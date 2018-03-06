@@ -1,0 +1,604 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84132612204EEE6000AA4B3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84132611204EEE6000AA4B3A /* AppDelegate.swift */; };
+		84132614204EEE6000AA4B3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84132613204EEE6000AA4B3A /* ViewController.swift */; };
+		84132617204EEE6000AA4B3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84132615204EEE6000AA4B3A /* Main.storyboard */; };
+		84132619204EEE6000AA4B3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84132618204EEE6000AA4B3A /* Assets.xcassets */; };
+		8413261C204EEE6000AA4B3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8413261A204EEE6000AA4B3A /* LaunchScreen.storyboard */; };
+		84132621204EEE6000AA4B3A /* PillApp WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 84132620204EEE6000AA4B3A /* PillApp WatchKit App.app */; };
+		84132627204EEE6000AA4B3A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84132625204EEE6000AA4B3A /* Interface.storyboard */; };
+		84132629204EEE6000AA4B3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84132628204EEE6000AA4B3A /* Assets.xcassets */; };
+		84132630204EEE6000AA4B3A /* PillApp WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8413262F204EEE6000AA4B3A /* PillApp WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		84132635204EEE6000AA4B3A /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84132634204EEE6000AA4B3A /* InterfaceController.swift */; };
+		84132637204EEE6000AA4B3A /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84132636204EEE6000AA4B3A /* ExtensionDelegate.swift */; };
+		84132639204EEE6000AA4B3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84132638204EEE6000AA4B3A /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84132622204EEE6000AA4B3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84132606204EEE6000AA4B3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8413261F204EEE6000AA4B3A;
+			remoteInfo = "PillApp WatchKit App";
+		};
+		84132631204EEE6000AA4B3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84132606204EEE6000AA4B3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8413262E204EEE6000AA4B3A;
+			remoteInfo = "PillApp WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		84132640204EEE6000AA4B3A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				84132630204EEE6000AA4B3A /* PillApp WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84132644204EEE6000AA4B3A /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				84132621204EEE6000AA4B3A /* PillApp WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8413260E204EEE6000AA4B3A /* PillApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PillApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84132611204EEE6000AA4B3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84132613204EEE6000AA4B3A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84132616204EEE6000AA4B3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84132618204EEE6000AA4B3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8413261B204EEE6000AA4B3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8413261D204EEE6000AA4B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84132620204EEE6000AA4B3A /* PillApp WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PillApp WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84132626204EEE6000AA4B3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		84132628204EEE6000AA4B3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8413262A204EEE6000AA4B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8413262F204EEE6000AA4B3A /* PillApp WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PillApp WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84132634204EEE6000AA4B3A /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		84132636204EEE6000AA4B3A /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		84132638204EEE6000AA4B3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8413263A204EEE6000AA4B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8413260B204EEE6000AA4B3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8413262C204EEE6000AA4B3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84132605204EEE6000AA4B3A = {
+			isa = PBXGroup;
+			children = (
+				84132610204EEE6000AA4B3A /* PillApp */,
+				84132624204EEE6000AA4B3A /* PillApp WatchKit App */,
+				84132633204EEE6000AA4B3A /* PillApp WatchKit Extension */,
+				8413260F204EEE6000AA4B3A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8413260F204EEE6000AA4B3A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8413260E204EEE6000AA4B3A /* PillApp.app */,
+				84132620204EEE6000AA4B3A /* PillApp WatchKit App.app */,
+				8413262F204EEE6000AA4B3A /* PillApp WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84132610204EEE6000AA4B3A /* PillApp */ = {
+			isa = PBXGroup;
+			children = (
+				84132611204EEE6000AA4B3A /* AppDelegate.swift */,
+				84132613204EEE6000AA4B3A /* ViewController.swift */,
+				84132615204EEE6000AA4B3A /* Main.storyboard */,
+				84132618204EEE6000AA4B3A /* Assets.xcassets */,
+				8413261A204EEE6000AA4B3A /* LaunchScreen.storyboard */,
+				8413261D204EEE6000AA4B3A /* Info.plist */,
+			);
+			path = PillApp;
+			sourceTree = "<group>";
+		};
+		84132624204EEE6000AA4B3A /* PillApp WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				84132625204EEE6000AA4B3A /* Interface.storyboard */,
+				84132628204EEE6000AA4B3A /* Assets.xcassets */,
+				8413262A204EEE6000AA4B3A /* Info.plist */,
+			);
+			path = "PillApp WatchKit App";
+			sourceTree = "<group>";
+		};
+		84132633204EEE6000AA4B3A /* PillApp WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				84132634204EEE6000AA4B3A /* InterfaceController.swift */,
+				84132636204EEE6000AA4B3A /* ExtensionDelegate.swift */,
+				84132638204EEE6000AA4B3A /* Assets.xcassets */,
+				8413263A204EEE6000AA4B3A /* Info.plist */,
+			);
+			path = "PillApp WatchKit Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8413260D204EEE6000AA4B3A /* PillApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84132645204EEE6000AA4B3A /* Build configuration list for PBXNativeTarget "PillApp" */;
+			buildPhases = (
+				8413260A204EEE6000AA4B3A /* Sources */,
+				8413260B204EEE6000AA4B3A /* Frameworks */,
+				8413260C204EEE6000AA4B3A /* Resources */,
+				84132644204EEE6000AA4B3A /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84132623204EEE6000AA4B3A /* PBXTargetDependency */,
+			);
+			name = PillApp;
+			productName = PillApp;
+			productReference = 8413260E204EEE6000AA4B3A /* PillApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8413261F204EEE6000AA4B3A /* PillApp WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84132641204EEE6000AA4B3A /* Build configuration list for PBXNativeTarget "PillApp WatchKit App" */;
+			buildPhases = (
+				8413261E204EEE6000AA4B3A /* Resources */,
+				84132640204EEE6000AA4B3A /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84132632204EEE6000AA4B3A /* PBXTargetDependency */,
+			);
+			name = "PillApp WatchKit App";
+			productName = "PillApp WatchKit App";
+			productReference = 84132620204EEE6000AA4B3A /* PillApp WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		8413262E204EEE6000AA4B3A /* PillApp WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8413263D204EEE6000AA4B3A /* Build configuration list for PBXNativeTarget "PillApp WatchKit Extension" */;
+			buildPhases = (
+				8413262B204EEE6000AA4B3A /* Sources */,
+				8413262C204EEE6000AA4B3A /* Frameworks */,
+				8413262D204EEE6000AA4B3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PillApp WatchKit Extension";
+			productName = "PillApp WatchKit Extension";
+			productReference = 8413262F204EEE6000AA4B3A /* PillApp WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84132606204EEE6000AA4B3A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Bruno Scheltzke";
+				TargetAttributes = {
+					8413260D204EEE6000AA4B3A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					8413261F204EEE6000AA4B3A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					8413262E204EEE6000AA4B3A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 84132609204EEE6000AA4B3A /* Build configuration list for PBXProject "PillApp" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84132605204EEE6000AA4B3A;
+			productRefGroup = 8413260F204EEE6000AA4B3A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8413260D204EEE6000AA4B3A /* PillApp */,
+				8413261F204EEE6000AA4B3A /* PillApp WatchKit App */,
+				8413262E204EEE6000AA4B3A /* PillApp WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8413260C204EEE6000AA4B3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8413261C204EEE6000AA4B3A /* LaunchScreen.storyboard in Resources */,
+				84132619204EEE6000AA4B3A /* Assets.xcassets in Resources */,
+				84132617204EEE6000AA4B3A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8413261E204EEE6000AA4B3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84132629204EEE6000AA4B3A /* Assets.xcassets in Resources */,
+				84132627204EEE6000AA4B3A /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8413262D204EEE6000AA4B3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84132639204EEE6000AA4B3A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8413260A204EEE6000AA4B3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84132614204EEE6000AA4B3A /* ViewController.swift in Sources */,
+				84132612204EEE6000AA4B3A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8413262B204EEE6000AA4B3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84132637204EEE6000AA4B3A /* ExtensionDelegate.swift in Sources */,
+				84132635204EEE6000AA4B3A /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84132623204EEE6000AA4B3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8413261F204EEE6000AA4B3A /* PillApp WatchKit App */;
+			targetProxy = 84132622204EEE6000AA4B3A /* PBXContainerItemProxy */;
+		};
+		84132632204EEE6000AA4B3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8413262E204EEE6000AA4B3A /* PillApp WatchKit Extension */;
+			targetProxy = 84132631204EEE6000AA4B3A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84132615204EEE6000AA4B3A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84132616204EEE6000AA4B3A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8413261A204EEE6000AA4B3A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8413261B204EEE6000AA4B3A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		84132625204EEE6000AA4B3A /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84132626204EEE6000AA4B3A /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8413263B204EEE6000AA4B3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8413263C204EEE6000AA4B3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8413263E204EEE6000AA4B3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M3PUPH2NBH;
+				INFOPLIST_FILE = "PillApp WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Scheltzke.PillApp.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		8413263F204EEE6000AA4B3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M3PUPH2NBH;
+				INFOPLIST_FILE = "PillApp WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Scheltzke.PillApp.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		84132642204EEE6000AA4B3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M3PUPH2NBH;
+				IBSC_MODULE = PillApp_WatchKit_Extension;
+				INFOPLIST_FILE = "PillApp WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = Scheltzke.PillApp.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		84132643204EEE6000AA4B3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M3PUPH2NBH;
+				IBSC_MODULE = PillApp_WatchKit_Extension;
+				INFOPLIST_FILE = "PillApp WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = Scheltzke.PillApp.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		84132646204EEE6000AA4B3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M3PUPH2NBH;
+				INFOPLIST_FILE = PillApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Scheltzke.PillApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84132647204EEE6000AA4B3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M3PUPH2NBH;
+				INFOPLIST_FILE = PillApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Scheltzke.PillApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84132609204EEE6000AA4B3A /* Build configuration list for PBXProject "PillApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8413263B204EEE6000AA4B3A /* Debug */,
+				8413263C204EEE6000AA4B3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8413263D204EEE6000AA4B3A /* Build configuration list for PBXNativeTarget "PillApp WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8413263E204EEE6000AA4B3A /* Debug */,
+				8413263F204EEE6000AA4B3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84132641204EEE6000AA4B3A /* Build configuration list for PBXNativeTarget "PillApp WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84132642204EEE6000AA4B3A /* Debug */,
+				84132643204EEE6000AA4B3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84132645204EEE6000AA4B3A /* Build configuration list for PBXNativeTarget "PillApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84132646204EEE6000AA4B3A /* Debug */,
+				84132647204EEE6000AA4B3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84132606204EEE6000AA4B3A /* Project object */;
+}
