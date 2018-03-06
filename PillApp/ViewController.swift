@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noMedicineImage: UIImageView!
     
-    var medicines = [Medicine]()
+    var medicines = [MedicineCD]()
     var daysOfWeek = [String]()
     
     override func viewDidLoad() {
@@ -21,6 +22,14 @@ class ViewController: UIViewController {
         //medicines.append(Medicine(name: "Paracetamol", quantity: 9, brand: "", unit: 9))
         initTableView()
         verifyTableViewContent()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let container = appDelegate.persistentContainer
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "MedicineCD")
+        
+        medicines = try! container.viewContext.fetch(request) as! [MedicineCD]
+        
     }
     
     func verifyTableViewContent() {
@@ -41,7 +50,6 @@ class ViewController: UIViewController {
     @objc func callPerform(tapGestureRecognizer: UITapGestureRecognizer) {
         performSegue(withIdentifier: "createMedicine", sender: nil)
     }
-    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -62,7 +70,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "medicineCell", for: indexPath) as! MedicineTableViewCell
         
-        cell.medicine = medicines[indexPath.row]
+//        cell.medicine = medicines[indexPath.row]
         
         return cell
     }
@@ -77,6 +85,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.reloadData()
         }
     }
-    
 }
 
+
+extension MedicineCD {
+    convenience init(name: String, quantity: Int32, brand: String? = "", unit: Int32 = 0){
+        self.init()
+        self.name = name
+        self.quantity = quantity
+        self.brand = brand
+        self.unit = unit
+    }
+}

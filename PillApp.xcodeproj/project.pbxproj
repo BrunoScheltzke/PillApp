@@ -22,6 +22,7 @@
 		84132649204EF23000AA4B3A /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84132648204EF23000AA4B3A /* Medicine.swift */; };
 		D7C85610204F02A7001265C7 /* MedicineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8560F204F02A7001265C7 /* MedicineTableViewCell.swift */; };
 		D7C85612204F0D3A001265C7 /* CreateMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C85611204F0D3A001265C7 /* CreateMedicineViewController.swift */; };
+		D7C85615204F2749001265C7 /* PillApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7C85613204F2749001265C7 /* PillApp.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		84132648204EF23000AA4B3A /* Medicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
 		D7C8560F204F02A7001265C7 /* MedicineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineTableViewCell.swift; sourceTree = "<group>"; };
 		D7C85611204F0D3A001265C7 /* CreateMedicineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMedicineViewController.swift; sourceTree = "<group>"; };
+		D7C85614204F2749001265C7 /* PillApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PillApp.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,11 +135,12 @@
 				84132613204EEE6000AA4B3A /* ViewController.swift */,
 				D7C85611204F0D3A001265C7 /* CreateMedicineViewController.swift */,
 				D7C8560F204F02A7001265C7 /* MedicineTableViewCell.swift */,
+				84132648204EF23000AA4B3A /* Medicine.swift */,
 				84132615204EEE6000AA4B3A /* Main.storyboard */,
 				84132618204EEE6000AA4B3A /* Assets.xcassets */,
 				8413261A204EEE6000AA4B3A /* LaunchScreen.storyboard */,
 				8413261D204EEE6000AA4B3A /* Info.plist */,
-				84132648204EF23000AA4B3A /* Medicine.swift */,
+				D7C85613204F2749001265C7 /* PillApp.xcdatamodeld */,
 			);
 			path = PillApp;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			files = (
 				D7C85612204F0D3A001265C7 /* CreateMedicineViewController.swift in Sources */,
 				84132649204EF23000AA4B3A /* Medicine.swift in Sources */,
+				D7C85615204F2749001265C7 /* PillApp.xcdatamodeld in Sources */,
 				84132614204EEE6000AA4B3A /* ViewController.swift in Sources */,
 				84132612204EEE6000AA4B3A /* AppDelegate.swift in Sources */,
 				D7C85610204F02A7001265C7 /* MedicineTableViewCell.swift in Sources */,
@@ -611,6 +615,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D7C85613204F2749001265C7 /* PillApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D7C85614204F2749001265C7 /* PillApp.xcdatamodel */,
+			);
+			currentVersion = D7C85614204F2749001265C7 /* PillApp.xcdatamodel */;
+			path = PillApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 84132606204EEE6000AA4B3A /* Project object */;
 }
