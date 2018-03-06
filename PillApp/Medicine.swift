@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Medicine {
+public struct Medicine {
     var name: String
     var quantity: Int
     var brand: String?
