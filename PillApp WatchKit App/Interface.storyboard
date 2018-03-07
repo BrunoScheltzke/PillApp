@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13756"/>
+    </dependencies>
+    <scenes>
+        <!--Medicine List Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="MedicineListController" customModule="PillApp_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="WqI-MH-sHv">
+                            <items>
+                                <tableRow identifier="MedicineRow" id="ZrK-kJ-rGj" customClass="MedicineRowController" customModule="PillApp_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="xbY-kj-1na">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Paracetamol" id="xvr-Hh-QxV">
+                                                <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                            </label>
+                                            <label alignment="right" verticalAlignment="center" text="20:45" id="44q-Vv-SRD"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="medicineNameLabel" destination="xvr-Hh-QxV" id="hBN-q7-Pt5"/>
+                                        <outlet property="timeLabel" destination="44q-Vv-SRD" id="E6l-Nh-xW7"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="medicineTable" destination="WqI-MH-sHv" id="NpW-xA-L62"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+    </scenes>
+</document>
