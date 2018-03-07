@@ -20,8 +20,8 @@
 		84132637204EEE6000AA4B3A /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84132636204EEE6000AA4B3A /* ExtensionDelegate.swift */; };
 		84132639204EEE6000AA4B3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84132638204EEE6000AA4B3A /* Assets.xcassets */; };
 		84132649204EF23000AA4B3A /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84132648204EF23000AA4B3A /* Medicine.swift */; };
-		8413264C204F094C00AA4B3A /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413264A204F062700AA4B3A /* NotificationManager.swift */; };
-		8413264D204F095A00AA4B3A /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413264A204F062700AA4B3A /* NotificationManager.swift */; };
+		84395E27205055EB003FEBBE /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84395E26205055EB003FEBBE /* NotificationManager.swift */; };
+		8477A4EA20505750008445F7 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477A4E92050574F008445F7 /* NotificationManager.swift */; };
 		84E418EF205011CF007DE716 /* WatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E418EE205011CF007DE716 /* WatchManager.swift */; };
 		84E418F1205011DC007DE716 /* iOSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E418F0205011DC007DE716 /* iOSManager.swift */; };
 /* End PBXBuildFile section */
@@ -86,8 +86,9 @@
 		84132638204EEE6000AA4B3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8413263A204EEE6000AA4B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84132648204EF23000AA4B3A /* Medicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
-		8413264A204F062700AA4B3A /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		8413264E204F0B5100AA4B3A /* PillApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PillApp.entitlements; sourceTree = "<group>"; };
+		84395E26205055EB003FEBBE /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		8477A4E92050574F008445F7 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		84E418EE205011CF007DE716 /* WatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchManager.swift; sourceTree = "<group>"; };
 		84E418F0205011DC007DE716 /* iOSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,8 +134,8 @@
 		84132610204EEE6000AA4B3A /* PillApp */ = {
 			isa = PBXGroup;
 			children = (
+				8477A4E92050574F008445F7 /* NotificationManager.swift */,
 				8413264E204F0B5100AA4B3A /* PillApp.entitlements */,
-				8413264A204F062700AA4B3A /* NotificationManager.swift */,
 				84132611204EEE6000AA4B3A /* AppDelegate.swift */,
 				84132613204EEE6000AA4B3A /* ViewController.swift */,
 				84132615204EEE6000AA4B3A /* Main.storyboard */,
@@ -165,6 +166,7 @@
 				84132638204EEE6000AA4B3A /* Assets.xcassets */,
 				8413263A204EEE6000AA4B3A /* Info.plist */,
 				84E418F0205011DC007DE716 /* iOSManager.swift */,
+				84395E26205055EB003FEBBE /* NotificationManager.swift */,
 			);
 			path = "PillApp WatchKit Extension";
 			sourceTree = "<group>";
@@ -319,8 +321,8 @@
 			files = (
 				84132649204EF23000AA4B3A /* Medicine.swift in Sources */,
 				84132614204EEE6000AA4B3A /* ViewController.swift in Sources */,
+				8477A4EA20505750008445F7 /* NotificationManager.swift in Sources */,
 				84E418EF205011CF007DE716 /* WatchManager.swift in Sources */,
-				8413264D204F095A00AA4B3A /* NotificationManager.swift in Sources */,
 				84132612204EEE6000AA4B3A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,7 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8413264C204F094C00AA4B3A /* NotificationManager.swift in Sources */,
+				84395E27205055EB003FEBBE /* NotificationManager.swift in Sources */,
 				84E418F1205011DC007DE716 /* iOSManager.swift in Sources */,
 				84132637204EEE6000AA4B3A /* ExtensionDelegate.swift in Sources */,
 				84132635204EEE6000AA4B3A /* InterfaceController.swift in Sources */,

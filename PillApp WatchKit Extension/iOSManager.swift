@@ -10,6 +10,7 @@ import Foundation
 import WatchConnectivity
 
 class iOSManager: NSObject, WCSessionDelegate {
+    
     static let shared = iOSManager()
     private let session: WCSession? = WCSession.isSupported() ? WCSession.default : nil
 
@@ -20,21 +21,21 @@ class iOSManager: NSObject, WCSessionDelegate {
     
     func updateApplicationContext(_ context: [String: Any]) throws {
         do {
-            print("sent application context to iPhone")
+            print("Sent application context to iPhone")
             try session?.updateApplicationContext(context)
         } catch {
-            print("failed to send message to iPhone")
+            print("Failed to send message to iPhone")
             throw error
         }
     }
     
     func sendMessage(_ message: [String: Any], _ replyHandler: (([String: Any]) -> Void)?, _ errorHandler: ((Error) -> Void)?) {
-        print("sent message to iPhone")
+        print("Sent message to iPhone")
         session?.sendMessage(message, replyHandler: replyHandler, errorHandler: errorHandler)
     }
     
     func transferUserInfo(_ userInfo: [String: Any]) {
-        print("sent user info to iPhone")
+        print("Sent user info to iPhone")
         session?.transferUserInfo(userInfo)
     }
     

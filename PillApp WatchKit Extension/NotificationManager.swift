@@ -74,7 +74,7 @@ class NotificationManager: NSObject {
 extension NotificationManager: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
 
-        //TODO: Save into core data
+        iOSManager.shared.transferUserInfo(["command": "Yes"])
         
         print(response.actionIdentifier)
         completionHandler()

@@ -25,7 +25,6 @@ class WatchManager: NSObject, WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         print("Received Message from watch")
-        replyHandler(["oi": "replaiou"])
         print(message)
     }
     
