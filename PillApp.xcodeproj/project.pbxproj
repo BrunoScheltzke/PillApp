@@ -137,16 +137,11 @@
 		84132610204EEE6000AA4B3A /* PillApp */ = {
 			isa = PBXGroup;
 			children = (
-				8477A4E92050574F008445F7 /* NotificationManager.swift */,
-				8413264E204F0B5100AA4B3A /* PillApp.entitlements */,
-				84132611204EEE6000AA4B3A /* AppDelegate.swift */,
-				84132613204EEE6000AA4B3A /* ViewController.swift */,
 				84132615204EEE6000AA4B3A /* Main.storyboard */,
-				84132618204EEE6000AA4B3A /* Assets.xcassets */,
-				8413261A204EEE6000AA4B3A /* LaunchScreen.storyboard */,
-				8413261D204EEE6000AA4B3A /* Info.plist */,
-				84132648204EF23000AA4B3A /* Medicine.swift */,
-				84E418EE205011CF007DE716 /* WatchManager.swift */,
+				8477A4EC205059FF008445F7 /* Managers */,
+				8477A4EE20505A1B008445F7 /* View */,
+				8477A4EB205059D6008445F7 /* Supporting Files */,
+				8477A4ED20505A0F008445F7 /* Model */,
 			);
 			path = PillApp;
 			sourceTree = "<group>";
@@ -164,15 +159,76 @@
 		84132633204EEE6000AA4B3A /* PillApp WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8413263A204EEE6000AA4B3A /* Info.plist */,
+				8477A4EF20505A30008445F7 /* View */,
+				8477A4F020505A44008445F7 /* Supporting Files */,
+				8477A4F120505A4F008445F7 /* Manager */,
+			);
+			path = "PillApp WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		8477A4EB205059D6008445F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84132611204EEE6000AA4B3A /* AppDelegate.swift */,
+				8413264E204F0B5100AA4B3A /* PillApp.entitlements */,
+				84132618204EEE6000AA4B3A /* Assets.xcassets */,
+				8413261D204EEE6000AA4B3A /* Info.plist */,
+				8413261A204EEE6000AA4B3A /* LaunchScreen.storyboard */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8477A4EC205059FF008445F7 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				8477A4E92050574F008445F7 /* NotificationManager.swift */,
+				84E418EE205011CF007DE716 /* WatchManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		8477A4ED20505A0F008445F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84132648204EF23000AA4B3A /* Medicine.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8477A4EE20505A1B008445F7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84132613204EEE6000AA4B3A /* ViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8477A4EF20505A30008445F7 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				AB7C23ED204F12DF00EBA6AB /* MedicineListController.swift */,
 				AB7C23EE204F12DF00EBA6AB /* MedicineRowController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8477A4F020505A44008445F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				84132636204EEE6000AA4B3A /* ExtensionDelegate.swift */,
 				84132638204EEE6000AA4B3A /* Assets.xcassets */,
-				8413263A204EEE6000AA4B3A /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8477A4F120505A4F008445F7 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
 				84E418F0205011DC007DE716 /* iOSManager.swift */,
 				84395E26205055EB003FEBBE /* NotificationManager.swift */,
 			);
-			path = "PillApp WatchKit Extension";
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
