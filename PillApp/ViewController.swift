@@ -23,6 +23,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noMedicineImage: UIImageView!
+
     
     var medicines = [MedicineCD]()
     var daysOfWeek = [DayOfWeek]()

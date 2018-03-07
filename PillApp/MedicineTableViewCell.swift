@@ -11,9 +11,16 @@ import UIKit
 class MedicineTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var quantityLabel: UILabel!
+    @IBOutlet weak var hourLabel: UILabel!
+    @IBOutlet weak var colorView: UIView!
+    
     var medicine: MedicineCD! {
         didSet {
             nameLabel.text = medicine.name
+            quantityLabel.text = "Quant: \(String(medicine.quantity))"
+            hourLabel.text = "At 7:30 AM"
+            colorView.backgroundColor = UIColor.red
         }
     }
 

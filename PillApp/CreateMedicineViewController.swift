@@ -12,9 +12,7 @@ import CoreData
 class CreateMedicineViewController: UIViewController {
     
     @IBOutlet weak var medicineNameTxt: UITextField!
-    @IBOutlet weak var quantityTxt: UITextField!
-    @IBOutlet weak var brandTxt: UITextField!
-    @IBOutlet weak var unitTxt: UITextField!
+    @IBOutlet weak var tableview: UITableView!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var container: NSPersistentContainer!
@@ -24,20 +22,15 @@ class CreateMedicineViewController: UIViewController {
         container = appDelegate.persistentContainer
     }
     
-    func saveMedicine(name: String, brand: String, unit: String, quantity: String) {
+    func saveMedicine(name: String) {
         let medicine = NSEntityDescription.insertNewObject(forEntityName: "MedicineCD",
                                                          into: container.viewContext) as! MedicineCD
         medicine.name = name
-        medicine.quantity = Int32(quantity)!
-        medicine.unit = Int32(unit)!
-        medicine.brand = brand
-        
         try? container.viewContext.save()
-        
     }
     
     @IBAction func save(_ sender: UIButton) {
-        saveMedicine(name: medicineNameTxt.text!, brand: quantityTxt.text!, unit: unitTxt.text!, quantity: quantityTxt.text!)
+        saveMedicine(name: medicineNameTxt.text!)
         performSegue(withIdentifier: "unwindToList", sender: nil)
     }
     
