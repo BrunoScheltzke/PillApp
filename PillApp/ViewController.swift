@@ -24,19 +24,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noMedicineImage: UIImageView!
     
-    var medicines = [MedicineCD]()
+    var medicines = [Medicine]()
     var daysOfWeek = [DayOfWeek]()
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var container: NSPersistentContainer!
-    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "MedicineCD")
+    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Medicine")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //medicines.append(Medicine(name: "Paracetamol", quantity: 9, brand: "", unit: 9))
         container = appDelegate.persistentContainer
 
-        medicines = try! container.viewContext.fetch(request) as! [MedicineCD]
+        medicines = try! container.viewContext.fetch(request) as! [Medicine]
         initTableView()
         verifyTableViewContent()
     }
@@ -62,7 +61,7 @@ class ViewController: UIViewController {
     
     @IBAction func unwind(segue:UIStoryboardSegue) {
         
-        medicines = try! container.viewContext.fetch(request) as! [MedicineCD]
+        medicines = try! container.viewContext.fetch(request) as! [Medicine]
         tableView.reloadData()
     }
 }

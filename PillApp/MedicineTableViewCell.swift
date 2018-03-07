@@ -11,7 +11,7 @@ import UIKit
 class MedicineTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
-    var medicine: MedicineCD! {
+    var medicine: Medicine! {
         didSet {
             nameLabel.text = medicine.name
         }

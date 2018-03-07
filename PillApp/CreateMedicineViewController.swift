@@ -25,15 +25,13 @@ class CreateMedicineViewController: UIViewController {
     }
     
     func saveMedicine(name: String, brand: String, unit: String, quantity: String) {
-        let medicine = NSEntityDescription.insertNewObject(forEntityName: "MedicineCD",
-                                                         into: container.viewContext) as! MedicineCD
+        let medicine = NSEntityDescription.insertNewObject(forEntityName: "Medicine",
+                                                         into: container.viewContext) as! Medicine
         medicine.name = name
-        medicine.quantity = Int32(quantity)!
         medicine.unit = Int32(unit)!
         medicine.brand = brand
         
         try? container.viewContext.save()
-        
     }
     
     @IBAction func save(_ sender: UIButton) {

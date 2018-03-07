@@ -1,16 +1,17 @@
 //
-//  Pill.swift
-//  PillApp
+//  Medicine.swift
+//  PillApp WatchKit Extension
 //
-//  Created by Bruno Scheltzke on 06/03/18.
+//  Created by Bruno Scheltzke on 07/03/18.
 //  Copyright © 2018 Bruno Scheltzke. All rights reserved.
 //
 
 import Foundation
 
 struct Medicine {
+    var id: Int
     var name: String
-    var quantity: Int
+    var unit: Int
+    var dosage: Dosage
     var brand: String?
-    var unit: Int?
 }
