@@ -9,27 +9,36 @@
 import UIKit
 import CoreData
 
+enum DayOfWeek {
+    case monday
+    case tuesday
+    case wednesday
+    case thurday
+    case friday
+    case saturday
+    case sunday
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noMedicineImage: UIImageView!
     
     var medicines = [MedicineCD]()
-    var daysOfWeek = [String]()
+    var daysOfWeek = [DayOfWeek]()
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var container: NSPersistentContainer!
+    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "MedicineCD")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //medicines.append(Medicine(name: "Paracetamol", quantity: 9, brand: "", unit: 9))
+        container = appDelegate.persistentContainer
+
+        medicines = try! container.viewContext.fetch(request) as! [MedicineCD]
         initTableView()
         verifyTableViewContent()
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let container = appDelegate.persistentContainer
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "MedicineCD")
-        
-        medicines = try! container.viewContext.fetch(request) as! [MedicineCD]
-        
     }
     
     func verifyTableViewContent() {
@@ -50,6 +59,12 @@ class ViewController: UIViewController {
     @objc func callPerform(tapGestureRecognizer: UITapGestureRecognizer) {
         performSegue(withIdentifier: "createMedicine", sender: nil)
     }
+    
+    @IBAction func unwind(segue:UIStoryboardSegue) {
+        
+        medicines = try! container.viewContext.fetch(request) as! [MedicineCD]
+        tableView.reloadData()
+    }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -58,10 +73,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         tableView.delegate = self
     }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return daysOfWeek.count
-    }
+//
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return daysOfWeek.count
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return medicines.count
@@ -70,7 +85,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "medicineCell", for: indexPath) as! MedicineTableViewCell
         
-//        cell.medicine = medicines[indexPath.row]
+        cell.medicine = medicines[indexPath.row]
         
         return cell
     }
@@ -81,19 +96,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
-            medicines.remove(at: indexPath.row)
+            let medicine = medicines.remove(at: indexPath.row)
+            container.viewContext.delete(medicine)
+            try? container.viewContext.save()
             tableView.reloadData()
         }
-    }
-}
-
-
-extension MedicineCD {
-    convenience init(name: String, quantity: Int32, brand: String? = "", unit: Int32 = 0){
-        self.init()
-        self.name = name
-        self.quantity = quantity
-        self.brand = brand
-        self.unit = unit
     }
 }
