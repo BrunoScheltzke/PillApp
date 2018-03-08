@@ -27,17 +27,18 @@ struct NotificationActionIdentifier {
 
 class NotificationManager: NSObject {
     static let shared = NotificationManager()
+    let center = UNUserNotificationCenter.current()
     
     private override init() {
         super.init()
-        
         center.delegate = self
         registerCategories()
     }
     
-    let center = UNUserNotificationCenter.current()
-    
-    func requestAuthorization(completion: @escaping(NotifiationResult) -> Void) {
+    func setup(completion: @escaping(NotifiationResult) -> Void) {
+        center.delegate = self
+        registerCategories()
+        
         center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
             guard error == nil else {
                 completion(.error(error!))
@@ -61,15 +62,15 @@ class NotificationManager: NSObject {
     func setUpReminder(reminder: Reminder) {
         let content = UNMutableNotificationContent()
         content.title = "Medication Reminder"
-        content.body = "Remember to take \(reminder.quantity, reminder.dosage) of \(String(describing: reminder.medicine?.name))"
+        content.body = "Remember to take \(reminder.quantity, reminder.dosage) of \(reminder.medicine!.name!)"
         content.categoryIdentifier = NotificationCategoryIdentifier.medicineTaking
-        content.userInfo = ["medicineId": Int(reminder.medicine!.id)]
+        content.userInfo = ["reminderId": reminder.objectID.uriRepresentation().absoluteString]
         
         var date = DateComponents()
         date.hour = Calendar.current.component(.hour, from: reminder.date!)
         date.minute = Calendar.current.component(.minute, from: reminder.date!)
         
-        if reminder.frequency != Int32(Frequency.everyDay.rawValue) {
+        if reminder.frequency != Int32(Frequency.everyDay.rawValue) && reminder.frequency != Int32(Frequency.currentDayOnly.rawValue) {
             date.weekday = Int(reminder.frequency)
         }
         
@@ -104,23 +105,25 @@ extension NotificationManager: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         print("Notification response: \(response.actionIdentifier)")
         
-        let register = Register()
-        
-        switch response.actionIdentifier {
-        case NotificationActionIdentifier.yes:
-            register.taken = true
-        default:
-            register.taken = false
+        if response.notification.request.content.categoryIdentifier == NotificationCategoryIdentifier.medicineTaking {
+            var taken: Bool
+            
+            switch response.actionIdentifier {
+            case NotificationActionIdentifier.yes:
+                taken = true
+            default:
+                taken = false
+            }
+            
+            let reminderDict = response.notification.request.content.userInfo
+            let idUrl = URL(string:  reminderDict["reminderId"] as! String)
+            let reminder = CoreDataManager.shared.fetchReminder(by: idUrl!)
+            let date = reminderDict["date"] as? Date ?? Date()
+            
+            CoreDataManager.shared.createRegister(date: date, reminder: reminder!, taken: taken)
+
+            completionHandler()
         }
-        
-        let reminderDict = response.notification.request.content.userInfo
-        //TODO: Fetch reminder from reminderId
-        //register.reminder = reminderDict["reminderId"]
-        register.date = reminderDict["date"] as? Date ?? Date()
-        
-        //TODO: Save in hisorico
-        
-        completionHandler()
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {

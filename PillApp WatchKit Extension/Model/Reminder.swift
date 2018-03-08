@@ -9,7 +9,7 @@
 import Foundation
 
 struct Reminder {
-    var id: Int
+    var id: URL
     var medicine: Medicine
     var dosage: Dosage
     var quantity: Int

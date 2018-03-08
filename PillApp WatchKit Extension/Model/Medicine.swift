@@ -9,7 +9,7 @@
 import Foundation
 
 struct Medicine {
-    var id: Int
+    var id: URL
     var name: String
     var unit: Int
     var dosage: Dosage

@@ -13,8 +13,6 @@ class MedicineListController: WKInterfaceController {
     
     let medicines: [Medicine] = {
         var medicines: [Medicine] = []
-        medicines.append(Medicine(id: 1, name: "Paracetamal", unit: 10, dosage: .pill, brand: nil))
-        medicines.append(Medicine(id: 1, name: "Tylenol", unit: 10, dosage: .pill, brand: nil))
         return medicines
     }()
     
@@ -22,6 +20,7 @@ class MedicineListController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        
         medicineTable.setNumberOfRows(medicines.count, withRowType: "MedicineRow")
         
         for index in 0..<medicineTable.numberOfRows {
@@ -30,6 +29,11 @@ class MedicineListController: WKInterfaceController {
             controller.medicine = medicines[index]
         }
     }
+    
+    @IBAction func notificationButtonTapped() {
+        NotificationManager.shared.createLocalTestNotification()
+    }
+    
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user

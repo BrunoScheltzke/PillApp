@@ -14,7 +14,7 @@ enum Frequency: Int {
     case everyMonday
     case everyTuesday
     case everyWednesday
-    case everyThrusday
+    case everyThursday
     case everyFriday
     case everySaturday
     case everyDay

@@ -22,11 +22,13 @@ class WatchManager: NSObject, WCSessionDelegate {
         print("Received User Info from watch")
         print(userInfo)
         
-        //TODO: Save register after action from apple watch notification
-        //register.taken = userInfo["actionIdentifier"]
-        //register.reminderId = userInfo["reminderId"]
-        //register.date = userInfo["date"]
-        //saveRegister
+        let taken = userInfo["medicineTaken"] as! Bool
+        
+        let idUrl = URL(string: userInfo["reminderId"] as! String)
+        let reminder = CoreDataManager.shared.fetchReminder(by: idUrl!)
+        let date = userInfo["date"] as? Date ?? Date()
+
+        CoreDataManager.shared.createRegister(date: date, reminder: reminder!, taken: taken)
     }
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
