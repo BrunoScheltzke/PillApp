@@ -15,9 +15,9 @@ class MedicineRowController: NSObject {
     
     var medicine: Medicine? {
         didSet {
-            guard let medicine = medicine else { return }
-            medicineNameLabel.setText(medicine.name)
-            timeLabel.setText("20:49")
+//            guard let medicine = medicine else { return }
+//            medicineNameLabel.setText(medicine.name)
+//            timeLabel.setText("20:49")
         }
     }
     
