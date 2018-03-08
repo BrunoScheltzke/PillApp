@@ -45,10 +45,11 @@ class WatchManager: NSObject, WCSessionDelegate {
             
             reminders.forEach({ (reminder) in remindersDict.append(CoreDataManager.shared.toDictionary(reminder))
             })
-            
-            session.sendMessage([Keys.communicationCommand: CommunicationProtocol.dailyReminders, Keys.reminders: remindersDict], replyHandler: nil, errorHandler: { (error) in
-                print("Failed to send Today Reminders to Watch: \(error)")
-            })
+
+            //replyHandler([Keys.communicationCommand: CommunicationProtocol.dailyReminders, Keys.reminders: remindersDict])
+//            session.sendMessage([Keys.communicationCommand: CommunicationProtocol.dailyReminders, Keys.reminders: remindersDict], replyHandler: nil, errorHandler: { (error) in
+//                print("Failed to send Today Reminders to Watch: \(error)")
+//            })
             
         case CommunicationProtocol.medicineLeft:
             print("Medicine Left Requested")
@@ -78,9 +79,11 @@ class WatchManager: NSObject, WCSessionDelegate {
             reminders.forEach({ (reminder) in remindersDict.append(CoreDataManager.shared.toDictionary(reminder))
             })
             
-            session.sendMessage([Keys.communicationCommand: CommunicationProtocol.dailyReminders, Keys.reminders: remindersDict], replyHandler: nil, errorHandler: { (error) in
-                print("Failed to send Today Reminders to Watch: \(error)")
-            })
+            replyHandler([Keys.communicationCommand: CommunicationProtocol.dailyReminders, Keys.reminders: remindersDict])
+//
+//            session.sendMessage([Keys.communicationCommand: CommunicationProtocol.dailyReminders, Keys.reminders: remindersDict], replyHandler: nil, errorHandler: { (error) in
+//                print("Failed to send Today Reminders to Watch: \(error)")
+//            })
             
         case CommunicationProtocol.medicineLeft:
             print("Medicine Left Requested")

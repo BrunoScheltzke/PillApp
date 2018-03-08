@@ -10,27 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PillApp WatchKit Extension/Manager/iOSManager.swift"
-            timestampString = "542231487.810401"
+            timestampString = "542236469.618173"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "getDailyReminders(_:_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PillApp WatchKit Extension/Manager/iOSManager.swift"
-            timestampString = "542231487.811054"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "getDailyReminders(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +26,75 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PillApp/WatchManager.swift"
-            timestampString = "542231487.811759"
+            timestampString = "542236469.618252"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "session(_:didReceiveMessage:replyHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PillApp WatchKit Extension/Controller/MedicineListController.swift"
+            timestampString = "542236469.618783"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "awake(withContext:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PillApp WatchKit Extension/Controller/MedicineListController.swift"
+            timestampString = "542236469.618837"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "awake(withContext:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PillApp WatchKit Extension/Manager/iOSManager.swift"
+            timestampString = "542236469.618885"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "getDailyReminders(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PillApp/WatchManager.swift"
+            timestampString = "542236469.618932"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "session(_:didReceiveMessage:replyHandler:)"
             landmarkType = "7">
             <Locations>
@@ -58,27 +106,27 @@
                   moduleName = "PillApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/brunoscheltzke/Documents/Projects/Swift/PillApp/PillApp/WatchManager.swift"
-                  timestampString = "542231488.216342"
+                  timestampString = "542236469.789161"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "81"
-                  endingLineNumber = "81"
-                  offsetFromSymbolStart = "4632">
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "2868">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Error) -&gt; () in PillApp.WatchManager.session(__ObjC.WCSession, didReceiveMessage: Swift.Dictionary&lt;Swift.String, Any&gt;, replyHandler: (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "implicit closure #1 : @autoclosure () throws -&gt; Swift.Array&lt;PillApp.Reminder&gt; in PillApp.WatchManager.session(__ObjC.WCSession, didReceiveMessage: Swift.Dictionary&lt;Swift.String, Any&gt;, replyHandler: (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "PillApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/brunoscheltzke/Documents/Projects/Swift/PillApp/PillApp/WatchManager.swift"
-                  timestampString = "542231488.219012"
+                  timestampString = "542236469.793071"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "82"
-                  endingLineNumber = "82"
-                  offsetFromSymbolStart = "15">
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "68">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -90,60 +138,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PillApp/WatchManager.swift"
-            timestampString = "542231487.81182"
+            timestampString = "542236487.1317739"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "session(_:didReceiveMessage:replyHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PillApp WatchKit Extension/Manager/iOSManager.swift"
-            timestampString = "542231487.811874"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "startSession()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PillApp/WatchManager.swift"
-            timestampString = "542231487.812368"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "session(_:didReceiveMessage:replyHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PillApp/ViewController.swift"
-            timestampString = "542231487.8124501"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "session(_:didReceiveUserInfo:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

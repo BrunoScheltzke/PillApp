@@ -23,4 +23,12 @@ class MedicineRowController: NSObject {
         }
     }
     
+    var reminder: Reminder? {
+        didSet {
+            guard let reminder = reminder else {return}
+            medicineNameLabel.setText(reminder.medicine.name)
+            quantityLabel.setText(String(reminder.quantity))
+            timeLabel.setText(String(describing: reminder.date))
+        }
+    }
 }

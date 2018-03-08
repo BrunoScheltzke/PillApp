@@ -16,19 +16,37 @@ class MedicineListController: WKInterfaceController {
     
     var medicines: [Medicine] = []
     
+    var reminders: [Reminder] = []
+    
     @IBOutlet var medicineTable: WKInterfaceTable!
     @IBOutlet var spriteScene: WKInterfaceSKScene!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        medicineTable.setNumberOfRows(medicines.count, withRowType: "MedicineRow")
-        
-        for index in 0..<medicineTable.numberOfRows {
-            guard let controller = medicineTable.rowController(at: index) as? MedicineRowController else { continue }
+        iOSManager.shared.getDailyReminders({ (reminders) in
             
-            controller.medicine = medicines[index]
+            self.reminders = reminders
+            
+            self.medicineTable.setNumberOfRows(self.reminders.count, withRowType: "MedicineRow")
+            
+            for index in 0..<self.medicineTable.numberOfRows {
+                guard let controller = self.medicineTable.rowController(at: index) as? MedicineRowController else { continue }
+                
+                controller.reminder = reminders[index]
+            }
+            
+        }) { (error) in
+            print("Error fetching daily reminders: \(error)")
         }
+        
+//        medicineTable.setNumberOfRows(medicines.count, withRowType: "MedicineRow")
+//
+//        for index in 0..<medicineTable.numberOfRows {
+//            guard let controller = medicineTable.rowController(at: index) as? MedicineRowController else { continue }
+//
+//            controller.medicine = medicines[index]
+//        }
     }
     
     override func willActivate() {

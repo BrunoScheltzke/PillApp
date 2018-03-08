@@ -17,7 +17,6 @@ class iOSManager: NSObject, WCSessionDelegate {
     func getDailyReminders(_ completion: @escaping ([Reminder]) -> Void, _ errorHandler: @escaping (Error) -> Void) {
         session?.sendMessage([Keys.communicationCommand: CommunicationProtocol.dailyReminders], replyHandler: { (response) in
             
-            
             guard let command = response[Keys.communicationCommand] as? String, command == CommunicationProtocol.dailyReminders else {return}
             
             let remindersDict = response[Keys.reminders] as! [[String: Any]]
