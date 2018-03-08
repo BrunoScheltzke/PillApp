@@ -13,7 +13,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     func applicationDidFinishLaunching() {
         iOSManager.shared.startSession()
         
-        NotificationManager.shared.requestAuthorization { (result) in}
+        NotificationManager.shared.setup { (result) in}
     }
 
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {

@@ -9,17 +9,10 @@
 import WatchKit
 import Foundation
 
-
 class MedicineListController: WKInterfaceController {
     
     let medicines: [Medicine] = {
         var medicines: [Medicine] = []
-        medicines.append(Medicine(name: "Parecetamol", quantity: 12, brand: nil, unit: nil))
-        medicines.append(Medicine(name: "Tylenol", quantity: 12, brand: nil, unit: nil))
-        medicines.append(Medicine(name: "Gelol", quantity: 12, brand: nil, unit: nil))
-        medicines.append(Medicine(name: "Aspirina", quantity: 12, brand: nil, unit: nil))
-        medicines.append(Medicine(name: "Sinvastatina", quantity: 12, brand: nil, unit: nil))
-        medicines.append(Medicine(name: "Avamys", quantity: 12, brand: nil, unit: nil))
         return medicines
     }()
     
@@ -27,6 +20,7 @@ class MedicineListController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        
         medicineTable.setNumberOfRows(medicines.count, withRowType: "MedicineRow")
         
         for index in 0..<medicineTable.numberOfRows {
@@ -35,6 +29,11 @@ class MedicineListController: WKInterfaceController {
             controller.medicine = medicines[index]
         }
     }
+    
+    @IBAction func notificationButtonTapped() {
+        NotificationManager.shared.createLocalTestNotification()
+    }
+    
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user

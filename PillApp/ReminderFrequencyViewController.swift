@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReminderFrequenceViewController: UIViewController {
+class ReminderFrequencyViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -30,7 +30,7 @@ class ReminderFrequenceViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToFrequenceViewController" {
+        if segue.identifier == "goToFrequencyViewController" {
             
         }
     }
@@ -38,13 +38,13 @@ class ReminderFrequenceViewController: UIViewController {
 }
 
 
-extension ReminderFrequenceViewController: UITableViewDelegate, UITableViewDataSource {
+extension ReminderFrequencyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "ReminderTableViewCell", for: indexPath)
             return cell
         } else {
-            let cell = self.tableView.dequeueReusableCell(withIdentifier: "FrequenceTableViewCell", for: indexPath)
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: "FrequencyTableViewCell", for: indexPath)
             return cell
         }
     }
@@ -55,7 +55,7 @@ extension ReminderFrequenceViewController: UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 1 {
-            performSegue(withIdentifier: "goToFrequenceViewController", sender: nil)
+            performSegue(withIdentifier: "goToFrequencyViewController", sender: nil)
         }
     }
 }

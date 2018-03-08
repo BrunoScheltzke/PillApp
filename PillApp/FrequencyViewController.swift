@@ -8,9 +8,19 @@
 
 import UIKit
 
-class FrequenceViewController: UIViewController {
+class FrequencyViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+
+//    case everySunday
+//    case everyMonday
+//    case everyTuesday
+//    case everyWednesday
+//    case everyThursday
+//    case everyFriday
+//    case everySaturday
+//    case everyDay
+    private var model = [Frequency.everySunday, Frequency.everyMonday, Frequency.everyTuesday, Frequency.everyWednesday, Frequency.everyThursday, Frequency.everyFriday, Frequency.everySaturday]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,13 +47,14 @@ class FrequenceViewController: UIViewController {
 
 }
 
-extension FrequenceViewController: UITableViewDelegate, UITableViewDataSource {
+extension FrequencyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "FrequenceTableViewCell", for: indexPath)
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "FrequencyTableViewCell", for: indexPath) as! FrequencyTableViewCell
+        cell.frequence = self.model[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return model.count
     }
 }

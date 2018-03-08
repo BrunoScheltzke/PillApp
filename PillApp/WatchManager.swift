@@ -21,6 +21,14 @@ class WatchManager: NSObject, WCSessionDelegate {
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
         print("Received User Info from watch")
         print(userInfo)
+        
+        let taken = userInfo["medicineTaken"] as! Bool
+        
+        let idUrl = URL(string: userInfo["reminderId"] as! String)
+        let reminder = CoreDataManager.shared.fetchReminder(by: idUrl!)
+        let date = userInfo["date"] as? Date ?? Date()
+
+        CoreDataManager.shared.createRegister(date: date, reminder: reminder!, taken: taken)
     }
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {

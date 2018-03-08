@@ -31,6 +31,11 @@
                                 </tableRow>
                             </items>
                         </table>
+                        <button width="1" alignment="left" title="Notification" id="OK6-CV-wQ3">
+                            <connections>
+                                <action selector="notificationButtonTapped" destination="AgC-eL-Hgc" id="RQq-pP-LQ3"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
                         <outlet property="medicineTable" destination="WqI-MH-sHv" id="NpW-xA-L62"/>
