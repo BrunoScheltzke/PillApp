@@ -64,7 +64,7 @@ class NotificationManager: NSObject {
         content.title = "Medication Reminder"
         content.body = "Remember to take your medication"
         content.categoryIdentifier = NotificationCategoryIdentifier.medicineTaking
-        content.userInfo = ["reminderId": "x-coredata://8C1C55E8-70EA-4606-AF3C-8EEF5F1711C5/Reminder/p1"]
+        content.userInfo = [Keys.reminderId: "x-coredata://8C1C55E8-70EA-4606-AF3C-8EEF5F1711C5/Reminder/p1"]
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 4.0, repeats: false)
         
@@ -95,9 +95,9 @@ extension NotificationManager: UNUserNotificationCenterDelegate {
             }
             
             let reminderDict = response.notification.request.content.userInfo
-            let reminderId = reminderDict["reminderId"] as! String
+            let reminderId = reminderDict[Keys.reminderId] as! String
             
-            iOSManager.shared.transferUserInfo(["medicineTaken": medicineTaken, "reminderId": reminderId, "date": Date()])
+            iOSManager.shared.transferUserInfo([Keys.communicationCommand: CommunicationProtocol.notification, Keys.medicineTaken: medicineTaken, Keys.reminderId: reminderId, Keys.date: Date()])
             
             completionHandler()
         }

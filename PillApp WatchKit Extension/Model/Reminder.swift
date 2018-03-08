@@ -9,10 +9,19 @@
 import Foundation
 
 struct Reminder {
-    var id: URL
+    var id: String
     var medicine: Medicine
     var dosage: Dosage
     var quantity: Int
     var date: Date
     var frequency: Frequency
+    
+    init(_ dictionary: [String: Any]) {
+        self.id = dictionary[Keys.Reminder.id] as! String
+        self.medicine = Medicine(dictionary[Keys.Reminder.medicine] as! [String: Any])
+        self.dosage = Dosage(rawValue: dictionary[Keys.Reminder.dosage] as! String)!
+        self.quantity = dictionary[Keys.Reminder.quantity] as! Int
+        self.date = dictionary[Keys.Reminder.date] as! Date
+        self.frequency = Frequency(rawValue: dictionary[Keys.Reminder.frequency] as! Int)!
+    }
 }

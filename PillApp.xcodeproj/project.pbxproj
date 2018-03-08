@@ -18,6 +18,8 @@
 		84132637204EEE6000AA4B3A /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84132636204EEE6000AA4B3A /* ExtensionDelegate.swift */; };
 		84132639204EEE6000AA4B3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84132638204EEE6000AA4B3A /* Assets.xcassets */; };
 		84395E27205055EB003FEBBE /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84395E26205055EB003FEBBE /* NotificationManager.swift */; };
+		846949B22051ACA8000E4709 /* WatchiPhoneCommunicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846949B12051ACA8000E4709 /* WatchiPhoneCommunicationProtocol.swift */; };
+		846949B32051ADC1000E4709 /* WatchiPhoneCommunicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846949B12051ACA8000E4709 /* WatchiPhoneCommunicationProtocol.swift */; };
 		8477A4EA20505750008445F7 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477A4E92050574F008445F7 /* NotificationManager.swift */; };
 		84E418EF205011CF007DE716 /* WatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E418EE205011CF007DE716 /* WatchManager.swift */; };
 		84E418F1205011DC007DE716 /* iOSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E418F0205011DC007DE716 /* iOSManager.swift */; };
@@ -95,6 +97,7 @@
 		8413263A204EEE6000AA4B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8413264E204F0B5100AA4B3A /* PillApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PillApp.entitlements; sourceTree = "<group>"; };
 		84395E26205055EB003FEBBE /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		846949B12051ACA8000E4709 /* WatchiPhoneCommunicationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchiPhoneCommunicationProtocol.swift; sourceTree = "<group>"; };
 		8477A4E92050574F008445F7 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		84E418EE205011CF007DE716 /* WatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchManager.swift; sourceTree = "<group>"; };
 		84E418F0205011DC007DE716 /* iOSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSManager.swift; sourceTree = "<group>"; };
@@ -245,6 +248,7 @@
 			children = (
 				84E418F0205011DC007DE716 /* iOSManager.swift */,
 				84395E26205055EB003FEBBE /* NotificationManager.swift */,
+				846949B12051ACA8000E4709 /* WatchiPhoneCommunicationProtocol.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -427,6 +431,7 @@
 				84132612204EEE6000AA4B3A /* AppDelegate.swift in Sources */,
 				84F738552050941100FDEB1D /* CoreDataManager.swift in Sources */,
 				D7C85610204F02A7001265C7 /* MedicineTableViewCell.swift in Sources */,
+				846949B32051ADC1000E4709 /* WatchiPhoneCommunicationProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +444,7 @@
 				84F7384F2050801B00FDEB1D /* Dosage.swift in Sources */,
 				84F738482050733D00FDEB1D /* Medicine.swift in Sources */,
 				84E418F1205011DC007DE716 /* iOSManager.swift in Sources */,
+				846949B22051ACA8000E4709 /* WatchiPhoneCommunicationProtocol.swift in Sources */,
 				84F738512050802100FDEB1D /* Frequency.swift in Sources */,
 				84132637204EEE6000AA4B3A /* ExtensionDelegate.swift in Sources */,
 				AB7C23F2204F12E400EBA6AB /* MedicineListController.swift in Sources */,

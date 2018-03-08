@@ -10,6 +10,7 @@ import WatchKit
 import Foundation
 
 class MedicineListController: WKInterfaceController {
+    @IBOutlet var notificationBtn: WKInterfaceButton!
     
     let medicines: [Medicine] = {
         var medicines: [Medicine] = []
@@ -29,11 +30,6 @@ class MedicineListController: WKInterfaceController {
             controller.medicine = medicines[index]
         }
     }
-    
-    @IBAction func notificationButtonTapped() {
-        NotificationManager.shared.createLocalTestNotification()
-    }
-    
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
