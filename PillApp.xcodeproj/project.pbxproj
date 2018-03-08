@@ -37,7 +37,7 @@
 		8D90510A2051985800B95B9D /* SKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9050FB2051985800B95B9D /* SKColor.swift */; };
 		8D90510B2051985800B95B9D /* SKAction+SpecialEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9050FC2051985800B95B9D /* SKAction+SpecialEffects.swift */; };
 		8D90510C2051985800B95B9D /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9050FD2051985800B95B9D /* Vector3.swift */; };
-		8D90510E2051989800B95B9D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D90510D2051989700B95B9D /* GameScene.swift */; };
+		AB719D742051B92D00C1DEF8 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB719D732051B92D00C1DEF8 /* GameScene.swift */; };
 		AB7C23F1204F12E400EBA6AB /* MedicineRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7C23EE204F12DF00EBA6AB /* MedicineRowController.swift */; };
 		AB7C23F2204F12E400EBA6AB /* MedicineListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7C23ED204F12DF00EBA6AB /* MedicineListController.swift */; };
 		AB7C23F6204F132A00EBA6AB /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB7C23F5204F132A00EBA6AB /* Interface.storyboard */; };
@@ -122,7 +122,7 @@
 		8D9050FB2051985800B95B9D /* SKColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKColor.swift; sourceTree = "<group>"; };
 		8D9050FC2051985800B95B9D /* SKAction+SpecialEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+SpecialEffects.swift"; sourceTree = "<group>"; };
 		8D9050FD2051985800B95B9D /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
-		8D90510D2051989700B95B9D /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = "PillApp WatchKit Extension/View/ringNode/GameScene.swift"; sourceTree = SOURCE_ROOT; };
+		AB719D732051B92D00C1DEF8 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		AB7C23ED204F12DF00EBA6AB /* MedicineListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineListController.swift; sourceTree = "<group>"; };
 		AB7C23EE204F12DF00EBA6AB /* MedicineRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineRowController.swift; sourceTree = "<group>"; };
 		AB7C23F5204F132A00EBA6AB /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
@@ -267,7 +267,7 @@
 		8D90510F205198D700B95B9D /* RingNode */ = {
 			isa = PBXGroup;
 			children = (
-				8D90510D2051989700B95B9D /* GameScene.swift */,
+				AB719D732051B92D00C1DEF8 /* GameScene.swift */,
 				8D9050F92051985800B95B9D /* CGFloat.swift */,
 				8D9050EF2051985600B95B9D /* CGFloat+Extensions.swift */,
 				8D9050F32051985700B95B9D /* CGPoint+Extensions.swift */,
@@ -463,7 +463,7 @@
 				AB7C23F1204F12E400EBA6AB /* MedicineRowController.swift in Sources */,
 				8D9051082051985800B95B9D /* CGFloat.swift in Sources */,
 				8D9050FF2051985800B95B9D /* SKColor+Extensions.swift in Sources */,
-				8D90510E2051989800B95B9D /* GameScene.swift in Sources */,
+				AB719D742051B92D00C1DEF8 /* GameScene.swift in Sources */,
 				8D90510A2051985800B95B9D /* SKColor.swift in Sources */,
 				8D9051022051985800B95B9D /* CGPoint+Extensions.swift in Sources */,
 				8D9051042051985800B95B9D /* SKAction+Extensions.swift in Sources */,

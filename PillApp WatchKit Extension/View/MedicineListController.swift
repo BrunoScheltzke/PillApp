@@ -13,16 +13,7 @@ import SpriteKit
 
 class MedicineListController: WKInterfaceController {
     
-    let medicines: [Medicine] = {
-        var medicines: [Medicine] = []
-        medicines.append(Medicine(name: "Parecetamol", quantity: 12, brand: nil, unit: nil))
-        medicines.append(Medicine(name: "Tylenol", quantity: 12, brand: nil, unit: nil))
-        medicines.append(Medicine(name: "Gelol", quantity: 12, brand: nil, unit: nil))
-        medicines.append(Medicine(name: "Aspirina", quantity: 12, brand: nil, unit: nil))
-        medicines.append(Medicine(name: "Sinvastatina", quantity: 12, brand: nil, unit: nil))
-        medicines.append(Medicine(name: "Avamys", quantity: 12, brand: nil, unit: nil))
-        return medicines
-    }()
+    var medicines: [Medicine] = []
     
     @IBOutlet var medicineTable: WKInterfaceTable!
     @IBOutlet var spriteScene: WKInterfaceSKScene!
@@ -42,9 +33,8 @@ class MedicineListController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
-        let scene = GameScene(size: CGSize(width: 45, height: 45))
+        let scene = RingScene(size: CGSize(width: 45, height: 45))
         spriteScene.presentScene(scene)
-        scene.show(at: CGPoint(x: scene.size.width / 2, y: scene.size.height / 2), diameter: scene.size.width)
     }
     
     override func didDeactivate() {
@@ -53,7 +43,7 @@ class MedicineListController: WKInterfaceController {
     }
     
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
-        print("tomei")
+        
     }
     
 }
