@@ -63,6 +63,12 @@
                                         <color key="backgroundColor" red="0.16862745098039217" green="0.1764705882352941" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                                         <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                                     </group>
+                                    <connections>
+                                        <outlet property="medicineNameLabel" destination="mNj-e2-st0" id="P6u-3I-KzV"/>
+                                        <outlet property="quantityLabel" destination="UXX-SQ-FjO" id="R27-Rv-CjI"/>
+                                        <outlet property="takedImageView" destination="9XQ-Id-5SV" id="FCS-MP-cTx"/>
+                                        <outlet property="timeLabel" destination="zO1-CM-jRH" id="Kpb-QN-CAM"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>

@@ -11,7 +11,9 @@ import WatchKit
 class MedicineRowController: NSObject {
 
     @IBOutlet var medicineNameLabel: WKInterfaceLabel!
+    @IBOutlet var quantityLabel: WKInterfaceLabel!
     @IBOutlet var timeLabel: WKInterfaceLabel!
+    @IBOutlet var takedImageView: WKInterfaceImage!
     
     var medicine: Medicine? {
         didSet {

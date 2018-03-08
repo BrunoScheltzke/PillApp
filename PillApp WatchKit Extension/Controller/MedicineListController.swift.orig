@@ -10,11 +10,17 @@ import WatchKit
 import Foundation
 import SpriteKit
 
-
 class MedicineListController: WKInterfaceController {
     @IBOutlet var notificationBtn: WKInterfaceButton!
     
+<<<<<<< HEAD:PillApp WatchKit Extension/Controller/MedicineListController.swift
+    let medicines: [Medicine] = {
+        var medicines: [Medicine] = []
+        return medicines
+    }()
+=======
     var medicines: [Medicine] = []
+>>>>>>> complicationWatchOS:PillApp WatchKit Extension/View/MedicineListController.swift
     
     @IBOutlet var medicineTable: WKInterfaceTable!
     @IBOutlet var spriteScene: WKInterfaceSKScene!

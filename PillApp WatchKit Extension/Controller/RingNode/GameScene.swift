@@ -32,20 +32,23 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+class RingScene: SKScene {
     
     // Configuration for both iOS and watchOS
     let duration: TimeInterval = 4
     let ringColor = #colorLiteral(red: 0.003921568627, green: 0.9960784314, blue: 0.968627451, alpha: 1)
     var ring: SKRingNode!
+    var ringCountLabel: SKLabelNode!
     
     override func sceneDidLoad() {
         backgroundColor = .black
-
+        showRing()
     }
     
     
-    func show(at position: CGPoint, diameter: CGFloat) {
+    private func showRing() {
+        let position = CGPoint(x: size.width / 2, y: size.height / 2)
+        let diameter = size.width
         ring = SKRingNode(diameter: diameter, thickness: 0.25)
         ring.color = ringColor
         ring.position = position
@@ -73,6 +76,7 @@ class GameScene: SKScene {
         node.position = CGPoint(x: frame.midX - label.frame.width / 2, y: frame.midY - (label.frame.height + label2.frame.height) * 0.5)
         addChild(node)
         
+        ringCountLabel = label
 //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
 //            let valueUpEffect = SKTRingValueEffect(for: self.ring, to: 0.5, duration: 1)
 //            valueUpEffect.timingFunction = SKTTimingFunctionCircularEaseOut
