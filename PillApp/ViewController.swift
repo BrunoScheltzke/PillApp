@@ -35,15 +35,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         container = appDelegate.persistentContainer
         
-//        CoreDataManager.shared.createMedicine(name: "Paracetamol", brand: nil, unit: 50, dosage: .pill)
-//
-//        medicines = try! container.viewContext.fetch(request) as! [Medicine]
-//
-//        let reminder = CoreDataManager.shared.createReminder(date: Date(timeIntervalSinceNow: 5), dosage: Dosage(rawValue: medicines.first!.dosage!)!, frequency: .everyThursday, quantity: 1, medicine: medicines.first!)
-//
-//        NotificationManager.shared.setUpReminder(reminder: reminder)
-//
-        
         initTableView()
         verifyTableViewContent()
     }

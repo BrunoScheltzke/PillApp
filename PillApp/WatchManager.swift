@@ -66,15 +66,12 @@ class WatchManager: NSObject, WCSessionDelegate {
         guard let command = message[Keys.communicationCommand] as? String else {return}
         
         switch command {
-        case CommunicationProtocol.notification:
-            print("Notification Action Received from Watch")
-            
         case CommunicationProtocol.dailyReminders:
             print("Daily Reminders Requested")
             
             let reminders = CoreDataManager.shared.fetchTodaysReminders() ?? []
             
-            var remindersDict: [[String: Any]] = [[:]]
+            var remindersDict: [[String: Any]] = []
             
             reminders.forEach({ (reminder) in remindersDict.append(CoreDataManager.shared.toDictionary(reminder))
             })
@@ -84,9 +81,6 @@ class WatchManager: NSObject, WCSessionDelegate {
 //            session.sendMessage([Keys.communicationCommand: CommunicationProtocol.dailyReminders, Keys.reminders: remindersDict], replyHandler: nil, errorHandler: { (error) in
 //                print("Failed to send Today Reminders to Watch: \(error)")
 //            })
-            
-        case CommunicationProtocol.medicineLeft:
-            print("Medicine Left Requested")
             
         default:
             print("Error\(#function)")
