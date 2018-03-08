@@ -28,6 +28,7 @@
 		D7C8563C205080AD001265C7 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8563B205080AD001265C7 /* ColorTableViewCell.swift */; };
 		D7C8563E2051AD85001265C7 /* DosageSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8563D2051AD85001265C7 /* DosageSettingsViewController.swift */; };
 		D7C856402051AFB0001265C7 /* SetDosageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8563F2051AFB0001265C7 /* SetDosageTableViewCell.swift */; };
+		D7C856422051B5E9001265C7 /* SetUnitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C856412051B5E9001265C7 /* SetUnitTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		D7C8563B205080AD001265C7 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
 		D7C8563D2051AD85001265C7 /* DosageSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DosageSettingsViewController.swift; sourceTree = "<group>"; };
 		D7C8563F2051AFB0001265C7 /* SetDosageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDosageTableViewCell.swift; sourceTree = "<group>"; };
+		D7C856412051B5E9001265C7 /* SetUnitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUnitTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				84132648204EF23000AA4B3A /* Medicine.swift */,
 				84132615204EEE6000AA4B3A /* Main.storyboard */,
 				D7C8563F2051AFB0001265C7 /* SetDosageTableViewCell.swift */,
+				D7C856412051B5E9001265C7 /* SetUnitTableViewCell.swift */,
 				D7C8563D2051AD85001265C7 /* DosageSettingsViewController.swift */,
 				D7C8563920508051001265C7 /* DosageTableViewCell.swift */,
 				D7C8563B205080AD001265C7 /* ColorTableViewCell.swift */,
@@ -316,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7C856422051B5E9001265C7 /* SetUnitTableViewCell.swift in Sources */,
 				D7C85612204F0D3A001265C7 /* CreateMedicineViewController.swift in Sources */,
 				84132649204EF23000AA4B3A /* Medicine.swift in Sources */,
 				D7C8563A20508051001265C7 /* DosageTableViewCell.swift in Sources */,
@@ -494,7 +498,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M3PUPH2NBH;
+				DEVELOPMENT_TEAM = QY73PT43D9;
 				INFOPLIST_FILE = "PillApp WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Scheltzke.PillApp.watchkitapp.watchkitextension;
@@ -512,7 +516,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M3PUPH2NBH;
+				DEVELOPMENT_TEAM = QY73PT43D9;
 				INFOPLIST_FILE = "PillApp WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Scheltzke.PillApp.watchkitapp.watchkitextension;
@@ -531,7 +535,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M3PUPH2NBH;
+				DEVELOPMENT_TEAM = QY73PT43D9;
 				IBSC_MODULE = PillApp_WatchKit_Extension;
 				INFOPLIST_FILE = "PillApp WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = Scheltzke.PillApp.watchkitapp;
@@ -550,7 +554,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M3PUPH2NBH;
+				DEVELOPMENT_TEAM = QY73PT43D9;
 				IBSC_MODULE = PillApp_WatchKit_Extension;
 				INFOPLIST_FILE = "PillApp WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = Scheltzke.PillApp.watchkitapp;
@@ -568,7 +572,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M3PUPH2NBH;
+				DEVELOPMENT_TEAM = QY73PT43D9;
 				INFOPLIST_FILE = PillApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -584,7 +588,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M3PUPH2NBH;
+				DEVELOPMENT_TEAM = QY73PT43D9;
 				INFOPLIST_FILE = PillApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

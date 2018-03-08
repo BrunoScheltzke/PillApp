@@ -10,10 +10,11 @@ import UIKit
 
 class DosageSettingsViewController: UIViewController {
 
+    @IBOutlet weak var tableview: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        initTableview()
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,7 +23,7 @@ class DosageSettingsViewController: UIViewController {
     }
     
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {
-        navigationController?.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     /*
@@ -35,4 +36,45 @@ class DosageSettingsViewController: UIViewController {
     }
     */
 
+}
+
+extension DosageSettingsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func initTableview() {
+        tableview.delegate = self
+        tableview.dataSource = self
+        
+        tableview.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "setDosageCell", for: indexPath) as! SetDosageTableViewCell
+
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "setUnitCell", for: indexPath) as! SetUnitTableViewCell
+            return cell
+        }
+    }
+    
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if indexPath.row == 0 {
+//
+//        }
+        if indexPath.row == 0 {
+            let cell = tableview.cellForRow(at: indexPath) as! SetDosageTableViewCell
+            cell.dosageTxt.becomeFirstResponder()
+//            print(cell.dosageTxt)
+        } else {
+//            let cell = tableview.cellForRow(at: indexPath) as! SetUnitTableViewCell
+            
+//            cell..becomeFirstResponder()
+        }
+    }
 }
