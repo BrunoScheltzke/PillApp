@@ -23,6 +23,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noMedicineImage: UIImageView!
+
     
     var medicines = [Medicine]()
     var daysOfWeek = [DayOfWeek]()
@@ -80,10 +81,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         tableView.delegate = self
     }
-//
-//    func numberOfSections(in tableView: UITableView) -> Int {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
 //        return daysOfWeek.count
-//    }
+                return 1
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return medicines.count
@@ -101,12 +103,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
-            let medicine = medicines.remove(at: indexPath.row)
-            container.viewContext.delete(medicine)
-            try? container.viewContext.save()
-            tableView.reloadData()
-        }
-    }
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == UITableViewCellEditingStyle.delete {
+//            let medicine = medicines.remove(at: indexPath.row)
+//            container.viewContext.delete(medicine)
+//            try? container.viewContext.save()
+//            tableView.reloadData()
+//        }
+//    }
 }

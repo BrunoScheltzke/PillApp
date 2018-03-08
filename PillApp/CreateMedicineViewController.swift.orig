@@ -31,10 +31,20 @@ class CreateMedicineViewController: UIViewController {
         initColorsTableview()
     }
     
-    func saveMedicine(name: String) {
+<<<<<<< HEAD
+    func saveMedicine(name: String, brand: String, unit: String, quantity: String) {
         let medicine = NSEntityDescription.insertNewObject(forEntityName: "Medicine",
-                                                           into: container.viewContext) as! Medicine
+                                                         into: container.viewContext) as! Medicine
         medicine.name = name
+        medicine.unit = Int32(unit)!
+        medicine.brand = brand
+        
+=======
+    func saveMedicine(name: String) {
+        let medicine = NSEntityDescription.insertNewObject(forEntityName: "MedicineCD",
+                                                           into: container.viewContext) as! MedicineCD
+        medicine.name = name
+>>>>>>> iOSImplementation
         try? container.viewContext.save()
     }
     
