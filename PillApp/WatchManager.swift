@@ -36,24 +36,6 @@ class WatchManager: NSObject, WCSessionDelegate {
             
             CoreDataManager.shared.createRegister(date: date, reminder: reminder!, taken: taken)
             
-        case CommunicationProtocol.dailyReminders:
-            print("Daily Reminders Requested")
-            
-            let reminders = CoreDataManager.shared.fetchTodaysReminders() ?? []
-            
-            var remindersDict: [[String: Any]] = [[:]]
-            
-            reminders.forEach({ (reminder) in remindersDict.append(CoreDataManager.shared.toDictionary(reminder))
-            })
-
-            //replyHandler([Keys.communicationCommand: CommunicationProtocol.dailyReminders, Keys.reminders: remindersDict])
-//            session.sendMessage([Keys.communicationCommand: CommunicationProtocol.dailyReminders, Keys.reminders: remindersDict], replyHandler: nil, errorHandler: { (error) in
-//                print("Failed to send Today Reminders to Watch: \(error)")
-//            })
-            
-        case CommunicationProtocol.medicineLeft:
-            print("Medicine Left Requested")
-            
         default:
             print("Error\(#function)")
         }
@@ -77,10 +59,6 @@ class WatchManager: NSObject, WCSessionDelegate {
             })
             
             replyHandler([Keys.communicationCommand: CommunicationProtocol.dailyReminders, Keys.reminders: remindersDict])
-//
-//            session.sendMessage([Keys.communicationCommand: CommunicationProtocol.dailyReminders, Keys.reminders: remindersDict], replyHandler: nil, errorHandler: { (error) in
-//                print("Failed to send Today Reminders to Watch: \(error)")
-//            })
             
         default:
             print("Error\(#function)")

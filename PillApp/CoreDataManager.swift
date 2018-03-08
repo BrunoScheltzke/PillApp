@@ -20,7 +20,7 @@ class CoreDataManager {
     }
     
     @discardableResult func createMedicine(name: String, brand: String?, unit: Int32, dosage: Dosage) -> Medicine {
-        let medicine = NSEntityDescription.insertNewObject(forEntityName: "Medicine",
+        let medicine = NSEntityDescription.insertNewObject(forEntityName: Keys.Medicine.tableName,
                                                            into: container.viewContext) as! Medicine
         medicine.name = name
         medicine.brand = brand
@@ -37,7 +37,7 @@ class CoreDataManager {
     }
     
     @discardableResult func createReminder(date: Date, dosage: Dosage, frequency: Frequency = .currentDayOnly, quantity: Int32, medicine: Medicine) -> Reminder {
-        let reminderObj = NSEntityDescription.insertNewObject(forEntityName: "Reminder", into: container.viewContext) as! Reminder
+        let reminderObj = NSEntityDescription.insertNewObject(forEntityName: Keys.Reminder.tableName, into: container.viewContext) as! Reminder
         
         reminderObj.date = date
         reminderObj.dosage = dosage.rawValue
@@ -55,7 +55,7 @@ class CoreDataManager {
     }
     
     @discardableResult func createRegister(date: Date, reminder: Reminder, taken: Bool) -> Register {
-        let registerObj = NSEntityDescription.insertNewObject(forEntityName: "Register", into: container.viewContext) as! Register
+        let registerObj = NSEntityDescription.insertNewObject(forEntityName: Keys.Register.tableName, into: container.viewContext) as! Register
         
         registerObj.date = date
         registerObj.reminder = reminder
@@ -71,7 +71,7 @@ class CoreDataManager {
     }
     
     func fetchAllReminders() -> [Reminder]? {
-        let request = NSFetchRequest<Reminder>(entityName: "Reminder")
+        let request = NSFetchRequest<Reminder>(entityName: Keys.Reminder.tableName)
         var reminders: [Reminder]?
         
         do {
@@ -84,7 +84,7 @@ class CoreDataManager {
     }
     
     func fetchTodaysReminders() -> [Reminder]? {
-        let request = NSFetchRequest<Reminder>(entityName: "Reminder")
+        let request = NSFetchRequest<Reminder>(entityName: Keys.Reminder.tableName)
         
         // Get the current calendar with local time zone
         var calendar = Calendar.current
@@ -109,11 +109,14 @@ class CoreDataManager {
             print(error)
         }
         
+        let fetchRequest = NSFetchRequest<Register>(entityName: Keys.Register.tableName)
+        fetchRequest.predicate = NSPredicate(format: "(%@ <= date) AND (date < %@) AND (\(Keys.Register.taken) == %@", argumentArray: [dateFrom, dateTo, true])
+        
         return reminders
     }
     
     func fetchAllMedicines() -> [Medicine]? {
-        let request = NSFetchRequest<Medicine>(entityName: "Medicine")
+        let request = NSFetchRequest<Medicine>(entityName: Keys.Medicine.tableName)
         var medicines: [Medicine]?
         
         do {
@@ -126,7 +129,7 @@ class CoreDataManager {
     }
     
     func fetchAllRegisters() -> [Register]? {
-        let request = NSFetchRequest<Register>(entityName: "Register")
+        let request = NSFetchRequest<Register>(entityName: Keys.Register.tableName)
         var registers: [Register]?
         
         do {
