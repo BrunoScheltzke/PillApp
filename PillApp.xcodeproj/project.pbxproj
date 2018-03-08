@@ -22,6 +22,22 @@
 		8477A4EA20505750008445F7 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477A4E92050574F008445F7 /* NotificationManager.swift */; };
 		84E418EF205011CF007DE716 /* WatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E418EE205011CF007DE716 /* WatchManager.swift */; };
 		84E418F1205011DC007DE716 /* iOSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E418F0205011DC007DE716 /* iOSManager.swift */; };
+		8D9050FE2051985800B95B9D /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9050EF2051985600B95B9D /* CGFloat+Extensions.swift */; };
+		8D9050FF2051985800B95B9D /* SKColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9050F02051985600B95B9D /* SKColor+Extensions.swift */; };
+		8D9051002051985800B95B9D /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9050F12051985700B95B9D /* CGVector+Extensions.swift */; };
+		8D9051012051985800B95B9D /* SKTAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9050F22051985700B95B9D /* SKTAudio.swift */; };
+		8D9051022051985800B95B9D /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9050F32051985700B95B9D /* CGPoint+Extensions.swift */; };
+		8D9051032051985800B95B9D /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9050F42051985700B95B9D /* Int+Extensions.swift */; };
+		8D9051042051985800B95B9D /* SKAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9050F52051985700B95B9D /* SKAction+Extensions.swift */; };
+		8D9051052051985800B95B9D /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9050F62051985700B95B9D /* SKNode+Extensions.swift */; };
+		8D9051062051985800B95B9D /* SKRingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9050F72051985700B95B9D /* SKRingNode.swift */; };
+		8D9051072051985800B95B9D /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9050F82051985700B95B9D /* SKTTimingFunctions.swift */; };
+		8D9051082051985800B95B9D /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9050F92051985800B95B9D /* CGFloat.swift */; };
+		8D9051092051985800B95B9D /* SKTEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9050FA2051985800B95B9D /* SKTEffects.swift */; };
+		8D90510A2051985800B95B9D /* SKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9050FB2051985800B95B9D /* SKColor.swift */; };
+		8D90510B2051985800B95B9D /* SKAction+SpecialEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9050FC2051985800B95B9D /* SKAction+SpecialEffects.swift */; };
+		8D90510C2051985800B95B9D /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9050FD2051985800B95B9D /* Vector3.swift */; };
+		8D90510E2051989800B95B9D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D90510D2051989700B95B9D /* GameScene.swift */; };
 		AB7C23F1204F12E400EBA6AB /* MedicineRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7C23EE204F12DF00EBA6AB /* MedicineRowController.swift */; };
 		AB7C23F2204F12E400EBA6AB /* MedicineListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7C23ED204F12DF00EBA6AB /* MedicineListController.swift */; };
 		AB7C23F6204F132A00EBA6AB /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB7C23F5204F132A00EBA6AB /* Interface.storyboard */; };
@@ -91,6 +107,22 @@
 		8477A4E92050574F008445F7 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		84E418EE205011CF007DE716 /* WatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchManager.swift; sourceTree = "<group>"; };
 		84E418F0205011DC007DE716 /* iOSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSManager.swift; sourceTree = "<group>"; };
+		8D9050EF2051985600B95B9D /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		8D9050F02051985600B95B9D /* SKColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKColor+Extensions.swift"; sourceTree = "<group>"; };
+		8D9050F12051985700B95B9D /* CGVector+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGVector+Extensions.swift"; sourceTree = "<group>"; };
+		8D9050F22051985700B95B9D /* SKTAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTAudio.swift; sourceTree = "<group>"; };
+		8D9050F32051985700B95B9D /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		8D9050F42051985700B95B9D /* Int+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		8D9050F52051985700B95B9D /* SKAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+Extensions.swift"; sourceTree = "<group>"; };
+		8D9050F62051985700B95B9D /* SKNode+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
+		8D9050F72051985700B95B9D /* SKRingNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKRingNode.swift; sourceTree = "<group>"; };
+		8D9050F82051985700B95B9D /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTTimingFunctions.swift; sourceTree = "<group>"; };
+		8D9050F92051985800B95B9D /* CGFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		8D9050FA2051985800B95B9D /* SKTEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTEffects.swift; sourceTree = "<group>"; };
+		8D9050FB2051985800B95B9D /* SKColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKColor.swift; sourceTree = "<group>"; };
+		8D9050FC2051985800B95B9D /* SKAction+SpecialEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+SpecialEffects.swift"; sourceTree = "<group>"; };
+		8D9050FD2051985800B95B9D /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
+		8D90510D2051989700B95B9D /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = "PillApp WatchKit Extension/View/ringNode/GameScene.swift"; sourceTree = SOURCE_ROOT; };
 		AB7C23ED204F12DF00EBA6AB /* MedicineListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineListController.swift; sourceTree = "<group>"; };
 		AB7C23EE204F12DF00EBA6AB /* MedicineRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineRowController.swift; sourceTree = "<group>"; };
 		AB7C23F5204F132A00EBA6AB /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
@@ -207,6 +239,7 @@
 		8477A4EF20505A30008445F7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8D90510F205198D700B95B9D /* RingNode */,
 				AB7C23ED204F12DF00EBA6AB /* MedicineListController.swift */,
 				AB7C23EE204F12DF00EBA6AB /* MedicineRowController.swift */,
 			);
@@ -229,6 +262,29 @@
 				84395E26205055EB003FEBBE /* NotificationManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		8D90510F205198D700B95B9D /* RingNode */ = {
+			isa = PBXGroup;
+			children = (
+				8D90510D2051989700B95B9D /* GameScene.swift */,
+				8D9050F92051985800B95B9D /* CGFloat.swift */,
+				8D9050EF2051985600B95B9D /* CGFloat+Extensions.swift */,
+				8D9050F32051985700B95B9D /* CGPoint+Extensions.swift */,
+				8D9050F12051985700B95B9D /* CGVector+Extensions.swift */,
+				8D9050F42051985700B95B9D /* Int+Extensions.swift */,
+				8D9050F52051985700B95B9D /* SKAction+Extensions.swift */,
+				8D9050FC2051985800B95B9D /* SKAction+SpecialEffects.swift */,
+				8D9050FB2051985800B95B9D /* SKColor.swift */,
+				8D9050F02051985600B95B9D /* SKColor+Extensions.swift */,
+				8D9050F62051985700B95B9D /* SKNode+Extensions.swift */,
+				8D9050F72051985700B95B9D /* SKRingNode.swift */,
+				8D9050F22051985700B95B9D /* SKTAudio.swift */,
+				8D9050FA2051985800B95B9D /* SKTEffects.swift */,
+				8D9050F82051985700B95B9D /* SKTTimingFunctions.swift */,
+				8D9050FD2051985800B95B9D /* Vector3.swift */,
+			);
+			path = RingNode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,9 +449,25 @@
 			files = (
 				84395E27205055EB003FEBBE /* NotificationManager.swift in Sources */,
 				84E418F1205011DC007DE716 /* iOSManager.swift in Sources */,
+				8D9051072051985800B95B9D /* SKTTimingFunctions.swift in Sources */,
 				84132637204EEE6000AA4B3A /* ExtensionDelegate.swift in Sources */,
 				AB7C23F2204F12E400EBA6AB /* MedicineListController.swift in Sources */,
+				8D9050FE2051985800B95B9D /* CGFloat+Extensions.swift in Sources */,
+				8D9051092051985800B95B9D /* SKTEffects.swift in Sources */,
+				8D9051002051985800B95B9D /* CGVector+Extensions.swift in Sources */,
+				8D9051052051985800B95B9D /* SKNode+Extensions.swift in Sources */,
+				8D90510B2051985800B95B9D /* SKAction+SpecialEffects.swift in Sources */,
+				8D9051012051985800B95B9D /* SKTAudio.swift in Sources */,
+				8D90510C2051985800B95B9D /* Vector3.swift in Sources */,
+				8D9051062051985800B95B9D /* SKRingNode.swift in Sources */,
 				AB7C23F1204F12E400EBA6AB /* MedicineRowController.swift in Sources */,
+				8D9051082051985800B95B9D /* CGFloat.swift in Sources */,
+				8D9050FF2051985800B95B9D /* SKColor+Extensions.swift in Sources */,
+				8D90510E2051989800B95B9D /* GameScene.swift in Sources */,
+				8D90510A2051985800B95B9D /* SKColor.swift in Sources */,
+				8D9051022051985800B95B9D /* CGPoint+Extensions.swift in Sources */,
+				8D9051042051985800B95B9D /* SKAction+Extensions.swift in Sources */,
+				8D9051032051985800B95B9D /* Int+Extensions.swift in Sources */,
 				AB7C23F7204F134300EBA6AB /* Medicine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -621,7 +693,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6UW4NKHZQ4;
 				INFOPLIST_FILE = PillApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -637,7 +709,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6UW4NKHZQ4;
 				INFOPLIST_FILE = PillApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

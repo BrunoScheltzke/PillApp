@@ -8,6 +8,7 @@
 
 import WatchKit
 import Foundation
+import SpriteKit
 
 
 class MedicineListController: WKInterfaceController {
@@ -24,6 +25,7 @@ class MedicineListController: WKInterfaceController {
     }()
     
     @IBOutlet var medicineTable: WKInterfaceTable!
+    @IBOutlet var spriteScene: WKInterfaceSKScene!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -39,6 +41,10 @@ class MedicineListController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+        let scene = GameScene(size: CGSize(width: 45, height: 45))
+        spriteScene.presentScene(scene)
+        scene.show(at: CGPoint(x: scene.size.width / 2, y: scene.size.height / 2), diameter: scene.size.width)
     }
     
     override func didDeactivate() {
