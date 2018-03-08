@@ -38,6 +38,7 @@
 		8D90510B2051985800B95B9D /* SKAction+SpecialEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9050FC2051985800B95B9D /* SKAction+SpecialEffects.swift */; };
 		8D90510C2051985800B95B9D /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9050FD2051985800B95B9D /* Vector3.swift */; };
 		AB719D742051B92D00C1DEF8 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB719D732051B92D00C1DEF8 /* GameScene.swift */; };
+		AB719D762051BC1300C1DEF8 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB719D752051BC1300C1DEF8 /* ComplicationController.swift */; };
 		AB7C23F1204F12E400EBA6AB /* MedicineRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7C23EE204F12DF00EBA6AB /* MedicineRowController.swift */; };
 		AB7C23F2204F12E400EBA6AB /* MedicineListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7C23ED204F12DF00EBA6AB /* MedicineListController.swift */; };
 		AB7C23F6204F132A00EBA6AB /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB7C23F5204F132A00EBA6AB /* Interface.storyboard */; };
@@ -123,6 +124,7 @@
 		8D9050FC2051985800B95B9D /* SKAction+SpecialEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+SpecialEffects.swift"; sourceTree = "<group>"; };
 		8D9050FD2051985800B95B9D /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 		AB719D732051B92D00C1DEF8 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		AB719D752051BC1300C1DEF8 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		AB7C23ED204F12DF00EBA6AB /* MedicineListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineListController.swift; sourceTree = "<group>"; };
 		AB7C23EE204F12DF00EBA6AB /* MedicineRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineRowController.swift; sourceTree = "<group>"; };
 		AB7C23F5204F132A00EBA6AB /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				8D90510F205198D700B95B9D /* RingNode */,
 				AB7C23ED204F12DF00EBA6AB /* MedicineListController.swift */,
 				AB7C23EE204F12DF00EBA6AB /* MedicineRowController.swift */,
+				AB719D752051BC1300C1DEF8 /* ComplicationController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				8D9051002051985800B95B9D /* CGVector+Extensions.swift in Sources */,
 				8D9051052051985800B95B9D /* SKNode+Extensions.swift in Sources */,
 				8D90510B2051985800B95B9D /* SKAction+SpecialEffects.swift in Sources */,
+				AB719D762051BC1300C1DEF8 /* ComplicationController.swift in Sources */,
 				8D9051012051985800B95B9D /* SKTAudio.swift in Sources */,
 				8D90510C2051985800B95B9D /* Vector3.swift in Sources */,
 				8D9051062051985800B95B9D /* SKRingNode.swift in Sources */,
@@ -619,7 +623,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VXU4QL7U6A;
 				INFOPLIST_FILE = "PillApp WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Scheltzke.PillApp.watchkitapp.watchkitextension;
@@ -637,7 +641,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VXU4QL7U6A;
 				INFOPLIST_FILE = "PillApp WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Scheltzke.PillApp.watchkitapp.watchkitextension;
@@ -656,7 +660,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VXU4QL7U6A;
 				IBSC_MODULE = PillApp_WatchKit_Extension;
 				INFOPLIST_FILE = "PillApp WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = Scheltzke.PillApp.watchkitapp;
@@ -675,7 +679,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VXU4QL7U6A;
 				IBSC_MODULE = PillApp_WatchKit_Extension;
 				INFOPLIST_FILE = "PillApp WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = Scheltzke.PillApp.watchkitapp;
@@ -693,7 +697,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6UW4NKHZQ4;
+				DEVELOPMENT_TEAM = VXU4QL7U6A;
 				INFOPLIST_FILE = PillApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -709,7 +713,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6UW4NKHZQ4;
+				DEVELOPMENT_TEAM = VXU4QL7U6A;
 				INFOPLIST_FILE = PillApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
