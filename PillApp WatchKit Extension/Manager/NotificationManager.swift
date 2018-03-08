@@ -27,17 +27,19 @@ struct NotificationActionIdentifier {
 class NotificationManager: NSObject {
     static let shared = NotificationManager()
     
+    let center = UNUserNotificationCenter.current()
+    
     private override init() {
         super.init()
-        
         center.delegate = self
         registerCategories()
     }
     
-    let center = UNUserNotificationCenter.current()
-    
-    func requestAuthorization(completion: @escaping(NotifiationResult) -> Void) {
-        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+    func setup(completion: @escaping(NotifiationResult) -> Void) {
+        center.delegate = self
+        registerCategories()
+        
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
             guard error == nil else {
                 completion(.error(error!))
                 return
@@ -49,35 +51,56 @@ class NotificationManager: NSObject {
     
     func registerCategories() {
         let yesAction = UNNotificationAction(identifier: NotificationActionIdentifier.yes, title: "Yes", options: .foreground)
-        let snoozeAction = UNNotificationAction(identifier: NotificationActionIdentifier.snooze, title: "Snooze", options: .foreground)
+//        let snoozeAction = UNNotificationAction(identifier: NotificationActionIdentifier.snooze, title: "Snooze", options: .foreground)
         let noAction = UNNotificationAction(identifier: NotificationActionIdentifier.no, title: "No", options: .foreground)
         
-        let medicineTakingCategory = UNNotificationCategory(identifier: NotificationCategoryIdentifier.medicineTaking, actions: [yesAction, noAction, snoozeAction], intentIdentifiers: [], options: .customDismissAction)
+        let medicineTakingCategory = UNNotificationCategory(identifier: NotificationCategoryIdentifier.medicineTaking, actions: [yesAction, noAction], intentIdentifiers: [], options: .customDismissAction)
         
         center.setNotificationCategories([medicineTakingCategory])
     }
     
-    func createLocalNotification() {
+    func createLocalTestNotification() {
         let content = UNMutableNotificationContent()
         content.title = "Medication Reminder"
         content.body = "Remember to take your medication"
         content.categoryIdentifier = NotificationCategoryIdentifier.medicineTaking
+        content.userInfo = [Keys.reminderId: "x-coredata://8C1C55E8-70EA-4606-AF3C-8EEF5F1711C5/Reminder/p1"]
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 4.0, repeats: false)
         
         // Create the request object.
         let request = UNNotificationRequest(identifier: "PillAlarm", content: content, trigger: trigger)
-        center.add(request, withCompletionHandler: nil)
+        
+        center.add(request) { (error) in
+            print(error ?? "")
+        }
     }
 }
 
 extension NotificationManager: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-
-        iOSManager.shared.transferUserInfo(["command": "Yes"])
-        
+        print("Notification response: \(response.actionIdentifier)")
         print(response.actionIdentifier)
-        completionHandler()
+        
+        if response.notification.request.content.categoryIdentifier == NotificationCategoryIdentifier.medicineTaking {
+        
+            let medicineTaken: Bool
+            
+            switch response.actionIdentifier {
+            case NotificationActionIdentifier.yes:
+                medicineTaken = true
+            default:
+                medicineTaken = false
+                break
+            }
+            
+            let reminderDict = response.notification.request.content.userInfo
+            let reminderId = reminderDict[Keys.reminderId] as! String
+            
+            iOSManager.shared.transferUserInfo([Keys.communicationCommand: CommunicationProtocol.notification, Keys.medicineTaken: medicineTaken, Keys.reminderId: reminderId, Keys.date: Date()])
+            
+            completionHandler()
+        }
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {

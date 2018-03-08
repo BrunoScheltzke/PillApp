@@ -10,17 +10,11 @@ import WatchKit
 import Foundation
 import SpriteKit
 
-
 class MedicineListController: WKInterfaceController {
+    @IBOutlet var notificationBtn: WKInterfaceButton!
     
     let medicines: [Medicine] = {
         var medicines: [Medicine] = []
-        medicines.append(Medicine(name: "Parecetamol", quantity: 12, brand: nil, unit: nil))
-        medicines.append(Medicine(name: "Tylenol", quantity: 12, brand: nil, unit: nil))
-        medicines.append(Medicine(name: "Gelol", quantity: 12, brand: nil, unit: nil))
-        medicines.append(Medicine(name: "Aspirina", quantity: 12, brand: nil, unit: nil))
-        medicines.append(Medicine(name: "Sinvastatina", quantity: 12, brand: nil, unit: nil))
-        medicines.append(Medicine(name: "Avamys", quantity: 12, brand: nil, unit: nil))
         return medicines
     }()
     
@@ -29,6 +23,7 @@ class MedicineListController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        
         medicineTable.setNumberOfRows(medicines.count, withRowType: "MedicineRow")
         
         for index in 0..<medicineTable.numberOfRows {
