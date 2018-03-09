@@ -40,6 +40,7 @@ class MedicineListController: WKInterfaceController {
                 
                 controller.reminder = reminders[index]
             }
+            
             self.scene.ringCountLabel.text = "/\(reminders.count)"
         }) { (error) in
             print("Error fetching daily reminders: \(error)")

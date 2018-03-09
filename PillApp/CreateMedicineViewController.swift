@@ -19,8 +19,7 @@ class CreateMedicineViewController: UIViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var container: NSPersistentContainer!
     
-    let colors = [UIColor.gray , UIColor.yellow, UIColor.blue, UIColor.orange, UIColor.purple]
-    let nameColors = ["Gray", "Yellow", "Blue", "Orange", "Purple"]
+
     var isOpen = false
     var indexColorsTableview = 0
     
@@ -90,14 +89,14 @@ extension CreateMedicineViewController: UITableViewDelegate, UITableViewDataSour
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath) as! ColorTableViewCell
-                cell.colorLabel.text = self.nameColors[indexColorsTableview]
-                cell.colorView.backgroundColor = self.colors[indexColorsTableview]
+                cell.colorLabel.text = colors[indexPath.row].0
+                cell.colorView.backgroundColor = colors[indexPath.row].1
                 return cell
             }
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath) as! ColorTableViewCell
-            cell.colorLabel.text = self.nameColors[indexPath.row]
-            cell.colorView.backgroundColor = self.colors[indexPath.row]
+            cell.colorLabel.text = colors[indexPath.row].0
+            cell.colorView.backgroundColor = colors[indexPath.row].1
             return cell
         }
     }
