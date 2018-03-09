@@ -25,8 +25,8 @@ class WatchManager: NSObject, WCSessionDelegate {
         guard let command = userInfo[Keys.communicationCommand] as? String else {return}
         
         switch command {
-        case CommunicationProtocol.notification:
-            print("Notification Action Received from Watch")
+        case CommunicationProtocol.checkedReminder:
+            print("User checked a reminder from Watch")
             
             let taken = userInfo[Keys.medicineTaken] as! Bool
             

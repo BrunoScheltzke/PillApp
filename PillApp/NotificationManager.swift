@@ -52,7 +52,7 @@ class NotificationManager: NSObject {
     func registerCategories() {
         let yesAction = UNNotificationAction(identifier: NotificationActionIdentifier.yes, title: NotificationActionIdentifier.yes, options: .foreground)
 //        let snoozeAction = UNNotificationAction(identifier: NotificationActionIdentifier.snooze, title: NotificationActionIdentifier.yes, options: .foreground)
-        let noAction = UNNotificationAction(identifier: NotificationActionIdentifier.no, title: NotificationActionIdentifier.yes, options: .foreground)
+        let noAction = UNNotificationAction(identifier: NotificationActionIdentifier.no, title: NotificationActionIdentifier.no, options: .foreground)
         
         let medicineTakingCategory = UNNotificationCategory(identifier: NotificationCategoryIdentifier.medicineTaking, actions: [yesAction, noAction], intentIdentifiers: [], options: .customDismissAction)
         
@@ -92,12 +92,16 @@ class NotificationManager: NSObject {
         content.title = "Medication Reminder"
         content.body = "Remember to take your medication"
         content.categoryIdentifier = NotificationCategoryIdentifier.medicineTaking
+        content.userInfo = [Keys.reminderId: "x-coredata://8C1C55E8-70EA-4606-AF3C-8EEF5F1711C5/Reminder/p1"]
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 4.0, repeats: false)
         
         // Create the request object.
-        let request = UNNotificationRequest(identifier: NotificationCategoryIdentifier.medicineTaking, content: content, trigger: trigger)
-        center.add(request, withCompletionHandler: nil)
+        let request = UNNotificationRequest(identifier: "PillAlarm", content: content, trigger: trigger)
+        
+        center.add(request) { (error) in
+            print(error ?? "")
+        }
     }
 }
 

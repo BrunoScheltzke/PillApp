@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PillApp WatchKit Extension/Manager/iOSManager.swift"
-            timestampString = "542237850.343362"
+            filePath = "PillApp/NotificationManager.swift"
+            timestampString = "542291251.620465"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "getDailyReminders(_:_:)"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "createLocalNotification()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PillApp WatchKit Extension/Controller/MedicineListController.swift"
-            timestampString = "542237850.343847"
+            filePath = "PillApp WatchKit Extension/Manager/NotificationManager.swift"
+            timestampString = "542291251.620724"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "awake(withContext:)"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "userNotificationCenter(_:didReceive:withCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,45 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PillApp WatchKit Extension/Controller/MedicineListController.swift"
-            timestampString = "542237850.3438981"
+            filePath = "PillApp WatchKit Extension/Manager/NotificationManager.swift"
+            timestampString = "542291251.620777"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "awake(withContext:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PillApp WatchKit Extension/Manager/iOSManager.swift"
-            timestampString = "542237850.343946"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "getDailyReminders(_:_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PillApp WatchKit Extension/Manager/iOSManager.swift"
-            timestampString = "542237850.344259"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "getDailyReminders(_:_:)"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "userNotificationCenter(_:didReceive:withCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

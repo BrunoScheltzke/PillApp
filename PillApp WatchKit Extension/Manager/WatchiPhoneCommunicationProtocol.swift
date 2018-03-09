@@ -12,6 +12,7 @@ struct CommunicationProtocol {
     static let notification = "notification"
     static let dailyReminders = "dailyReminders"
     static let medicineLeft = "medicineLeft"
+    static let checkedReminder = "checkedReminder"
 }
 
 struct Keys {
