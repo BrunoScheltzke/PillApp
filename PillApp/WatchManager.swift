@@ -29,12 +29,20 @@ class WatchManager: NSObject, WCSessionDelegate {
             print("User checked a reminder from Watch")
             
             let taken = userInfo[Keys.medicineTaken] as! Bool
+            let idStr = userInfo[Keys.reminderId] as! String
             
-            let idUrl = URL(string: userInfo[Keys.reminderId] as! String)
-            let reminder = CoreDataManager.shared.fetchReminder(by: idUrl!)
+            guard let idUrl = URL(string: idStr) else {
+                print("Reminder Id: \(idStr) was not able to be converted into CoreData Object Id")
+                return
+            }
+            
+            guard let reminder = CoreDataManager.shared.fetchReminder(by: idUrl) else {
+                print("No reminder found from Id: \(idStr)")
+                return
+            }
             let date = userInfo[Keys.date] as? Date ?? Date()
             
-            CoreDataManager.shared.createRegister(date: date, reminder: reminder!, taken: taken)
+            CoreDataManager.shared.createRegister(date: date, reminder: reminder, taken: taken)
             
         default:
             print("Error\(#function)")
