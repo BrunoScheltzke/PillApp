@@ -18,7 +18,13 @@ class FrequencyTableViewCell: UITableViewCell {
 
     @IBOutlet weak var tapView: UIView!
 
-    @IBOutlet weak var check: UIImageView!
+    @IBOutlet private weak var checkUIImageView: UIImageView!
+    
+    var check: Bool = false {
+        didSet {
+            self.checkUIImageView.isHidden = !check
+        }
+    }
 
     @IBOutlet weak var dayUILabel: UILabel!
 
@@ -36,10 +42,10 @@ class FrequencyTableViewCell: UITableViewCell {
     }
 
     @objc func actionTap(recognizer: UITapGestureRecognizer) {
-        if self.check.isHidden {
-            self.check.isHidden = false
+        if self.checkUIImageView.isHidden {
+            self.checkUIImageView.isHidden = false
         } else {
-            self.check.isHidden = true
+            self.checkUIImageView.isHidden = true
         }
     }
 
