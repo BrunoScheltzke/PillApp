@@ -114,7 +114,7 @@ class CoreDataManager {
         }
         
         let fetchRequest = NSFetchRequest<Register>(entityName: Keys.Register.tableName)
-        fetchRequest.predicate = NSPredicate(format: "(%@ <= date) AND (date < %@) AND (\(Keys.Register.taken) == %@)", argumentArray: [dateFrom, dateTo, true])
+        fetchRequest.predicate = NSPredicate(format: "(%@ <= date) AND (date < %@)", argumentArray: [dateFrom, dateTo, true])
         var todayRegisters: [Register]?
         
         do {
@@ -177,7 +177,7 @@ class CoreDataManager {
         var components = gregorian.dateComponents([.year, .month, .day, .hour, .minute, .second], from: now)
         
         components.hour = 10
-        components.minute = 36
+        components.minute = 47
         components.second = 0
         
         let date = gregorian.date(from: components)!
