@@ -74,6 +74,7 @@
                         </table>
                     </items>
                     <connections>
+                        <outlet property="dayLabel" destination="b5S-Da-pQf" id="wya-SG-aqy"/>
                         <outlet property="medicineTable" destination="WqI-MH-sHv" id="NpW-xA-L62"/>
                         <outlet property="spriteScene" destination="Lmd-gW-2RG" id="B5X-eZ-wUR"/>
                     </connections>

@@ -10,13 +10,18 @@ import WatchKit
 import Foundation
 import SpriteKit
 
+let dayFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "EEEE, dd"
+    return formatter
+}()
 
 class MedicineListController: WKInterfaceController {
     @IBOutlet var notificationBtn: WKInterfaceButton!
     
-    var medicines: [Medicine] = []
-    
+    @IBOutlet var dayLabel: WKInterfaceLabel!
     var reminders: [Reminder] = []
+    let scene = RingScene(size: CGSize(width: 45, height: 45))
     
     @IBOutlet var medicineTable: WKInterfaceTable!
     @IBOutlet var spriteScene: WKInterfaceSKScene!
@@ -35,25 +40,17 @@ class MedicineListController: WKInterfaceController {
                 
                 controller.reminder = reminders[index]
             }
-            
+            self.scene.ringCountLabel.text = "/\(reminders.count)"
         }) { (error) in
             print("Error fetching daily reminders: \(error)")
         }
-        
-//        medicineTable.setNumberOfRows(medicines.count, withRowType: "MedicineRow")
-//
-//        for index in 0..<medicineTable.numberOfRows {
-//            guard let controller = medicineTable.rowController(at: index) as? MedicineRowController else { continue }
-//
-//            controller.medicine = medicines[index]
-//        }
     }
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
-        let scene = RingScene(size: CGSize(width: 45, height: 45))
+        dayLabel.setText(dayFormatter.string(from: Date()))
         spriteScene.presentScene(scene)
     }
     
@@ -63,7 +60,11 @@ class MedicineListController: WKInterfaceController {
     }
     
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
-        
+        let reminderId = reminders[rowIndex].id
+        iOSManager.shared.set(reminderId: reminderId, as: true, at: Date())
+        if let controller = self.medicineTable.rowController(at: rowIndex) as? MedicineRowController {
+            controller.takedImageView.setImage(#imageLiteral(resourceName: "checked"))
+        }
     }
     
 }

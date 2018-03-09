@@ -15,11 +15,12 @@ class MedicineTableViewCell: UITableViewCell {
     @IBOutlet weak var hourLabel: UILabel!
     @IBOutlet weak var colorView: UIView!
     
-    var medicine: Medicine! {
+    var medicine: Reminder! {
         didSet {
-            nameLabel.text = medicine.name
-            quantityLabel.text = "Quant: \(String(medicine.unit))"
-            hourLabel.text = "At 7:30 AM"
+            nameLabel.text = medicine.medicine?.name
+            quantityLabel.text = "Quant: \(medicine.medicine?.unit ?? 0)"
+            let date = medicine.date ?? Date()
+            hourLabel.text = "At \(dateFormatter.string(from: date))"
             colorView.backgroundColor = UIColor.red
         }
     }
