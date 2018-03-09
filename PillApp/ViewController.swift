@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         container = appDelegate.persistentContainer
         
-        //CoreDataManager.shared.createMockData()
+//        CoreDataManager.shared.createMockData()
         
         initTableView()
         verifyTableViewContent()
