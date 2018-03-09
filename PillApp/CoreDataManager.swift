@@ -176,13 +176,13 @@ class CoreDataManager {
         let now = Date()
         var components = gregorian.dateComponents([.year, .month, .day, .hour, .minute, .second], from: now)
         
-        components.hour = 8
+        components.hour = 12
         components.minute = 40
         components.second = 0
         
         let date = gregorian.date(from: components)!
         
-        components.hour = 14
+        components.hour = 13
         components.minute = 30
         components.second = 0
         
@@ -190,10 +190,8 @@ class CoreDataManager {
         
         let paracetamol = createMedicine(name: "Paracetamol", brand: "Agafarma", unit: 50, dosage: .pill)
         let diclofenaco = createMedicine(name: "Diclofenaco", brand: nil, unit: 30, dosage: .pill)
-        let reminder = createReminder(date: date, dosage: .pill, frequency: .everyDay, quantity: 1, medicine: paracetamol)
+        createReminder(date: date, dosage: .pill, frequency: .everyDay, quantity: 1, medicine: paracetamol)
         createReminder(date: date2, dosage: .pill, frequency: .currentDayOnly, quantity: 1, medicine: diclofenaco)
-        
-        createRegister(date: reminder.date!, reminder: reminder, taken: true)
     }
     
     func toDictionary(_ reminder: Reminder) -> [String: Any] {

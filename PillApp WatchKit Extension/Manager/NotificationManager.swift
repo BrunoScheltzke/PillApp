@@ -29,6 +29,8 @@ class NotificationManager: NSObject {
     
     let center = UNUserNotificationCenter.current()
     
+    var delegate: NotificationActionSelected?
+    
     private override init() {
         super.init()
         center.delegate = self
@@ -97,6 +99,7 @@ extension NotificationManager: UNUserNotificationCenterDelegate {
             let reminderDict = response.notification.request.content.userInfo
             let reminderId = reminderDict[Keys.reminderId] as! String
             
+            delegate?.didSelect(taken: medicineTaken, for: reminderId)
             iOSManager.shared.set(reminderId: reminderId, as: medicineTaken, at: Date())
             completionHandler()
         }
@@ -107,4 +110,6 @@ extension NotificationManager: UNUserNotificationCenterDelegate {
     }
 }
 
-
+protocol NotificationActionSelected {
+    func didSelect(taken: Bool, for reminderId: String)
+}

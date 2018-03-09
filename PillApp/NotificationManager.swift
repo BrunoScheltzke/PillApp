@@ -92,21 +92,13 @@ class NotificationManager: NSObject {
     }
     
     func createTestLocalNotification() {
-        
         let content = UNMutableNotificationContent()
-        content.title = "Medication Reminder"
-        content.body = "Remember to take your medication"
+        content.title = "Medication"
+        content.body = "Remember to take 1 Paracetamol"
         content.categoryIdentifier = NotificationCategoryIdentifier.medicineTaking
         content.userInfo = [Keys.reminderId: "x-coredata://8C1C55E8-70EA-4606-AF3C-8EEF5F1711C5/Reminder/p1"]
         
-        var date = DateComponents()
-        date.timeZone = TimeZone(abbreviation: "UTC")
-        
-        date.hour = 12
-        date.minute = 18
-        date.second = 0
-        
-        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5.0, repeats: false)
         
         // Create the request object.
         let request = UNNotificationRequest(identifier: "PillAlarm", content: content, trigger: trigger)
