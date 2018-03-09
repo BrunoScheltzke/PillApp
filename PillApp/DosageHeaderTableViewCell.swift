@@ -9,12 +9,20 @@
 import UIKit
 
 class DosageHeaderTableViewCell: UITableViewCell {
-    
+
+    @IBOutlet weak var dosage: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(actionTap))
+//        self.addGestureRecognizer(tapGestureRecognizer)
     }
 
+//    @objc func actionTap(recognizer: UITapGestureRecognizer) {
+//        if let delegate = self.delegate {
+//            delegate.setVisibilityPickerDosageCell(with: <#T##Bool#>)
+//        }
+//    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

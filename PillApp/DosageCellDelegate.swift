@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol DosageCellDelegate {
+    func update(dosage: Dosage)
+}

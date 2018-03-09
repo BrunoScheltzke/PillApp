@@ -11,17 +11,14 @@ import UIKit
 class DosagePickerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var picker: UIPickerView!
+    var model = [Dosage.ml, Dosage.pill]
+    
+    var delegate: DosageCellDelegate!
     override func awakeFromNib() {
         super.awakeFromNib()
 
         self.picker.delegate = self
         self.picker.dataSource = self
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }
@@ -32,8 +29,16 @@ extension DosagePickerTableViewCell: UIPickerViewDelegate, UIPickerViewDataSourc
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 1
+        return self.model.count
     }
     
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(self.model[row])"
+    }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if let delegate = self.delegate {
+            delegate.update(dosage: model[row])
+        }
+    }
 }

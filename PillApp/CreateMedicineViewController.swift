@@ -11,7 +11,16 @@ import CoreData
 
 class CreateMedicineViewController: UIViewController {
     
+    @IBOutlet weak var nextButton: UIBarButtonItem!
     @IBOutlet weak var tableview: UITableView!
+    var dosage: Dosage!
+    var units: Int!
+    
+    @IBAction func unwindToCreateMedicine(segue: UIStoryboardSegue) {
+        if let _ = self.dosage, let _ = self.units {
+            self.nextButton.isEnabled = true
+        }
+    }
 
     @IBOutlet weak var medicineNameTxt: UITextField!
     @IBOutlet weak var colorsTableview: UITableView!
@@ -46,12 +55,21 @@ class CreateMedicineViewController: UIViewController {
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {
         navigationController?.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func nextAction(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "goToReminderFrequency", sender: nil)
+    }
 
-     // MARK: - Navigation
+    // MARK: - Navigation
  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDosageSettings" {
             
+        } else if segue.identifier == "goToReminderFrequency" {
+            if let destination = segue.destination as? ReminderFrequencyViewController {
+                destination.dosage = self.dosage
+                destination.units = self.units
+            }
         }
     }
 }

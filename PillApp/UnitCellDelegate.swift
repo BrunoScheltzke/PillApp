@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol UnitCellDelegate {
+    func update(unit: Int)
+}

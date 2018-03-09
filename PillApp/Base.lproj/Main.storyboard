@@ -344,9 +344,9 @@
                                 <action selector="cancelAction:" destination="nXj-tR-gsX" id="Xx7-iI-g7w"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Next" style="done" id="eWN-A0-REh">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Next" style="done" id="eWN-A0-REh">
                             <connections>
-                                <segue destination="7HN-4r-Wyf" kind="show" id="ZTh-Xd-wkx"/>
+                                <action selector="nextAction:" destination="nXj-tR-gsX" id="6a8-vh-gEA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -354,8 +354,10 @@
                         <outlet property="bottomColorsTableviewConstraint" destination="YtW-ue-MiK" id="acB-gq-AFf"/>
                         <outlet property="colorsTableview" destination="3Bz-Ve-j9v" id="zrM-WR-3fE"/>
                         <outlet property="medicineNameTxt" destination="kjn-B7-Sb2" id="IX0-8Y-M2B"/>
+                        <outlet property="nextButton" destination="eWN-A0-REh" id="8c9-DQ-Lby"/>
                         <outlet property="tableview" destination="BH3-pf-FP1" id="XZe-0q-Hd7"/>
                         <segue destination="5Uq-oJ-ieX" kind="unwind" identifier="unwindToList" unwindAction="unwindWithSegue:" id="O90-Rs-iDC"/>
+                        <segue destination="7HN-4r-Wyf" kind="show" identifier="goToReminderFrequency" id="Sgi-ID-j7G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bn2-4S-gtZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -392,7 +394,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBG-AX-w5r">
                                                     <rect key="frame" x="70" y="0.0" width="288" height="50.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2d-l0-Xdi">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2d-l0-Xdi">
                                                             <rect key="frame" x="144" y="0.0" width="144" height="50.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                             <nil key="textColor"/>
@@ -429,6 +431,9 @@
                                                 <constraint firstItem="9Xa-Pk-7Hn" firstAttribute="leading" secondItem="EHn-LH-sbc" secondAttribute="leading" constant="23" id="bx1-pE-xbL"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dosage" destination="K2d-l0-Xdi" id="sJD-9c-E8u"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DosagePickerCell" rowHeight="162" id="GOf-dK-wE3" customClass="DosagePickerTableViewCell" customModule="PillApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="79" width="375" height="162"/>
@@ -468,7 +473,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TD0-wN-QNM">
                                                     <rect key="frame" x="63" y="0.0" width="295" height="50.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0O-rP-hqb">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0O-rP-hqb">
                                                             <rect key="frame" x="147.5" y="0.0" width="147.5" height="50.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                             <nil key="textColor"/>
@@ -505,6 +510,9 @@
                                                 <constraint firstItem="TD0-wN-QNM" firstAttribute="top" secondItem="ia2-Pg-1XJ" secondAttribute="top" id="tG1-ai-56W"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="unit" destination="u0O-rP-hqb" id="DIx-yn-AUo"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UnitPickerCell" rowHeight="162" id="Mqx-7Z-BBt" customClass="UnitPickerTableViewCell" customModule="PillApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="292" width="375" height="162"/>
@@ -545,13 +553,19 @@
                                 <action selector="cancelAction:" destination="ETA-98-rf7" id="u51-PH-nWj"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="WI0-pg-yhz"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="WI0-pg-yhz">
+                            <connections>
+                                <action selector="doneAction:" destination="ETA-98-rf7" id="Ngm-aG-ZRr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableview" destination="XBn-nZ-aoA" id="BAY-Ww-YfO"/>
+                        <segue destination="xWK-VS-n8A" kind="unwind" identifier="unwindToCreateMedicine" unwindAction="unwindToCreateMedicineWithSegue:" id="29O-Y1-QCs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NgH-Ou-fPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="xWK-VS-n8A" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3501.5999999999999" y="887.40629685157433"/>
         </scene>

@@ -10,10 +10,15 @@ import UIKit
 
 class UnitHeaderTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var unit: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(actionTap))
+//        self.addGestureRecognizer(tapGestureRecognizer)
     }
+    
+//    @objc func actionTap(recognizer: UITapGestureRecognizer) {
+//    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
