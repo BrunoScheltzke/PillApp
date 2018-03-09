@@ -47,6 +47,12 @@
 		8D60C9132051D6000048E3E3 /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60C9032051D5FF0048E3E3 /* SKNode+Extensions.swift */; };
 		8D60C9142051D6000048E3E3 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60C9042051D6000048E3E3 /* Vector3.swift */; };
 		8D60C9152051D6000048E3E3 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60C9052051D6000048E3E3 /* CGPoint+Extensions.swift */; };
+		9101E83A205076EE00AB41FF /* ReminderFrequencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9101E839205076EE00AB41FF /* ReminderFrequencyViewController.swift */; };
+		9101E83C20507CAE00AB41FF /* ReminderHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9101E83B20507CAE00AB41FF /* ReminderHeaderTableViewCell.swift */; };
+		91531FEC2051B0EC0012E488 /* FrequencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91531FEB2051B0EC0012E488 /* FrequencyTableViewCell.swift */; };
+		91940C9A2051ECA60035316D /* ReminderCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91940C992051ECA60035316D /* ReminderCellDelegate.swift */; };
+		91940C9C2052054B0035316D /* ReminderPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91940C9B2052054B0035316D /* ReminderPickerTableViewCell.swift */; };
+		91ECBF532051A91E009FE51E /* FrequencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ECBF522051A91E009FE51E /* FrequencyViewController.swift */; };
 		AB7C23F1204F12E400EBA6AB /* MedicineRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7C23EE204F12DF00EBA6AB /* MedicineRowController.swift */; };
 		AB7C23F2204F12E400EBA6AB /* MedicineListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7C23ED204F12DF00EBA6AB /* MedicineListController.swift */; };
 		AB7C23F6204F132A00EBA6AB /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB7C23F5204F132A00EBA6AB /* Interface.storyboard */; };
@@ -146,6 +152,12 @@
 		8D60C9032051D5FF0048E3E3 /* SKNode+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SKNode+Extensions.swift"; path = "RingNode/SKNode+Extensions.swift"; sourceTree = "<group>"; };
 		8D60C9042051D6000048E3E3 /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Vector3.swift; path = RingNode/Vector3.swift; sourceTree = "<group>"; };
 		8D60C9052051D6000048E3E3 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGPoint+Extensions.swift"; path = "RingNode/CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		9101E839205076EE00AB41FF /* ReminderFrequencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderFrequencyViewController.swift; sourceTree = "<group>"; };
+		9101E83B20507CAE00AB41FF /* ReminderHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		91531FEB2051B0EC0012E488 /* FrequencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyTableViewCell.swift; sourceTree = "<group>"; };
+		91940C992051ECA60035316D /* ReminderCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCellDelegate.swift; sourceTree = "<group>"; };
+		91940C9B2052054B0035316D /* ReminderPickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderPickerTableViewCell.swift; sourceTree = "<group>"; };
+		91ECBF522051A91E009FE51E /* FrequencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyViewController.swift; sourceTree = "<group>"; };
 		AB7C23ED204F12DF00EBA6AB /* MedicineListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineListController.swift; sourceTree = "<group>"; };
 		AB7C23EE204F12DF00EBA6AB /* MedicineRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineRowController.swift; sourceTree = "<group>"; };
 		AB7C23F5204F132A00EBA6AB /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
@@ -275,6 +287,14 @@
 		8477A4EE20505A1B008445F7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84132613204EEE6000AA4B3A /* ViewController.swift */,
+				9101E839205076EE00AB41FF /* ReminderFrequencyViewController.swift */,
+				9101E83B20507CAE00AB41FF /* ReminderHeaderTableViewCell.swift */,
+				91ECBF522051A91E009FE51E /* FrequencyViewController.swift */,
+				D7C8560F204F02A7001265C7 /* MedicineTableViewCell.swift */,
+				91531FEB2051B0EC0012E488 /* FrequencyTableViewCell.swift */,
+				91940C992051ECA60035316D /* ReminderCellDelegate.swift */,
+				91940C9B2052054B0035316D /* ReminderPickerTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -327,6 +347,7 @@
 		84F73846205070F300FDEB1D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D7C85611204F0D3A001265C7 /* CreateMedicineViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -493,15 +514,21 @@
 				D7C856422051B5E9001265C7 /* SetUnitTableViewCell.swift in Sources */,
 				D7C85612204F0D3A001265C7 /* CreateMedicineViewController.swift in Sources */,
 				D7C8563A20508051001265C7 /* DosageTableViewCell.swift in Sources */,
+				91940C9A2051ECA60035316D /* ReminderCellDelegate.swift in Sources */,
 				D7C85615204F2749001265C7 /* PillApp.xcdatamodeld in Sources */,
 				D7C8563820507795001265C7 /* UIView.swift in Sources */,
 				D7C856402051AFB0001265C7 /* SetDosageTableViewCell.swift in Sources */,
 				D7C8563C205080AD001265C7 /* ColorTableViewCell.swift in Sources */,
 				D7C8563E2051AD85001265C7 /* DosageSettingsViewController.swift in Sources */,
+				91531FEC2051B0EC0012E488 /* FrequencyTableViewCell.swift in Sources */,
 				84132614204EEE6000AA4B3A /* ViewController.swift in Sources */,
+				9101E83C20507CAE00AB41FF /* ReminderHeaderTableViewCell.swift in Sources */,
 				8477A4EA20505750008445F7 /* NotificationManager.swift in Sources */,
 				84F738522050804800FDEB1D /* Frequency.swift in Sources */,
 				84F738532050804C00FDEB1D /* Dosage.swift in Sources */,
+				91940C9C2052054B0035316D /* ReminderPickerTableViewCell.swift in Sources */,
+				9101E83A205076EE00AB41FF /* ReminderFrequencyViewController.swift in Sources */,
+				91ECBF532051A91E009FE51E /* FrequencyViewController.swift in Sources */,
 				84E418EF205011CF007DE716 /* WatchManager.swift in Sources */,
 				84132612204EEE6000AA4B3A /* AppDelegate.swift in Sources */,
 				84F738552050941100FDEB1D /* CoreDataManager.swift in Sources */,
