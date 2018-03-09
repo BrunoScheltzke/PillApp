@@ -132,6 +132,11 @@
                         <viewLayoutGuide key="safeArea" id="Uee-0j-aNJ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Today" id="SH9-AL-RSc">
+                        <barButtonItem key="leftBarButtonItem" systemItem="play" id="FjZ-ra-qW0">
+                            <connections>
+                                <action selector="fireTestNotification:" destination="BYZ-38-t0r" id="r9H-mE-DNX"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="geV-UV-eQl">
                             <connections>
                                 <segue destination="5TT-rZ-nmg" kind="presentation" id="Pds-by-HHE"/>

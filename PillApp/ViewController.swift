@@ -40,6 +40,10 @@ class ViewController: UIViewController {
         verifyTableViewContent()
     }
     
+    @IBAction func fireTestNotification(_ sender: Any) {
+        NotificationManager.shared.createTestLocalNotification()
+    }
+    
     func verifyTableViewContent() {
         if medicines.count == 0 {
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(callPerform(tapGestureRecognizer:)))
