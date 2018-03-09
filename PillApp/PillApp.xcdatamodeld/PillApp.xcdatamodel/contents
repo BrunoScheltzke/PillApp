@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17D102" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Medicine" representedClassName="Medicine" syncable="YES" codeGenerationType="class">
         <attribute name="brand" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="dosage" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="unit" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -21,7 +22,7 @@
         <relationship name="register" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Register" inverseName="reminder" inverseEntity="Register" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Medicine" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Medicine" positionX="-63" positionY="-18" width="128" height="135"/>
         <element name="Register" positionX="-45" positionY="63" width="128" height="30"/>
         <element name="Reminder" positionX="-63" positionY="18" width="128" height="135"/>
     </elements>
