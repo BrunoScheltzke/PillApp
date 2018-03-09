@@ -51,6 +51,8 @@ class CoreDataManager {
             print(error)
         }
         
+        NotificationManager.shared.setUpReminder(reminder: reminderObj)
+        
         return reminderObj
     }
     
@@ -170,11 +172,26 @@ class CoreDataManager {
     }
     
     func createMockData() {
+        let gregorian = Calendar(identifier: .gregorian)
+        let now = Date()
+        var components = gregorian.dateComponents([.year, .month, .day, .hour, .minute, .second], from: now)
+        
+        components.hour = 10
+        components.minute = 36
+        components.second = 0
+        
+        let date = gregorian.date(from: components)!
+        
+        components.hour = 14
+        components.minute = 30
+        components.second = 0
+        
+        let date2 = gregorian.date(from: components)!
+        
         let paracetamol = createMedicine(name: "Paracetamol", brand: "Agafarma", unit: 50, dosage: .pill)
         let diclofenaco = createMedicine(name: "Diclofenaco", brand: nil, unit: 30, dosage: .pill)
-        let paracetamolReminder = createReminder(date: Date(), dosage: .pill, frequency: .everyDay, quantity: 1, medicine: paracetamol)
-        createReminder(date: Date(), dosage: .pill, frequency: .currentDayOnly, quantity: 1, medicine: diclofenaco)
-        createRegister(date: Date(), reminder: paracetamolReminder, taken: true)
+        createReminder(date: date, dosage: .pill, frequency: .everyDay, quantity: 1, medicine: paracetamol)
+        createReminder(date: date2, dosage: .pill, frequency: .currentDayOnly, quantity: 1, medicine: diclofenaco)
     }
     
     func toDictionary(_ reminder: Reminder) -> [String: Any] {
