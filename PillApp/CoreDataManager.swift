@@ -177,7 +177,7 @@ class CoreDataManager {
         var components = gregorian.dateComponents([.year, .month, .day, .hour, .minute, .second], from: now)
         
         components.hour = 8
-        components.minute = 14
+        components.minute = 40
         components.second = 0
         
         let date = gregorian.date(from: components)!

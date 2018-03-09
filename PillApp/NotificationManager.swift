@@ -87,7 +87,7 @@ class NotificationManager: NSObject {
         let request = UNNotificationRequest(identifier: NotificationCategoryIdentifier.medicineTaking, content: content, trigger: trigger)
         
         center.add(request) { (error) in
-            print(error)
+            print(error ?? "Setup notification for medication: \(reminder.medicine!.name), reminderID: \(reminder.objectID.uriRepresentation().absoluteString)")
         }
     }
     
