@@ -85,7 +85,7 @@ class CoreDataManager {
         return reminders
     }
     
-    func fetchTodaysReminders() -> [Reminder]? {
+    func fetchTodaysReminders() -> ([Reminder]?, [Register]?) {
         let request = NSFetchRequest<Reminder>(entityName: Keys.Reminder.tableName)
         
         // Get the current calendar with local time zone
@@ -123,18 +123,18 @@ class CoreDataManager {
             print(error)
         }
         
-        let remindersNotChecked = reminders?.filter({ (reminder) -> Bool in
-            var wasReminderNotChecked = true
-            todayRegisters?.forEach({ (register) in
-                if reminder.objectID == register.reminder?.objectID{
-                    wasReminderNotChecked = false
-                    return
-                }
-            })
-            return wasReminderNotChecked
-        })
+//        let remindersNotChecked = reminders?.filter({ (reminder) -> Bool in
+//            var wasReminderNotChecked = true
+//            todayRegisters?.forEach({ (register) in
+//                if reminder.objectID == register.reminder?.objectID{
+//                    wasReminderNotChecked = false
+//                    return
+//                }
+//            })
+//            return wasReminderNotChecked
+//        })
         
-        return remindersNotChecked
+        return (reminders, todayRegisters)
     }
     
     func fetchAllMedicines() -> [Medicine]? {
@@ -176,8 +176,8 @@ class CoreDataManager {
         let now = Date()
         var components = gregorian.dateComponents([.year, .month, .day, .hour, .minute, .second], from: now)
         
-        components.hour = 10
-        components.minute = 47
+        components.hour = 8
+        components.minute = 40
         components.second = 0
         
         let date = gregorian.date(from: components)!
@@ -212,7 +212,7 @@ class CoreDataManager {
         
         dict[Keys.Register.id] = register.objectID.uriRepresentation().absoluteString
         dict[Keys.Register.date] = register.date
-        dict[Keys.Register.reminder] = toDictionary(register.reminder!)
+        //dict[Keys.Register.reminder] = toDictionary(register.reminder!)
         dict[Keys.Register.taken] = register.taken
         
         return dict

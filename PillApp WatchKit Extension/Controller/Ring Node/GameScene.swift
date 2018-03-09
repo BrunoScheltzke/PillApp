@@ -77,11 +77,14 @@ class RingScene: SKScene {
         addChild(node)
         
         ringCountLabel = label
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
-//            let valueUpEffect = SKTRingValueEffect(for: self.ring, to: 0.5, duration: 1)
-//            valueUpEffect.timingFunction = SKTTimingFunctionCircularEaseOut
-//            let valueUpAction = SKAction.actionWithEffect(valueUpEffect)
-//            self.ring.run(valueUpAction)
-//        }
+    }
+    
+    func fillRing(to: CGFloat) {
+        DispatchQueue.main.async {
+            let valueUpEffect = SKTRingValueEffect(for: self.ring, to: to, duration: 0.8)
+            valueUpEffect.timingFunction = SKTTimingFunctionCircularEaseOut
+            let valueUpAction = SKAction.actionWithEffect(valueUpEffect)
+            self.ring.run(valueUpAction)
+        }
     }
 }

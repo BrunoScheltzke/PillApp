@@ -33,8 +33,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
 //        CoreDataManager.shared.createMockData()
+        //NotificationManager.shared.createLocalNotification()
         
-        medicines = CoreDataManager.shared.fetchTodaysReminders() ?? []
+        medicines = CoreDataManager.shared.fetchTodaysReminders().0 ?? []
         initTableView()
         verifyTableViewContent()
     }

@@ -59,14 +59,20 @@ class WatchManager: NSObject, WCSessionDelegate {
         case CommunicationProtocol.dailyReminders:
             print("Daily Reminders Requested")
             
-            let reminders = CoreDataManager.shared.fetchTodaysReminders() ?? []
+            let result = CoreDataManager.shared.fetchTodaysReminders()
+            
+            let reminders = result.0 ?? []
+            let registers = result.1 ?? []
             
             var remindersDict: [[String: Any]] = []
-            
             reminders.forEach({ (reminder) in remindersDict.append(CoreDataManager.shared.toDictionary(reminder))
             })
             
-            replyHandler([Keys.communicationCommand: CommunicationProtocol.dailyReminders, Keys.reminders: remindersDict])
+            var registerDict: [[String: Any]] = []
+            registers.forEach({ (register) in registerDict.append(CoreDataManager.shared.toDictionary(register))
+            })
+            
+            replyHandler([Keys.communicationCommand: CommunicationProtocol.dailyReminders, Keys.reminders: remindersDict, Keys.registers: registerDict])
             
         default:
             print("Error\(#function)")

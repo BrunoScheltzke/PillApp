@@ -21,6 +21,7 @@ struct Keys {
     static let medicineTaken = "medicineTaken"
     static let communicationCommand = "command"
     static let reminders = "reminders"
+    static let registers = "registers"
     
     struct Reminder {
         static let id = "id"
