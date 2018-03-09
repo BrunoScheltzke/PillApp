@@ -24,17 +24,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noMedicineImage: UIImageView!
 
-    var medicines = [Medicine]()
+    var medicines = [Reminder]()
     var daysOfWeek = [DayOfWeek]()
     
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    var container: NSPersistentContainer!
-    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Medicine")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        container = appDelegate.persistentContainer
         
+        //CoreDataManager.shared.createMockData()
+        //NotificationManager.shared.createLocalNotification()
+        
+        //NotificationManager.shared.createTestLocalNotification()
+        
+        //medicines = CoreDataManager.shared.fetchTodaysReminders() ?? []
         initTableView()
         verifyTableViewContent()
     }
@@ -56,12 +59,6 @@ class ViewController: UIViewController {
     
     @objc func callPerform(tapGestureRecognizer: UITapGestureRecognizer) {
         performSegue(withIdentifier: "createMedicine", sender: nil)
-    }
-    
-    @IBAction func unwind(segue:UIStoryboardSegue) {
-        
-        medicines = try! container.viewContext.fetch(request) as! [Medicine]
-        tableView.reloadData()
     }
 }
 

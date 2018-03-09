@@ -14,7 +14,7 @@ class iOSManager: NSObject, WCSessionDelegate {
     static let shared = iOSManager()
     private let session: WCSession? = WCSession.isSupported() ? WCSession.default : nil
     
-    func getDailyReminders(_ completion: @escaping ([Reminder]) -> Void, _ errorHandler: @escaping (Error) -> Void) {
+    func getDailyReminders(_ completion: @escaping (([Reminder], [Register])) -> Void, _ errorHandler: @escaping (Error) -> Void) {
         session?.sendMessage([Keys.communicationCommand: CommunicationProtocol.dailyReminders], replyHandler: { (response) in
             
             guard let command = response[Keys.communicationCommand] as? String, command == CommunicationProtocol.dailyReminders else {return}
@@ -26,9 +26,20 @@ class iOSManager: NSObject, WCSessionDelegate {
                 reminders.append(Reminder(dict))
             })
             
-            completion(reminders)
+            let registersDict = response[Keys.registers] as! [[String: Any]]
+            var registers: [Register] = []
+            
+            registersDict.forEach({ (dict) in
+                registers.append(Register(dict))
+            })
+            
+            completion((reminders, registers))
             
         }, errorHandler: errorHandler)
+    }
+    
+    func set(reminderId: String, as checked: Bool, at date: Date) {
+        transferUserInfo([Keys.communicationCommand: CommunicationProtocol.checkedReminder, Keys.medicineTaken: checked, Keys.reminderId: reminderId, Keys.date: date])
     }
     
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
@@ -40,7 +51,7 @@ class iOSManager: NSObject, WCSessionDelegate {
         
     }
     
-    func updateApplicationContext(_ context: [String: Any]) throws {
+    private func updateApplicationContext(_ context: [String: Any]) throws {
         do {
             print("Sent application context to iPhone")
             try session?.updateApplicationContext(context)
@@ -50,12 +61,12 @@ class iOSManager: NSObject, WCSessionDelegate {
         }
     }
     
-    func sendMessage(_ message: [String: Any], _ replyHandler: (([String: Any]) -> Void)?, _ errorHandler: ((Error) -> Void)?) {
+    private func sendMessage(_ message: [String: Any], _ replyHandler: (([String: Any]) -> Void)?, _ errorHandler: ((Error) -> Void)?) {
         session?.sendMessage(message, replyHandler: replyHandler, errorHandler: errorHandler)
         print("Sent message to iPhone")
     }
     
-    func transferUserInfo(_ userInfo: [String: Any]) {
+    private func transferUserInfo(_ userInfo: [String: Any]) {
         print("Sent user info to iPhone")
         session?.transferUserInfo(userInfo)
     }

@@ -20,7 +20,7 @@ class CoreDataManager {
     }
     
     @discardableResult func createMedicine(name: String, brand: String?, unit: Int32, dosage: Dosage) -> Medicine {
-        let medicine = NSEntityDescription.insertNewObject(forEntityName: "Medicine",
+        let medicine = NSEntityDescription.insertNewObject(forEntityName: Keys.Medicine.tableName,
                                                            into: container.viewContext) as! Medicine
         medicine.name = name
         medicine.brand = brand
@@ -37,7 +37,7 @@ class CoreDataManager {
     }
     
     @discardableResult func createReminder(date: Date, dosage: Dosage, frequency: Frequency = .currentDayOnly, quantity: Int32, medicine: Medicine) -> Reminder {
-        let reminderObj = NSEntityDescription.insertNewObject(forEntityName: "Reminder", into: container.viewContext) as! Reminder
+        let reminderObj = NSEntityDescription.insertNewObject(forEntityName: Keys.Reminder.tableName, into: container.viewContext) as! Reminder
         
         reminderObj.date = date
         reminderObj.dosage = dosage.rawValue
@@ -51,11 +51,13 @@ class CoreDataManager {
             print(error)
         }
         
+        NotificationManager.shared.setUpReminder(reminder: reminderObj)
+        
         return reminderObj
     }
     
     @discardableResult func createRegister(date: Date, reminder: Reminder, taken: Bool) -> Register {
-        let registerObj = NSEntityDescription.insertNewObject(forEntityName: "Register", into: container.viewContext) as! Register
+        let registerObj = NSEntityDescription.insertNewObject(forEntityName: Keys.Register.tableName, into: container.viewContext) as! Register
         
         registerObj.date = date
         registerObj.reminder = reminder
@@ -71,7 +73,7 @@ class CoreDataManager {
     }
     
     func fetchAllReminders() -> [Reminder]? {
-        let request = NSFetchRequest<Reminder>(entityName: "Reminder")
+        let request = NSFetchRequest<Reminder>(entityName: Keys.Reminder.tableName)
         var reminders: [Reminder]?
         
         do {
@@ -83,8 +85,8 @@ class CoreDataManager {
         return reminders
     }
     
-    func fetchTodaysReminders() -> [Reminder]? {
-        let request = NSFetchRequest<Reminder>(entityName: "Reminder")
+    func fetchTodaysReminders() -> ([Reminder]?, [Register]?) {
+        let request = NSFetchRequest<Reminder>(entityName: Keys.Reminder.tableName)
         
         // Get the current calendar with local time zone
         var calendar = Calendar.current
@@ -97,8 +99,10 @@ class CoreDataManager {
         let dateTo = calendar.date(from: components)! // eg. 2016-10-11 00:00:00
         // Note: Times are printed in UTC. Depending on where you live it won't print 00:00:00 but it will work with UTC times which can be converted to local time
         
+        let currentWeekDay = calendar.component(.weekday, from: Date())
+        
         // Set predicate as date being today's date
-        let datePredicate = NSPredicate(format: "(%@ <= date) AND (date < %@)", argumentArray: [dateFrom, dateTo])
+        let datePredicate = NSPredicate(format: "((%@ <= date) AND (date < %@)) OR (frequency == %@) OR (frequency == %@)", argumentArray: [dateFrom, dateTo, Int32(currentWeekDay), Int32(Frequency.everyDay.rawValue)])
         request.predicate = datePredicate
         
         var reminders: [Reminder]?
@@ -109,11 +113,32 @@ class CoreDataManager {
             print(error)
         }
         
-        return reminders
+        let fetchRequest = NSFetchRequest<Register>(entityName: Keys.Register.tableName)
+        fetchRequest.predicate = NSPredicate(format: "(%@ <= date) AND (date < %@)", argumentArray: [dateFrom, dateTo, true])
+        var todayRegisters: [Register]?
+        
+        do {
+            todayRegisters = try container.viewContext.fetch(fetchRequest)
+        } catch {
+            print(error)
+        }
+        
+        let remindersNotChecked = reminders?.filter({ (reminder) -> Bool in
+            var wasReminderNotChecked = true
+            todayRegisters?.forEach({ (register) in
+                if reminder.objectID == register.reminder?.objectID{
+                    wasReminderNotChecked = false
+                    return
+                }
+            })
+            return wasReminderNotChecked
+        })
+        
+        return (remindersNotChecked, todayRegisters)
     }
     
     func fetchAllMedicines() -> [Medicine]? {
-        let request = NSFetchRequest<Medicine>(entityName: "Medicine")
+        let request = NSFetchRequest<Medicine>(entityName: Keys.Medicine.tableName)
         var medicines: [Medicine]?
         
         do {
@@ -126,7 +151,7 @@ class CoreDataManager {
     }
     
     func fetchAllRegisters() -> [Register]? {
-        let request = NSFetchRequest<Register>(entityName: "Register")
+        let request = NSFetchRequest<Register>(entityName: Keys.Register.tableName)
         var registers: [Register]?
         
         do {
@@ -147,8 +172,28 @@ class CoreDataManager {
     }
     
     func createMockData() {
+        let gregorian = Calendar(identifier: .gregorian)
+        let now = Date()
+        var components = gregorian.dateComponents([.year, .month, .day, .hour, .minute, .second], from: now)
+        
+        components.hour = 8
+        components.minute = 40
+        components.second = 0
+        
+        let date = gregorian.date(from: components)!
+        
+        components.hour = 14
+        components.minute = 30
+        components.second = 0
+        
+        let date2 = gregorian.date(from: components)!
+        
         let paracetamol = createMedicine(name: "Paracetamol", brand: "Agafarma", unit: 50, dosage: .pill)
-        createReminder(date: Date(), dosage: .pill, frequency: .everyDay, quantity: 1, medicine: paracetamol)
+        let diclofenaco = createMedicine(name: "Diclofenaco", brand: nil, unit: 30, dosage: .pill)
+        let reminder = createReminder(date: date, dosage: .pill, frequency: .everyDay, quantity: 1, medicine: paracetamol)
+        createReminder(date: date2, dosage: .pill, frequency: .currentDayOnly, quantity: 1, medicine: diclofenaco)
+        
+        createRegister(date: reminder.date!, reminder: reminder, taken: true)
     }
     
     func toDictionary(_ reminder: Reminder) -> [String: Any] {

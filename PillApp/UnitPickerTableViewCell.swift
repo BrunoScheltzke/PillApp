@@ -1,15 +1,16 @@
 //
-//  SetUnitTableViewCell.swift
+//  UnitPickerTableViewCell.swift
 //  PillApp
 //
-//  Created by Arthur Giachini on 08/03/2018.
+//  Created by Eduardo Fornari on 09/03/18.
 //  Copyright © 2018 Bruno Scheltzke. All rights reserved.
 //
 
 import UIKit
 
-class SetUnitTableViewCell: UITableViewCell {
+class UnitPickerTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var picker: UIPickerView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

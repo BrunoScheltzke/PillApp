@@ -52,7 +52,7 @@ class NotificationManager: NSObject {
     func registerCategories() {
         let yesAction = UNNotificationAction(identifier: NotificationActionIdentifier.yes, title: NotificationActionIdentifier.yes, options: .foreground)
 //        let snoozeAction = UNNotificationAction(identifier: NotificationActionIdentifier.snooze, title: NotificationActionIdentifier.yes, options: .foreground)
-        let noAction = UNNotificationAction(identifier: NotificationActionIdentifier.no, title: NotificationActionIdentifier.yes, options: .foreground)
+        let noAction = UNNotificationAction(identifier: NotificationActionIdentifier.no, title: NotificationActionIdentifier.no, options: .foreground)
         
         let medicineTakingCategory = UNNotificationCategory(identifier: NotificationCategoryIdentifier.medicineTaking, actions: [yesAction, noAction], intentIdentifiers: [], options: .customDismissAction)
         
@@ -67,6 +67,7 @@ class NotificationManager: NSObject {
         content.userInfo = [Keys.reminderId: reminder.objectID.uriRepresentation().absoluteString]
         
         var date = DateComponents()
+        //TODO: FIX THIS DISGUSTING THING WITH UTC
         date.hour = Calendar.current.component(.hour, from: reminder.date!)
         date.minute = Calendar.current.component(.minute, from: reminder.date!)
         
@@ -84,7 +85,35 @@ class NotificationManager: NSObject {
         
         // Create the request object.
         let request = UNNotificationRequest(identifier: NotificationCategoryIdentifier.medicineTaking, content: content, trigger: trigger)
-        center.add(request, withCompletionHandler: nil)
+        
+        center.add(request) { (error) in
+            print(error ?? "Setup notification for medication: \(reminder.medicine!.name!), reminderID: \(reminder.objectID.uriRepresentation().absoluteString)")
+        }
+    }
+    
+    func createTestLocalNotification() {
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Medication Reminder"
+        content.body = "Remember to take your medication"
+        content.categoryIdentifier = NotificationCategoryIdentifier.medicineTaking
+        content.userInfo = [Keys.reminderId: "x-coredata://8C1C55E8-70EA-4606-AF3C-8EEF5F1711C5/Reminder/p1"]
+        
+        var date = DateComponents()
+        date.timeZone = TimeZone(abbreviation: "UTC")
+        
+        date.hour = 12
+        date.minute = 18
+        date.second = 0
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: false)
+        
+        // Create the request object.
+        let request = UNNotificationRequest(identifier: "PillAlarm", content: content, trigger: trigger)
+        
+        center.add(request) { (error) in
+            print(error ?? "")
+        }
     }
     
     func createLocalNotification() {
@@ -92,12 +121,16 @@ class NotificationManager: NSObject {
         content.title = "Medication Reminder"
         content.body = "Remember to take your medication"
         content.categoryIdentifier = NotificationCategoryIdentifier.medicineTaking
+        content.userInfo = [Keys.reminderId: "x-coredata://8C1C55E8-70EA-4606-AF3C-8EEF5F1711C5/Reminder/p1"]
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 4.0, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 11.0, repeats: false)
         
         // Create the request object.
-        let request = UNNotificationRequest(identifier: NotificationCategoryIdentifier.medicineTaking, content: content, trigger: trigger)
-        center.add(request, withCompletionHandler: nil)
+        let request = UNNotificationRequest(identifier: "PillAlarm", content: content, trigger: trigger)
+        
+        center.add(request) { (error) in
+            print(error ?? "")
+        }
     }
 }
 
@@ -116,11 +149,19 @@ extension NotificationManager: UNUserNotificationCenterDelegate {
             }
             
             let reminderDict = response.notification.request.content.userInfo
-            let idUrl = URL(string: reminderDict[Keys.reminderId] as! String)
-            let reminder = CoreDataManager.shared.fetchReminder(by: idUrl!)
+            let idStr = reminderDict[Keys.reminderId] as! String
+            
+            guard let idUrl = URL(string: idStr) else {
+                print("Error with reminder id: \(idStr)")
+                return
+            }
+            guard let reminder = CoreDataManager.shared.fetchReminder(by: idUrl) else {
+                print("No reminder found for reminder id: \(idStr)")
+                return
+            }
             let date = reminderDict[Keys.date] as? Date ?? Date()
             
-            CoreDataManager.shared.createRegister(date: date, reminder: reminder!, taken: taken)
+            CoreDataManager.shared.createRegister(date: date, reminder: reminder, taken: taken)
 
             completionHandler()
         }
