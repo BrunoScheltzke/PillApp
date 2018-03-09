@@ -31,14 +31,14 @@ class MedicineListController: WKInterfaceController {
         
         iOSManager.shared.getDailyReminders({ (reminders) in
             
-            self.reminders = reminders
+            self.reminders = reminders.sorted { $0.date < $1.date }
             
             self.medicineTable.setNumberOfRows(self.reminders.count, withRowType: "MedicineRow")
             
             for index in 0..<self.medicineTable.numberOfRows {
                 guard let controller = self.medicineTable.rowController(at: index) as? MedicineRowController else { continue }
                 
-                controller.reminder = reminders[index]
+                controller.reminder = self.reminders[index]
             }
             
             self.scene.ringCountLabel.text = "/\(reminders.count)"
