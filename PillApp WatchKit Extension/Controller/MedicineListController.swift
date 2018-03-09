@@ -21,6 +21,7 @@ class MedicineListController: WKInterfaceController {
     
     @IBOutlet var dayLabel: WKInterfaceLabel!
     var reminders: [Reminder] = []
+    var regostersCount: Int = 0
     let scene = RingScene(size: CGSize(width: 45, height: 45))
     
     @IBOutlet var medicineTable: WKInterfaceTable!
@@ -30,7 +31,7 @@ class MedicineListController: WKInterfaceController {
         super.awake(withContext: context)
 
         iOSManager.shared.getDailyReminders({ (result) in
-        
+            
             self.reminders = result.0
             let registers = result.1
             
@@ -40,11 +41,17 @@ class MedicineListController: WKInterfaceController {
                 guard let controller = self.medicineTable.rowController(at: index) as? MedicineRowController else { continue }
                 
                 controller.reminder = self.reminders[index]
+                let reminder = self.reminders[index]
+                
+                let register = registers.first(where: { $0.reminder?.id ?? "" == reminder.id })
+                if register != nil {
+                    controller.takedImageView.setImage(#imageLiteral(resourceName: "checked"))
+                }
             }
-            
-            self.scene.ringCountLabel.text = "\(registers.count)/\(self.reminders.count)"
-            let fillRing = CGFloat(self.reminders.count) / CGFloat(registers.count)
-            self.scene.fillRing(to: fillRing)
+            self.scene.ringCountLabel.text = "\(0)/\(self.reminders.count)"
+            //            let fillRing =  CGFloat(registers.count) / CGFloat(self.reminders.count)
+            //            self.scene.fillRing(to: fillRing)
+            self.regostersCount = 0
         }) { (error) in
             print("Error fetching daily reminders: \(error)")
         }
@@ -54,7 +61,7 @@ class MedicineListController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        
+
         dayLabel.setText(dayFormatter.string(from: Date()))
         
     }
@@ -67,10 +74,14 @@ class MedicineListController: WKInterfaceController {
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
         let reminderId = reminders[rowIndex].id
 //        iOSManager.shared.set(reminderId: reminderId, as: true, at: Date())
-        
         if let controller = self.medicineTable.rowController(at: rowIndex) as? MedicineRowController {
             controller.takedImageView.setImage(#imageLiteral(resourceName: "checked"))
         }
+        regostersCount+=1
+        scene.ringCountLabel.text = "\(regostersCount)/\(reminders.count)"
+        let fill = CGFloat(regostersCount) / CGFloat(reminders.count)
+        scene.fillRing(to: fill)
+        
     }
     
 }
