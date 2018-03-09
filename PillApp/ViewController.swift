@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        CoreDataManager.shared.createMockData()
+        //CoreDataManager.shared.createMockData()
         //NotificationManager.shared.createLocalNotification()
         
         //NotificationManager.shared.createTestLocalNotification()
