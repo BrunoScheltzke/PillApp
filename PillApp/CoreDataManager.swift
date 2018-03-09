@@ -85,7 +85,7 @@ class CoreDataManager {
         return reminders
     }
     
-    func fetchTodaysReminders() -> [Reminder]? {
+    func fetchTodaysReminders() -> ([Reminder]?, [Register]?) {
         let request = NSFetchRequest<Reminder>(entityName: Keys.Reminder.tableName)
         
         // Get the current calendar with local time zone
@@ -134,7 +134,7 @@ class CoreDataManager {
             return wasReminderNotChecked
         })
         
-        return remindersNotChecked
+        return (remindersNotChecked, todayRegisters)
     }
     
     func fetchAllMedicines() -> [Medicine]? {
@@ -176,8 +176,8 @@ class CoreDataManager {
         let now = Date()
         var components = gregorian.dateComponents([.year, .month, .day, .hour, .minute, .second], from: now)
         
-        components.hour = 10
-        components.minute = 47
+        components.hour = 8
+        components.minute = 14
         components.second = 0
         
         let date = gregorian.date(from: components)!

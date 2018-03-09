@@ -10,7 +10,6 @@ import WatchKit
 import Foundation
 import SpriteKit
 
-
 class MedicineListController: WKInterfaceController {
     @IBOutlet var notificationBtn: WKInterfaceButton!
     
@@ -24,16 +23,17 @@ class MedicineListController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        iOSManager.shared.getDailyReminders({ (reminders) in
-            
-            self.reminders = reminders
+        iOSManager.shared.getDailyReminders({ (result) in
+        
+            self.reminders = result.0
+            var register = result.1
             
             self.medicineTable.setNumberOfRows(self.reminders.count, withRowType: "MedicineRow")
             
             for index in 0..<self.medicineTable.numberOfRows {
                 guard let controller = self.medicineTable.rowController(at: index) as? MedicineRowController else { continue }
                 
-                controller.reminder = reminders[index]
+                controller.reminder = self.reminders[index]
             }
             
         }) { (error) in
