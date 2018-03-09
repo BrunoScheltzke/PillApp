@@ -32,12 +32,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //CoreDataManager.shared.createMockData()
+//        CoreDataManager.shared.createMockData()
         //NotificationManager.shared.createLocalNotification()
         
-        //NotificationManager.shared.createTestLocalNotification()
-        
-        //medicines = CoreDataManager.shared.fetchTodaysReminders() ?? []
+        medicines = CoreDataManager.shared.fetchTodaysReminders().0 ?? []
         initTableView()
         verifyTableViewContent()
     }

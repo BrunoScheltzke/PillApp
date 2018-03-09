@@ -123,18 +123,18 @@ class CoreDataManager {
             print(error)
         }
         
-        let remindersNotChecked = reminders?.filter({ (reminder) -> Bool in
-            var wasReminderNotChecked = true
-            todayRegisters?.forEach({ (register) in
-                if reminder.objectID == register.reminder?.objectID{
-                    wasReminderNotChecked = false
-                    return
-                }
-            })
-            return wasReminderNotChecked
-        })
+//        let remindersNotChecked = reminders?.filter({ (reminder) -> Bool in
+//            var wasReminderNotChecked = true
+//            todayRegisters?.forEach({ (register) in
+//                if reminder.objectID == register.reminder?.objectID{
+//                    wasReminderNotChecked = false
+//                    return
+//                }
+//            })
+//            return wasReminderNotChecked
+//        })
         
-        return (remindersNotChecked, todayRegisters)
+        return (reminders, todayRegisters)
     }
     
     func fetchAllMedicines() -> [Medicine]? {
@@ -214,7 +214,7 @@ class CoreDataManager {
         
         dict[Keys.Register.id] = register.objectID.uriRepresentation().absoluteString
         dict[Keys.Register.date] = register.date
-        dict[Keys.Register.reminder] = toDictionary(register.reminder!)
+        //dict[Keys.Register.reminder] = toDictionary(register.reminder!)
         dict[Keys.Register.taken] = register.taken
         
         return dict

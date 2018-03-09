@@ -29,10 +29,16 @@ class MedicineListController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
+<<<<<<< HEAD
+        iOSManager.shared.getDailyReminders({ (reminders) in
+            
+            self.reminders = reminders.sorted { $0.date < $1.date }
+=======
         iOSManager.shared.getDailyReminders({ (result) in
         
             self.reminders = result.0
             var register = result.1
+>>>>>>> 4f2d7de6a7071f8e69f470ceae6729fd791fb6b1
             
             self.medicineTable.setNumberOfRows(self.reminders.count, withRowType: "MedicineRow")
             
@@ -42,7 +48,7 @@ class MedicineListController: WKInterfaceController {
                 controller.reminder = self.reminders[index]
             }
             
-            self.scene.ringCountLabel.text = "/\(reminders.count)"
+            self.scene.ringCountLabel.text = "/\(self.reminders.count)"
         }) { (error) in
             print("Error fetching daily reminders: \(error)")
         }

@@ -32,7 +32,7 @@ class MedicineListController: WKInterfaceController {
         iOSManager.shared.getDailyReminders({ (result) in
         
             self.reminders = result.0
-            var register = result.1
+            let registers = result.1
             
             self.medicineTable.setNumberOfRows(self.reminders.count, withRowType: "MedicineRow")
             
@@ -42,10 +42,13 @@ class MedicineListController: WKInterfaceController {
                 controller.reminder = self.reminders[index]
             }
             
-            self.scene.ringCountLabel.text = "/\(self.reminders.count)"
+            self.scene.ringCountLabel.text = "\(registers.count)/\(self.reminders.count)"
+            let fillRing = CGFloat(self.reminders.count) / CGFloat(registers.count)
+            self.scene.fillRing(to: fillRing)
         }) { (error) in
             print("Error fetching daily reminders: \(error)")
         }
+        spriteScene.presentScene(scene)
     }
     
     override func willActivate() {
@@ -53,7 +56,7 @@ class MedicineListController: WKInterfaceController {
         super.willActivate()
         
         dayLabel.setText(dayFormatter.string(from: Date()))
-        spriteScene.presentScene(scene)
+        
     }
     
     override func didDeactivate() {
@@ -63,7 +66,8 @@ class MedicineListController: WKInterfaceController {
     
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
         let reminderId = reminders[rowIndex].id
-        iOSManager.shared.set(reminderId: reminderId, as: true, at: Date())
+//        iOSManager.shared.set(reminderId: reminderId, as: true, at: Date())
+        
         if let controller = self.medicineTable.rowController(at: rowIndex) as? MedicineRowController {
             controller.takedImageView.setImage(#imageLiteral(resourceName: "checked"))
         }
