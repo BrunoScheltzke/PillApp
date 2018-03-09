@@ -10,17 +10,14 @@ import UIKit
 
 class FrequencyViewController: UIViewController {
 
+    private var unwindToReminderFrequency = "unwindToReminderFrequency"
     @IBOutlet weak var tableView: UITableView!
 
-//    case everySunday
-//    case everyMonday
-//    case everyTuesday
-//    case everyWednesday
-//    case everyThursday
-//    case everyFriday
-//    case everySaturday
-//    case everyDay
     private var model = [Frequency.everySunday, Frequency.everyMonday, Frequency.everyTuesday, Frequency.everyWednesday, Frequency.everyThursday, Frequency.everyFriday, Frequency.everySaturday]
+    
+    var frequency = [Frequency]()
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,31 +31,63 @@ class FrequencyViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        self.unwindToReminderFrequency()
-//    }
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == self.unwindToReminderFrequency {
+            if let frequency = sender as? [Frequency] {
+                if let destination = segue.destination as? ReminderFrequencyViewController {
+                    destination.frequency = frequency
+                }
+            }
+        }
         
     }
-
-    private func unwindToReminderFrequency() {
-        performSegue(withIdentifier: "unwindToReminderFrequency", sender: nil)
+    
+    @IBAction func cancelAction(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: self.unwindToReminderFrequency, sender: nil)
     }
 
+    @IBAction func doneAction(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: self.unwindToReminderFrequency, sender: self.frequency)
+    }
+    
+    
 }
 
 extension FrequencyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "FrequencyTableViewCell", for: indexPath) as! FrequencyTableViewCell
-        cell.frequence = self.model[indexPath.row]
+        let day = self.model[indexPath.row]
+        cell.dayOfWeek = day
+        cell.delegate = self
+        if self.frequency.contains(day) {
+            cell.check = true
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! FrequencyTableViewCell
+        cell.isSelected = false
+        print(cell.check)
+    }
+}
+
+extension FrequencyViewController: FrequencyTableViewCellDelegate {
+    func update(day: Frequency, check: Bool) {
+        let index = self.frequency.index { value -> Bool in
+            value == day
+        }
+        if let index = index {
+            self.frequency.remove(at: index)
+        } else {
+            self.frequency.append(day)
+        }
     }
 }

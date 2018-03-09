@@ -552,7 +552,7 @@
             </objects>
             <point key="canvasLocation" x="2465" y="889"/>
         </scene>
-        <!--Reminder Frequency View Controller-->
+        <!--Add new Medicine-->
         <scene sceneID="orH-Tj-746">
             <objects>
                 <viewController id="7HN-4r-Wyf" customClass="ReminderFrequencyViewController" customModule="PillApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -728,6 +728,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="N6p-Qa-TaV"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add new Medicine" id="Ofi-iu-bgN">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="od5-ja-5GL">
+                            <connections>
+                                <action selector="cancelAction:" destination="ETA-98-rf7" id="XJN-jP-qei"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="tM7-s7-jAf"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="IcY-rb-hdU" id="EaN-Cv-Sn7"/>
                         <segue destination="wEl-Uq-ol6" kind="show" identifier="goToFrequencyViewController" id="eqC-UZ-5TY"/>
@@ -737,17 +745,18 @@
             </objects>
             <point key="canvasLocation" x="3502" y="148"/>
         </scene>
-        <!--Frequency View Controller-->
+        <!--Add new medicine-->
         <scene sceneID="mI7-dp-Ifx">
             <objects>
-                <viewController id="wEl-Uq-ol6" customClass="FrequencyViewController" customModule="PillApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add new medicine" id="wEl-Uq-ol6" customClass="FrequencyViewController" customModule="PillApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OFX-e5-CqS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OXI-UD-lKE">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OXI-UD-lKE">
                                 <rect key="frame" x="0.0" y="97" width="375" height="570"/>
                                 <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="48" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FrequencyTableViewCell" rowHeight="51" id="A8o-Ln-LlA" customClass="FrequencyTableViewCell" customModule="PillApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="51"/>
@@ -808,6 +817,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bhm-XK-ftj"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add new Medicine" id="ev6-np-XkE">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Vgw-CT-euu">
+                            <connections>
+                                <action selector="cancelAction:" destination="wEl-Uq-ol6" id="Fe8-oN-kE6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="MY7-q7-uRb">
+                            <connections>
+                                <action selector="doneAction:" destination="wEl-Uq-ol6" id="cow-2L-jVB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="OXI-UD-lKE" id="zbp-Lk-eDT"/>
                         <segue destination="JAI-0j-Dyo" kind="unwind" identifier="unwindToReminderFrequency" unwindAction="unwindToReminderFrequencyWithSegue:" id="OaD-NZ-UvZ"/>

@@ -10,9 +10,12 @@ import UIKit
 
 class ReminderFrequencyViewController: UIViewController {
 
+    var frequency = [Frequency]()
     @IBOutlet weak var tableView: UITableView!
 
-    @IBAction func unwindToReminderFrequency(segue: UIStoryboardSegue) {}
+    @IBAction func unwindToReminderFrequency(segue: UIStoryboardSegue) {
+        print(frequency)
+    }
     
     private var frequencyTableViewCellIdentifier = "FrequencyTableViewCell"
     private var reminderPickerTableViewCellIdentifier = "ReminderPickerTableViewCell"
@@ -39,7 +42,9 @@ class ReminderFrequencyViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == self.goToFrequencyViewControllerSegue {
-            
+            if let destination = segue.destination as? FrequencyViewController {
+                destination.frequency = self.frequency
+            }
         }
     }
 
