@@ -87,7 +87,32 @@ class NotificationManager: NSObject {
         let request = UNNotificationRequest(identifier: NotificationCategoryIdentifier.medicineTaking, content: content, trigger: trigger)
         
         center.add(request) { (error) in
-            print(error ?? "Setup notification for medication: \(reminder.medicine!.name), reminderID: \(reminder.objectID.uriRepresentation().absoluteString)")
+            print(error ?? "Setup notification for medication: \(reminder.medicine!.name!), reminderID: \(reminder.objectID.uriRepresentation().absoluteString)")
+        }
+    }
+    
+    func createTestLocalNotification() {
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Medication Reminder"
+        content.body = "Remember to take your medication"
+        content.categoryIdentifier = NotificationCategoryIdentifier.medicineTaking
+        content.userInfo = [Keys.reminderId: "x-coredata://8C1C55E8-70EA-4606-AF3C-8EEF5F1711C5/Reminder/p1"]
+        
+        var date = DateComponents()
+        date.timeZone = TimeZone(abbreviation: "UTC")
+        
+        date.hour = 12
+        date.minute = 18
+        date.second = 0
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: false)
+        
+        // Create the request object.
+        let request = UNNotificationRequest(identifier: "PillAlarm", content: content, trigger: trigger)
+        
+        center.add(request) { (error) in
+            print(error ?? "")
         }
     }
     

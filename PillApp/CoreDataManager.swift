@@ -190,8 +190,10 @@ class CoreDataManager {
         
         let paracetamol = createMedicine(name: "Paracetamol", brand: "Agafarma", unit: 50, dosage: .pill)
         let diclofenaco = createMedicine(name: "Diclofenaco", brand: nil, unit: 30, dosage: .pill)
-        createReminder(date: date, dosage: .pill, frequency: .everyDay, quantity: 1, medicine: paracetamol)
+        let reminder = createReminder(date: date, dosage: .pill, frequency: .everyDay, quantity: 1, medicine: paracetamol)
         createReminder(date: date2, dosage: .pill, frequency: .currentDayOnly, quantity: 1, medicine: diclofenaco)
+        
+        createRegister(date: reminder.date!, reminder: reminder, taken: true)
     }
     
     func toDictionary(_ reminder: Reminder) -> [String: Any] {
