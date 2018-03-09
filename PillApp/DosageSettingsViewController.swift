@@ -12,6 +12,9 @@ class DosageSettingsViewController: UIViewController {
 
     @IBOutlet weak var tableview: UITableView!
     
+    var isDosagePickerViewCellHide = false
+    var isUnitPickerViewCellHide = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initTableview()
@@ -48,33 +51,32 @@ extension DosageSettingsViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if !self.isDosagePickerViewCellHide && !self.isUnitPickerViewCellHide {
+            return 4
+        } else if !self.isDosagePickerViewCellHide {
+            return 3
+        } else if !self.isUnitPickerViewCellHide {
+            return 3
+        }
         return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "setDosageCell", for: indexPath) as! SetDosageTableViewCell
-
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DosageHeaderCell", for: indexPath) as! DosageHeaderTableViewCell
+            return cell
+        } else if (self.isDosagePickerViewCellHide && indexPath.row == 1) || indexPath.row == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UnitHeaderCell", for: indexPath) as! UnitHeaderTableViewCell
+            return cell
+        } else if !self.isDosagePickerViewCellHide && indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DosagePickerCell", for: indexPath) as! DosagePickerTableViewCell
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "setUnitCell", for: indexPath) as! SetUnitTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UnitPickerCell", for: indexPath) as! UnitPickerTableViewCell
             return cell
         }
     }
     
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if indexPath.row == 0 {
-//
-//        }
-        if indexPath.row == 0 {
-            let cell = tableview.cellForRow(at: indexPath) as! SetDosageTableViewCell
-            cell.dosageTxt.becomeFirstResponder()
-//            print(cell.dosageTxt)
-        } else {
-//            let cell = tableview.cellForRow(at: indexPath) as! SetUnitTableViewCell
-            
-//            cell..becomeFirstResponder()
-        }
-    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
 }

@@ -1,17 +1,15 @@
 //
-//  DosageTableViewCell.swift
+//  SetUnitTableViewCell.swift
 //  PillApp
 //
-//  Created by Arthur Giachini on 07/03/2018.
+//  Created by Arthur Giachini on 08/03/2018.
 //  Copyright © 2018 Bruno Scheltzke. All rights reserved.
 //
 
 import UIKit
 
-class DosageTableViewCell: UITableViewCell {
+class UnitHeaderTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var dosageLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
