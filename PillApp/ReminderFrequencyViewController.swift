@@ -11,6 +11,12 @@ import UIKit
 class ReminderFrequencyViewController: UIViewController {
 
     var frequency = [Frequency]()
+    private var reminderTime: Date? = Date()
+    var dosage: Dosage!
+    var units: Int!
+    
+    private var isReminderPickerViewCellVisible = true
+
     @IBOutlet weak var tableView: UITableView!
 
     @IBAction func unwindToReminderFrequency(segue: UIStoryboardSegue) {
@@ -19,12 +25,8 @@ class ReminderFrequencyViewController: UIViewController {
     
     private var frequencyTableViewCellIdentifier = "FrequencyTableViewCell"
     private var reminderPickerTableViewCellIdentifier = "ReminderPickerTableViewCell"
-    private var ReminderHeaderTableViewCellIdentifier = "ReminderHeaderTableViewCell"
-
+    private var reminderHeaderTableViewCellIdentifier = "ReminderHeaderTableViewCell"
     private var goToFrequencyViewControllerSegue = "goToFrequencyViewController"
-
-    private var isReminderPickerViewCellVisible = true
-    private var reminderTime: Date? = Date()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,10 @@ class ReminderFrequencyViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("\(self.reminderTime)      \(self.frequency)         \(self.units!)\(self.dosage!)")
     }
 
     // MARK: - Navigation
@@ -54,7 +60,7 @@ class ReminderFrequencyViewController: UIViewController {
 extension ReminderFrequencyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell = self.tableView.dequeueReusableCell(withIdentifier: self.ReminderHeaderTableViewCellIdentifier, for: indexPath) as! ReminderHeaderTableViewCell
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: self.reminderHeaderTableViewCellIdentifier, for: indexPath) as! ReminderHeaderTableViewCell
             cell.delegate = self
             cell.reminderTime = reminderTime!
             return cell

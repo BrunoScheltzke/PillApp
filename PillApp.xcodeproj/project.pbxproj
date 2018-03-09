@@ -53,9 +53,13 @@
 		8DCB5A362052CBCA0058B3E4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCB5A352052CBCA0058B3E4 /* Colors.swift */; };
 		9101E83A205076EE00AB41FF /* ReminderFrequencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9101E839205076EE00AB41FF /* ReminderFrequencyViewController.swift */; };
 		9101E83C20507CAE00AB41FF /* ReminderHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9101E83B20507CAE00AB41FF /* ReminderHeaderTableViewCell.swift */; };
+		911302632052F1F400164E0F /* DosageCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911302622052F1F400164E0F /* DosageCellDelegate.swift */; };
+		911302652052F43C00164E0F /* UnitCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911302642052F43C00164E0F /* UnitCellDelegate.swift */; };
 		91531FEC2051B0EC0012E488 /* FrequencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91531FEB2051B0EC0012E488 /* FrequencyTableViewCell.swift */; };
 		91940C9A2051ECA60035316D /* ReminderCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91940C992051ECA60035316D /* ReminderCellDelegate.swift */; };
 		91940C9C2052054B0035316D /* ReminderPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91940C9B2052054B0035316D /* ReminderPickerTableViewCell.swift */; };
+		919F24E72052D277005F1BAD /* UnitPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919F24E62052D277005F1BAD /* UnitPickerTableViewCell.swift */; };
+		919F24E92052D2C8005F1BAD /* DosagePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919F24E82052D2C8005F1BAD /* DosagePickerTableViewCell.swift */; };
 		91B9D5EB20523783007DC9F4 /* FrequencyTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9D5EA20523783007DC9F4 /* FrequencyTableViewCellDelegate.swift */; };
 		91ECBF532051A91E009FE51E /* FrequencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ECBF522051A91E009FE51E /* FrequencyViewController.swift */; };
 		AB7C23F1204F12E400EBA6AB /* MedicineRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7C23EE204F12DF00EBA6AB /* MedicineRowController.swift */; };
@@ -65,11 +69,11 @@
 		D7C85612204F0D3A001265C7 /* CreateMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C85611204F0D3A001265C7 /* CreateMedicineViewController.swift */; };
 		D7C85615204F2749001265C7 /* PillApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7C85613204F2749001265C7 /* PillApp.xcdatamodeld */; };
 		D7C8563820507795001265C7 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8563720507795001265C7 /* UIView.swift */; };
-		D7C8563A20508051001265C7 /* DosageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8563920508051001265C7 /* DosageTableViewCell.swift */; };
+		D7C8563A20508051001265C7 /* DosageHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8563920508051001265C7 /* DosageHeaderTableViewCell.swift */; };
 		D7C8563C205080AD001265C7 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8563B205080AD001265C7 /* ColorTableViewCell.swift */; };
 		D7C8563E2051AD85001265C7 /* DosageSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8563D2051AD85001265C7 /* DosageSettingsViewController.swift */; };
 		D7C856402051AFB0001265C7 /* SetDosageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8563F2051AFB0001265C7 /* SetDosageTableViewCell.swift */; };
-		D7C856422051B5E9001265C7 /* SetUnitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C856412051B5E9001265C7 /* SetUnitTableViewCell.swift */; };
+		D7C856422051B5E9001265C7 /* UnitHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C856412051B5E9001265C7 /* UnitHeaderTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,9 +166,13 @@
 		8DCB5A352052CBCA0058B3E4 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		9101E839205076EE00AB41FF /* ReminderFrequencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderFrequencyViewController.swift; sourceTree = "<group>"; };
 		9101E83B20507CAE00AB41FF /* ReminderHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		911302622052F1F400164E0F /* DosageCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DosageCellDelegate.swift; sourceTree = "<group>"; };
+		911302642052F43C00164E0F /* UnitCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitCellDelegate.swift; sourceTree = "<group>"; };
 		91531FEB2051B0EC0012E488 /* FrequencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyTableViewCell.swift; sourceTree = "<group>"; };
 		91940C992051ECA60035316D /* ReminderCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCellDelegate.swift; sourceTree = "<group>"; };
 		91940C9B2052054B0035316D /* ReminderPickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderPickerTableViewCell.swift; sourceTree = "<group>"; };
+		919F24E62052D277005F1BAD /* UnitPickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitPickerTableViewCell.swift; sourceTree = "<group>"; };
+		919F24E82052D2C8005F1BAD /* DosagePickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DosagePickerTableViewCell.swift; sourceTree = "<group>"; };
 		91B9D5EA20523783007DC9F4 /* FrequencyTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		91ECBF522051A91E009FE51E /* FrequencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyViewController.swift; sourceTree = "<group>"; };
 		AB7C23ED204F12DF00EBA6AB /* MedicineListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineListController.swift; sourceTree = "<group>"; };
@@ -174,11 +182,11 @@
 		D7C85611204F0D3A001265C7 /* CreateMedicineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMedicineViewController.swift; sourceTree = "<group>"; };
 		D7C85614204F2749001265C7 /* PillApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PillApp.xcdatamodel; sourceTree = "<group>"; };
 		D7C8563720507795001265C7 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		D7C8563920508051001265C7 /* DosageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DosageTableViewCell.swift; sourceTree = "<group>"; };
+		D7C8563920508051001265C7 /* DosageHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DosageHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		D7C8563B205080AD001265C7 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
 		D7C8563D2051AD85001265C7 /* DosageSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DosageSettingsViewController.swift; sourceTree = "<group>"; };
 		D7C8563F2051AFB0001265C7 /* SetDosageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDosageTableViewCell.swift; sourceTree = "<group>"; };
-		D7C856412051B5E9001265C7 /* SetUnitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUnitTableViewCell.swift; sourceTree = "<group>"; };
+		D7C856412051B5E9001265C7 /* UnitHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitHeaderTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,13 +236,17 @@
 				84132613204EEE6000AA4B3A /* ViewController.swift */,
 				D7C85611204F0D3A001265C7 /* CreateMedicineViewController.swift */,
 				D7C8560F204F02A7001265C7 /* MedicineTableViewCell.swift */,
+				911302622052F1F400164E0F /* DosageCellDelegate.swift */,
 				D7C8563720507795001265C7 /* UIView.swift */,
 				84132615204EEE6000AA4B3A /* Main.storyboard */,
 				D7C8563F2051AFB0001265C7 /* SetDosageTableViewCell.swift */,
-				D7C856412051B5E9001265C7 /* SetUnitTableViewCell.swift */,
-				D7C8563D2051AD85001265C7 /* DosageSettingsViewController.swift */,
-				D7C8563920508051001265C7 /* DosageTableViewCell.swift */,
 				D7C8563B205080AD001265C7 /* ColorTableViewCell.swift */,
+				911302642052F43C00164E0F /* UnitCellDelegate.swift */,
+				D7C8563D2051AD85001265C7 /* DosageSettingsViewController.swift */,
+				D7C8563920508051001265C7 /* DosageHeaderTableViewCell.swift */,
+				919F24E82052D2C8005F1BAD /* DosagePickerTableViewCell.swift */,
+				D7C856412051B5E9001265C7 /* UnitHeaderTableViewCell.swift */,
+				919F24E62052D277005F1BAD /* UnitPickerTableViewCell.swift */,
 				84132618204EEE6000AA4B3A /* Assets.xcassets */,
 				8413261A204EEE6000AA4B3A /* LaunchScreen.storyboard */,
 				8413261D204EEE6000AA4B3A /* Info.plist */,
@@ -529,15 +541,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7C856422051B5E9001265C7 /* SetUnitTableViewCell.swift in Sources */,
+				D7C856422051B5E9001265C7 /* UnitHeaderTableViewCell.swift in Sources */,
 				D7C85612204F0D3A001265C7 /* CreateMedicineViewController.swift in Sources */,
-				D7C8563A20508051001265C7 /* DosageTableViewCell.swift in Sources */,
+				911302652052F43C00164E0F /* UnitCellDelegate.swift in Sources */,
+				D7C8563A20508051001265C7 /* DosageHeaderTableViewCell.swift in Sources */,
 				91940C9A2051ECA60035316D /* ReminderCellDelegate.swift in Sources */,
 				D7C85615204F2749001265C7 /* PillApp.xcdatamodeld in Sources */,
 				D7C8563820507795001265C7 /* UIView.swift in Sources */,
 				D7C856402051AFB0001265C7 /* SetDosageTableViewCell.swift in Sources */,
 				91B9D5EB20523783007DC9F4 /* FrequencyTableViewCellDelegate.swift in Sources */,
 				D7C8563C205080AD001265C7 /* ColorTableViewCell.swift in Sources */,
+				919F24E72052D277005F1BAD /* UnitPickerTableViewCell.swift in Sources */,
 				D7C8563E2051AD85001265C7 /* DosageSettingsViewController.swift in Sources */,
 				91531FEC2051B0EC0012E488 /* FrequencyTableViewCell.swift in Sources */,
 				84132614204EEE6000AA4B3A /* ViewController.swift in Sources */,
@@ -550,11 +564,13 @@
 				91ECBF532051A91E009FE51E /* FrequencyViewController.swift in Sources */,
 				84E418EF205011CF007DE716 /* WatchManager.swift in Sources */,
 				84132612204EEE6000AA4B3A /* AppDelegate.swift in Sources */,
+				919F24E92052D2C8005F1BAD /* DosagePickerTableViewCell.swift in Sources */,
 				8DCB5A362052CBCA0058B3E4 /* Colors.swift in Sources */,
 				84F738552050941100FDEB1D /* CoreDataManager.swift in Sources */,
 				8DCB5A332052CA510058B3E4 /* Helper.swift in Sources */,
 				D7C85610204F02A7001265C7 /* MedicineTableViewCell.swift in Sources */,
 				846949B32051ADC1000E4709 /* WatchiPhoneCommunicationProtocol.swift in Sources */,
+				911302632052F1F400164E0F /* DosageCellDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

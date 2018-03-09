@@ -11,8 +11,18 @@ import CoreData
 
 class CreateMedicineViewController: UIViewController {
     
-    @IBOutlet weak var medicineNameTxt: UITextField!
+    @IBOutlet weak var nextButton: UIBarButtonItem!
     @IBOutlet weak var tableview: UITableView!
+    var dosage: Dosage!
+    var units: Int!
+    
+    @IBAction func unwindToCreateMedicine(segue: UIStoryboardSegue) {
+        if let _ = self.dosage, let _ = self.units {
+            self.nextButton.isEnabled = true
+        }
+    }
+
+    @IBOutlet weak var medicineNameTxt: UITextField!
     @IBOutlet weak var colorsTableview: UITableView!
     @IBOutlet weak var bottomColorsTableviewConstraint: NSLayoutConstraint!
     
@@ -45,19 +55,21 @@ class CreateMedicineViewController: UIViewController {
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {
         navigationController?.dismiss(animated: true, completion: nil)
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
+    @IBAction func nextAction(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "goToReminderFrequency", sender: nil)
+    }
+
+    // MARK: - Navigation
+ 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDosageSettings" {
             
+        } else if segue.identifier == "goToReminderFrequency" {
+            if let destination = segue.destination as? ReminderFrequencyViewController {
+                destination.dosage = self.dosage
+                destination.units = self.units
+            }
         }
     }
 }
@@ -85,12 +97,12 @@ extension CreateMedicineViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == self.tableview {
             if indexPath.row == 0 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "dosageCell", for: indexPath)
+                let cell = self.tableview.dequeueReusableCell(withIdentifier: "DosageCell", for: indexPath)
                 return cell
             } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath) as! ColorTableViewCell
-                cell.colorLabel.text = colors[indexPath.row].0
-                cell.colorView.backgroundColor = colors[indexPath.row].1
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ColorCell", for: indexPath) as! ColorTableViewCell
+//                cell.colorLabel.text = self.nameColors[indexColorsTableview]
+//                cell.colorView.backgroundColor = self.colors[indexColorsTableview]
                 return cell
             }
         } else {
