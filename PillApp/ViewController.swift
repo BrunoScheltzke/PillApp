@@ -23,7 +23,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noMedicineImage: UIImageView!
-    
+
     var medicines = [Medicine]()
     var daysOfWeek = [DayOfWeek]()
     
@@ -34,15 +34,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         container = appDelegate.persistentContainer
-        
-//        CoreDataManager.shared.createMedicine(name: "Paracetamol", brand: nil, unit: 50, dosage: .pill)
-//
-//
-//        let reminder = CoreDataManager.shared.createReminder(date: Date(timeIntervalSinceNow: 5), dosage: Dosage(rawValue: medicines.first!.dosage!)!, frequency: .everyThursday, quantity: 1, medicine: medicines.first!)
-//
-//        NotificationManager.shared.setUpReminder(reminder: reminder)
-  
-        medicines = try! container.viewContext.fetch(request) as! [Medicine]
         
         initTableView()
         verifyTableViewContent()
@@ -80,10 +71,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         tableView.delegate = self
     }
-//
-//    func numberOfSections(in tableView: UITableView) -> Int {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
 //        return daysOfWeek.count
-//    }
+                return 1
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return medicines.count
@@ -101,12 +93,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
-            let medicine = medicines.remove(at: indexPath.row)
-            container.viewContext.delete(medicine)
-            try? container.viewContext.save()
-            tableView.reloadData()
-        }
-    }
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == UITableViewCellEditingStyle.delete {
+//            let medicine = medicines.remove(at: indexPath.row)
+//            container.viewContext.delete(medicine)
+//            try? container.viewContext.save()
+//            tableView.reloadData()
+//        }
+//    }
 }

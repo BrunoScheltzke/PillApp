@@ -16,7 +16,6 @@
         <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="dosage" attributeType="String" syncable="YES"/>
         <attribute name="frequency" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="quantity" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="medicine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medicine" inverseName="reminder" inverseEntity="Medicine" syncable="YES"/>
         <relationship name="register" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Register" inverseName="reminder" inverseEntity="Register" syncable="YES"/>
@@ -24,6 +23,6 @@
     <elements>
         <element name="Medicine" positionX="-63" positionY="-18" width="128" height="120"/>
         <element name="Register" positionX="-45" positionY="63" width="128" height="30"/>
-        <element name="Reminder" positionX="-63" positionY="18" width="128" height="30"/>
+        <element name="Reminder" positionX="-63" positionY="18" width="128" height="135"/>
     </elements>
 </model>

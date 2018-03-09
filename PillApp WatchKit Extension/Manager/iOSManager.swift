@@ -13,10 +13,31 @@ class iOSManager: NSObject, WCSessionDelegate {
     
     static let shared = iOSManager()
     private let session: WCSession? = WCSession.isSupported() ? WCSession.default : nil
-
+    
+    func getDailyReminders(_ completion: @escaping ([Reminder]) -> Void, _ errorHandler: @escaping (Error) -> Void) {
+        session?.sendMessage([Keys.communicationCommand: CommunicationProtocol.dailyReminders], replyHandler: { (response) in
+            
+            guard let command = response[Keys.communicationCommand] as? String, command == CommunicationProtocol.dailyReminders else {return}
+            
+            let remindersDict = response[Keys.reminders] as! [[String: Any]]
+            var reminders: [Reminder] = []
+            
+            remindersDict.forEach({ (dict) in
+                reminders.append(Reminder(dict))
+            })
+            
+            completion(reminders)
+            
+        }, errorHandler: errorHandler)
+    }
+    
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         print("Received communication from iPhone")
         print(applicationContext)
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        
     }
     
     func updateApplicationContext(_ context: [String: Any]) throws {
@@ -30,8 +51,8 @@ class iOSManager: NSObject, WCSessionDelegate {
     }
     
     func sendMessage(_ message: [String: Any], _ replyHandler: (([String: Any]) -> Void)?, _ errorHandler: ((Error) -> Void)?) {
-        print("Sent message to iPhone")
         session?.sendMessage(message, replyHandler: replyHandler, errorHandler: errorHandler)
+        print("Sent message to iPhone")
     }
     
     func transferUserInfo(_ userInfo: [String: Any]) {

@@ -64,7 +64,7 @@ class NotificationManager: NSObject {
         content.title = "Medication Reminder"
         content.body = "Remember to take \(reminder.quantity, reminder.dosage) of \(reminder.medicine!.name!)"
         content.categoryIdentifier = NotificationCategoryIdentifier.medicineTaking
-        content.userInfo = ["reminderId": reminder.objectID.uriRepresentation().absoluteString]
+        content.userInfo = [Keys.reminderId: reminder.objectID.uriRepresentation().absoluteString]
         
         var date = DateComponents()
         date.hour = Calendar.current.component(.hour, from: reminder.date!)
@@ -116,9 +116,9 @@ extension NotificationManager: UNUserNotificationCenterDelegate {
             }
             
             let reminderDict = response.notification.request.content.userInfo
-            let idUrl = URL(string:  reminderDict["reminderId"] as! String)
+            let idUrl = URL(string: reminderDict[Keys.reminderId] as! String)
             let reminder = CoreDataManager.shared.fetchReminder(by: idUrl!)
-            let date = reminderDict["date"] as? Date ?? Date()
+            let date = reminderDict[Keys.date] as? Date ?? Date()
             
             CoreDataManager.shared.createRegister(date: date, reminder: reminder!, taken: taken)
 

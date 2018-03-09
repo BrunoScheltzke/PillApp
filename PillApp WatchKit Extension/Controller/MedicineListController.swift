@@ -8,36 +8,53 @@
 
 import WatchKit
 import Foundation
+import SpriteKit
+
 
 class MedicineListController: WKInterfaceController {
+    @IBOutlet var notificationBtn: WKInterfaceButton!
     
-    let medicines: [Medicine] = {
-        var medicines: [Medicine] = []
-        return medicines
-    }()
+    var medicines: [Medicine] = []
+    
+    var reminders: [Reminder] = []
     
     @IBOutlet var medicineTable: WKInterfaceTable!
+    @IBOutlet var spriteScene: WKInterfaceSKScene!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        medicineTable.setNumberOfRows(medicines.count, withRowType: "MedicineRow")
-        
-        for index in 0..<medicineTable.numberOfRows {
-            guard let controller = medicineTable.rowController(at: index) as? MedicineRowController else { continue }
+        iOSManager.shared.getDailyReminders({ (reminders) in
             
-            controller.medicine = medicines[index]
+            self.reminders = reminders
+            
+            self.medicineTable.setNumberOfRows(self.reminders.count, withRowType: "MedicineRow")
+            
+            for index in 0..<self.medicineTable.numberOfRows {
+                guard let controller = self.medicineTable.rowController(at: index) as? MedicineRowController else { continue }
+                
+                controller.reminder = reminders[index]
+            }
+            
+        }) { (error) in
+            print("Error fetching daily reminders: \(error)")
         }
+        
+//        medicineTable.setNumberOfRows(medicines.count, withRowType: "MedicineRow")
+//
+//        for index in 0..<medicineTable.numberOfRows {
+//            guard let controller = medicineTable.rowController(at: index) as? MedicineRowController else { continue }
+//
+//            controller.medicine = medicines[index]
+//        }
     }
-    
-    @IBAction func notificationButtonTapped() {
-        NotificationManager.shared.createLocalTestNotification()
-    }
-    
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+        let scene = RingScene(size: CGSize(width: 45, height: 45))
+        spriteScene.presentScene(scene)
     }
     
     override func didDeactivate() {
@@ -46,7 +63,7 @@ class MedicineListController: WKInterfaceController {
     }
     
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
-        print("tomei")
+        
     }
     
 }

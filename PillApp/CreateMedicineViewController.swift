@@ -12,33 +12,40 @@ import CoreData
 class CreateMedicineViewController: UIViewController {
     
     @IBOutlet weak var medicineNameTxt: UITextField!
-    @IBOutlet weak var quantityTxt: UITextField!
-    @IBOutlet weak var brandTxt: UITextField!
-    @IBOutlet weak var unitTxt: UITextField!
+    @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var colorsTableview: UITableView!
+    @IBOutlet weak var bottomColorsTableviewConstraint: NSLayoutConstraint!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var container: NSPersistentContainer!
     
+    let colors = [UIColor.gray , UIColor.yellow, UIColor.blue, UIColor.orange, UIColor.purple]
+    let nameColors = ["Gray", "Yellow", "Blue", "Orange", "Purple"]
+    var isOpen = false
+    var indexColorsTableview = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         container = appDelegate.persistentContainer
+        initTableView()
+        initColorsTableview()
     }
     
-    func saveMedicine(name: String, brand: String, unit: String, quantity: String) {
+    func saveMedicine(name: String) {
         let medicine = NSEntityDescription.insertNewObject(forEntityName: "Medicine",
-                                                         into: container.viewContext) as! Medicine
+                                                           into: container.viewContext) as! Medicine
         medicine.name = name
-        medicine.unit = Int32(unit)!
-        medicine.brand = brand
-        
         try? container.viewContext.save()
     }
     
     @IBAction func save(_ sender: UIButton) {
-        saveMedicine(name: medicineNameTxt.text!, brand: quantityTxt.text!, unit: unitTxt.text!, quantity: quantityTxt.text!)
+        saveMedicine(name: medicineNameTxt.text!)
         performSegue(withIdentifier: "unwindToList", sender: nil)
     }
-    
+        
+    @IBAction func cancelAction(_ sender: UIBarButtonItem) {
+        navigationController?.dismiss(animated: true, completion: nil)
+    }
     /*
      // MARK: - Navigation
      
@@ -49,4 +56,81 @@ class CreateMedicineViewController: UIViewController {
      }
      */
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDosageSettings" {
+            
+        }
+    }
+}
+
+extension CreateMedicineViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func initTableView() {
+        tableview.delegate = self
+        tableview.dataSource = self
+    }
+    
+    func initColorsTableview() {
+        colorsTableview.delegate = self
+        colorsTableview.dataSource = self
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == self.tableview {
+            return 2
+        } else {
+            return colors.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableView == self.tableview {
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "dosageCell", for: indexPath)
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath) as! ColorTableViewCell
+                cell.colorLabel.text = self.nameColors[indexColorsTableview]
+                cell.colorView.backgroundColor = self.colors[indexColorsTableview]
+                return cell
+            }
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath) as! ColorTableViewCell
+            cell.colorLabel.text = self.nameColors[indexPath.row]
+            cell.colorView.backgroundColor = self.colors[indexPath.row]
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == self.tableview {
+            if indexPath.row == 0 {
+                performSegue(withIdentifier: "showDosageSettings", sender: nil)
+            } else if indexPath.row == 1 && isOpen == false {
+                isOpen = true
+                self.view.layoutIfNeeded()
+                UIView.animate(withDuration: 0.3, delay: 0.11, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+                    self.bottomColorsTableviewConstraint.constant = 0
+                    self.view.layoutIfNeeded()
+                })
+            } else if isOpen {
+                isOpen = false
+                self.view.layoutIfNeeded()
+                UIView.animate(withDuration: 0.3, delay: 0.11, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+                    self.bottomColorsTableviewConstraint.constant = -352
+                    self.view.layoutIfNeeded()
+                })
+                
+            }
+        } else {
+            self.indexColorsTableview = indexPath.row
+            self.tableview.reloadData()
+            self.view.layoutIfNeeded()
+            UIView.animate(withDuration: 0.3, delay: 0.11, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+                self.bottomColorsTableviewConstraint.constant = -352
+                self.view.layoutIfNeeded()
+            })
+            isOpen = false
+        }
+    }
 }
