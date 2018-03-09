@@ -14,7 +14,7 @@ struct Register {
     var taken: Bool
     
     init(_ dict: [String: Any]) {
-        self.reminder = dict[Keys.Register.reminder] as! Reminder
+        self.reminder = Reminder(dict[Keys.Register.reminder] as! [String: Any])
         self.date = dict[Keys.Register.date] as! Date
         self.taken = dict[Keys.Register.taken] as! Bool
     }

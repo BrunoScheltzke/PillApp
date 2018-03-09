@@ -28,7 +28,7 @@ class MedicineListController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
+
         iOSManager.shared.getDailyReminders({ (result) in
         
             self.reminders = result.0
