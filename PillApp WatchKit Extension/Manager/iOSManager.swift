@@ -31,6 +31,10 @@ class iOSManager: NSObject, WCSessionDelegate {
         }, errorHandler: errorHandler)
     }
     
+    func set(reminderId: String, as checked: Bool, at date: Date) {
+        transferUserInfo([Keys.communicationCommand: CommunicationProtocol.checkedReminder, Keys.medicineTaken: checked, Keys.reminderId: reminderId, Keys.date: date])
+    }
+    
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         print("Received communication from iPhone")
         print(applicationContext)
@@ -40,7 +44,7 @@ class iOSManager: NSObject, WCSessionDelegate {
         
     }
     
-    func updateApplicationContext(_ context: [String: Any]) throws {
+    private func updateApplicationContext(_ context: [String: Any]) throws {
         do {
             print("Sent application context to iPhone")
             try session?.updateApplicationContext(context)
@@ -50,12 +54,12 @@ class iOSManager: NSObject, WCSessionDelegate {
         }
     }
     
-    func sendMessage(_ message: [String: Any], _ replyHandler: (([String: Any]) -> Void)?, _ errorHandler: ((Error) -> Void)?) {
+    private func sendMessage(_ message: [String: Any], _ replyHandler: (([String: Any]) -> Void)?, _ errorHandler: ((Error) -> Void)?) {
         session?.sendMessage(message, replyHandler: replyHandler, errorHandler: errorHandler)
         print("Sent message to iPhone")
     }
     
-    func transferUserInfo(_ userInfo: [String: Any]) {
+    private func transferUserInfo(_ userInfo: [String: Any]) {
         print("Sent user info to iPhone")
         session?.transferUserInfo(userInfo)
     }

@@ -50,9 +50,9 @@ class NotificationManager: NSObject {
     }
     
     func registerCategories() {
-        let yesAction = UNNotificationAction(identifier: NotificationActionIdentifier.yes, title: "Yes", options: .foreground)
+        let yesAction = UNNotificationAction(identifier: NotificationActionIdentifier.yes, title: NotificationActionIdentifier.yes, options: .foreground)
 //        let snoozeAction = UNNotificationAction(identifier: NotificationActionIdentifier.snooze, title: "Snooze", options: .foreground)
-        let noAction = UNNotificationAction(identifier: NotificationActionIdentifier.no, title: "No", options: .foreground)
+        let noAction = UNNotificationAction(identifier: NotificationActionIdentifier.no, title: NotificationActionIdentifier.no, options: .foreground)
         
         let medicineTakingCategory = UNNotificationCategory(identifier: NotificationCategoryIdentifier.medicineTaking, actions: [yesAction, noAction], intentIdentifiers: [], options: .customDismissAction)
         
@@ -97,8 +97,7 @@ extension NotificationManager: UNUserNotificationCenterDelegate {
             let reminderDict = response.notification.request.content.userInfo
             let reminderId = reminderDict[Keys.reminderId] as! String
             
-            iOSManager.shared.transferUserInfo([Keys.communicationCommand: CommunicationProtocol.notification, Keys.medicineTaken: medicineTaken, Keys.reminderId: reminderId, Keys.date: Date()])
-            
+            iOSManager.shared.set(reminderId: reminderId, as: medicineTaken, at: Date())
             completionHandler()
         }
     }

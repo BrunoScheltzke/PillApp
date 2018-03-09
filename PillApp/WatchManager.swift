@@ -25,34 +25,24 @@ class WatchManager: NSObject, WCSessionDelegate {
         guard let command = userInfo[Keys.communicationCommand] as? String else {return}
         
         switch command {
-        case CommunicationProtocol.notification:
-            print("Notification Action Received from Watch")
+        case CommunicationProtocol.checkedReminder:
+            print("User checked a reminder from Watch")
             
             let taken = userInfo[Keys.medicineTaken] as! Bool
+            let idStr = userInfo[Keys.reminderId] as! String
             
-            let idUrl = URL(string: userInfo[Keys.reminderId] as! String)
-            let reminder = CoreDataManager.shared.fetchReminder(by: idUrl!)
+            guard let idUrl = URL(string: idStr) else {
+                print("Reminder Id: \(idStr) was not able to be converted into CoreData Object Id")
+                return
+            }
+            
+            guard let reminder = CoreDataManager.shared.fetchReminder(by: idUrl) else {
+                print("No reminder found from Id: \(idStr)")
+                return
+            }
             let date = userInfo[Keys.date] as? Date ?? Date()
             
-            CoreDataManager.shared.createRegister(date: date, reminder: reminder!, taken: taken)
-            
-        case CommunicationProtocol.dailyReminders:
-            print("Daily Reminders Requested")
-            
-            let reminders = CoreDataManager.shared.fetchTodaysReminders() ?? []
-            
-            var remindersDict: [[String: Any]] = [[:]]
-            
-            reminders.forEach({ (reminder) in remindersDict.append(CoreDataManager.shared.toDictionary(reminder))
-            })
-
-            //replyHandler([Keys.communicationCommand: CommunicationProtocol.dailyReminders, Keys.reminders: remindersDict])
-//            session.sendMessage([Keys.communicationCommand: CommunicationProtocol.dailyReminders, Keys.reminders: remindersDict], replyHandler: nil, errorHandler: { (error) in
-//                print("Failed to send Today Reminders to Watch: \(error)")
-//            })
-            
-        case CommunicationProtocol.medicineLeft:
-            print("Medicine Left Requested")
+            CoreDataManager.shared.createRegister(date: date, reminder: reminder, taken: taken)
             
         default:
             print("Error\(#function)")
@@ -77,10 +67,6 @@ class WatchManager: NSObject, WCSessionDelegate {
             })
             
             replyHandler([Keys.communicationCommand: CommunicationProtocol.dailyReminders, Keys.reminders: remindersDict])
-//
-//            session.sendMessage([Keys.communicationCommand: CommunicationProtocol.dailyReminders, Keys.reminders: remindersDict], replyHandler: nil, errorHandler: { (error) in
-//                print("Failed to send Today Reminders to Watch: \(error)")
-//            })
             
         default:
             print("Error\(#function)")

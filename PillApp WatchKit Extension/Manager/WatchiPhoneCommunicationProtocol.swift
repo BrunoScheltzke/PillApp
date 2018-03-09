@@ -12,6 +12,7 @@ struct CommunicationProtocol {
     static let notification = "notification"
     static let dailyReminders = "dailyReminders"
     static let medicineLeft = "medicineLeft"
+    static let checkedReminder = "checkedReminder"
 }
 
 struct Keys {
@@ -28,6 +29,7 @@ struct Keys {
         static let frequency = "frequency"
         static let quantity = "quantity"
         static let medicine = "medicine"
+        static let tableName = "Reminder"
     }
     
     struct Register {
@@ -35,6 +37,7 @@ struct Keys {
         static let date = "date"
         static let taken = "taken"
         static let reminder = "reminder"
+        static let tableName = "Register"
     }
     
     struct Medicine {
@@ -43,5 +46,6 @@ struct Keys {
         static let dosage = "dosage"
         static let name = "name"
         static let unit = "unit"
+        static let tableName = "Medicine"
     }
 }
