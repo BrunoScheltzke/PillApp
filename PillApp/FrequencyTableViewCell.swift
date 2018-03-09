@@ -10,11 +10,13 @@ import UIKit
 
 class FrequencyTableViewCell: UITableViewCell {
     
-    var frequence: Frequency! {
+    var dayOfWeek: Frequency! {
         didSet {
-            self.dayUILabel.text = "\(self.frequence!)"
+            self.dayUILabel.text = "\(self.dayOfWeek!)"
         }
     }
+    
+    var delegate: FrequencyTableViewCellDelegate?
 
     @IBOutlet weak var tapView: UIView!
 
@@ -32,20 +34,12 @@ class FrequencyTableViewCell: UITableViewCell {
         super.awakeFromNib()
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(actionTap))
         self.tapView.addGestureRecognizer(tapGestureRecognizer)
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
     @objc func actionTap(recognizer: UITapGestureRecognizer) {
-        if self.checkUIImageView.isHidden {
-            self.checkUIImageView.isHidden = false
-        } else {
-            self.checkUIImageView.isHidden = true
+        self.check = !self.check
+        if let delegate = self.delegate {
+            delegate.update(day: self.dayOfWeek, check: self.check)
         }
     }
 

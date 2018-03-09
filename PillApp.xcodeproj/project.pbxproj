@@ -52,6 +52,7 @@
 		91531FEC2051B0EC0012E488 /* FrequencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91531FEB2051B0EC0012E488 /* FrequencyTableViewCell.swift */; };
 		91940C9A2051ECA60035316D /* ReminderCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91940C992051ECA60035316D /* ReminderCellDelegate.swift */; };
 		91940C9C2052054B0035316D /* ReminderPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91940C9B2052054B0035316D /* ReminderPickerTableViewCell.swift */; };
+		91B9D5EB20523783007DC9F4 /* FrequencyTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9D5EA20523783007DC9F4 /* FrequencyTableViewCellDelegate.swift */; };
 		91ECBF532051A91E009FE51E /* FrequencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ECBF522051A91E009FE51E /* FrequencyViewController.swift */; };
 		AB7C23F1204F12E400EBA6AB /* MedicineRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7C23EE204F12DF00EBA6AB /* MedicineRowController.swift */; };
 		AB7C23F2204F12E400EBA6AB /* MedicineListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7C23ED204F12DF00EBA6AB /* MedicineListController.swift */; };
@@ -157,6 +158,7 @@
 		91531FEB2051B0EC0012E488 /* FrequencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyTableViewCell.swift; sourceTree = "<group>"; };
 		91940C992051ECA60035316D /* ReminderCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCellDelegate.swift; sourceTree = "<group>"; };
 		91940C9B2052054B0035316D /* ReminderPickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderPickerTableViewCell.swift; sourceTree = "<group>"; };
+		91B9D5EA20523783007DC9F4 /* FrequencyTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		91ECBF522051A91E009FE51E /* FrequencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyViewController.swift; sourceTree = "<group>"; };
 		AB7C23ED204F12DF00EBA6AB /* MedicineListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineListController.swift; sourceTree = "<group>"; };
 		AB7C23EE204F12DF00EBA6AB /* MedicineRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineRowController.swift; sourceTree = "<group>"; };
@@ -287,14 +289,13 @@
 		8477A4EE20505A1B008445F7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				84132613204EEE6000AA4B3A /* ViewController.swift */,
 				9101E839205076EE00AB41FF /* ReminderFrequencyViewController.swift */,
 				9101E83B20507CAE00AB41FF /* ReminderHeaderTableViewCell.swift */,
 				91ECBF522051A91E009FE51E /* FrequencyViewController.swift */,
-				D7C8560F204F02A7001265C7 /* MedicineTableViewCell.swift */,
 				91531FEB2051B0EC0012E488 /* FrequencyTableViewCell.swift */,
 				91940C992051ECA60035316D /* ReminderCellDelegate.swift */,
 				91940C9B2052054B0035316D /* ReminderPickerTableViewCell.swift */,
+				91B9D5EA20523783007DC9F4 /* FrequencyTableViewCellDelegate.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -347,7 +348,6 @@
 		84F73846205070F300FDEB1D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D7C85611204F0D3A001265C7 /* CreateMedicineViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -518,6 +518,7 @@
 				D7C85615204F2749001265C7 /* PillApp.xcdatamodeld in Sources */,
 				D7C8563820507795001265C7 /* UIView.swift in Sources */,
 				D7C856402051AFB0001265C7 /* SetDosageTableViewCell.swift in Sources */,
+				91B9D5EB20523783007DC9F4 /* FrequencyTableViewCellDelegate.swift in Sources */,
 				D7C8563C205080AD001265C7 /* ColorTableViewCell.swift in Sources */,
 				D7C8563E2051AD85001265C7 /* DosageSettingsViewController.swift in Sources */,
 				91531FEC2051B0EC0012E488 /* FrequencyTableViewCell.swift in Sources */,
