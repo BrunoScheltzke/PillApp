@@ -231,22 +231,11 @@
 			isa = PBXGroup;
 			children = (
 				8DCB5A352052CBCA0058B3E4 /* Colors.swift */,
-				84F73846205070F300FDEB1D /* Controller */,
-				84132611204EEE6000AA4B3A /* AppDelegate.swift */,
-				84132613204EEE6000AA4B3A /* ViewController.swift */,
-				D7C85611204F0D3A001265C7 /* CreateMedicineViewController.swift */,
-				D7C8560F204F02A7001265C7 /* MedicineTableViewCell.swift */,
-				911302622052F1F400164E0F /* DosageCellDelegate.swift */,
 				D7C8563720507795001265C7 /* UIView.swift */,
+				84132611204EEE6000AA4B3A /* AppDelegate.swift */,
+				84F73846205070F300FDEB1D /* Controller */,
+				8D067712207C410A00A9C5F5 /* Cell */,
 				84132615204EEE6000AA4B3A /* Main.storyboard */,
-				D7C8563F2051AFB0001265C7 /* SetDosageTableViewCell.swift */,
-				D7C8563B205080AD001265C7 /* ColorTableViewCell.swift */,
-				911302642052F43C00164E0F /* UnitCellDelegate.swift */,
-				D7C8563D2051AD85001265C7 /* DosageSettingsViewController.swift */,
-				D7C8563920508051001265C7 /* DosageHeaderTableViewCell.swift */,
-				919F24E82052D2C8005F1BAD /* DosagePickerTableViewCell.swift */,
-				D7C856412051B5E9001265C7 /* UnitHeaderTableViewCell.swift */,
-				919F24E62052D277005F1BAD /* UnitPickerTableViewCell.swift */,
 				84132618204EEE6000AA4B3A /* Assets.xcassets */,
 				8413261A204EEE6000AA4B3A /* LaunchScreen.storyboard */,
 				8413261D204EEE6000AA4B3A /* Info.plist */,
@@ -354,6 +343,9 @@
 		84F73846205070F300FDEB1D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D7C85611204F0D3A001265C7 /* CreateMedicineViewController.swift */,
+				D7C8563D2051AD85001265C7 /* DosageSettingsViewController.swift */,
+				84132613204EEE6000AA4B3A /* ViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -368,6 +360,22 @@
 				8495F8CA2052CF19009C5C84 /* Register.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8D067712207C410A00A9C5F5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D7C8560F204F02A7001265C7 /* MedicineTableViewCell.swift */,
+				911302622052F1F400164E0F /* DosageCellDelegate.swift */,
+				D7C8563F2051AFB0001265C7 /* SetDosageTableViewCell.swift */,
+				D7C8563B205080AD001265C7 /* ColorTableViewCell.swift */,
+				911302642052F43C00164E0F /* UnitCellDelegate.swift */,
+				D7C8563920508051001265C7 /* DosageHeaderTableViewCell.swift */,
+				919F24E82052D2C8005F1BAD /* DosagePickerTableViewCell.swift */,
+				D7C856412051B5E9001265C7 /* UnitHeaderTableViewCell.swift */,
+				919F24E62052D277005F1BAD /* UnitPickerTableViewCell.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		8DCB5A312052BF750058B3E4 /* Ring Node */ = {
@@ -456,7 +464,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Bruno Scheltzke";
 				TargetAttributes = {
 					8413260D204EEE6000AA4B3A = {
@@ -659,6 +667,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -666,6 +675,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -716,6 +726,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -723,6 +734,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
