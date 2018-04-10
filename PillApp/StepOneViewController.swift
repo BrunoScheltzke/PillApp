@@ -6,6 +6,7 @@
 //  Copyright © 2018 Bruno Scheltzke. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class StepOneViewController: UIViewController {
@@ -15,6 +16,9 @@ class StepOneViewController: UIViewController {
     @IBOutlet weak var heightPillImage: NSLayoutConstraint!
     @IBOutlet weak var widthPillImage: NSLayoutConstraint!
     @IBOutlet weak var bottomConstraintNextButton: NSLayoutConstraint!
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +27,8 @@ class StepOneViewController: UIViewController {
         
         tranparentNavigationBar()
         UIApplication.shared.statusBarStyle = .lightContent
+        
+        nameTextField.attributedPlaceholder = NSAttributedString(string: "type here", attributes: [.foregroundColor : UIColor.white])
     }
     
     override func viewWillAppear(_ animated: Bool) {
