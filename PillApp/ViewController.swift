@@ -40,6 +40,12 @@ class ViewController: UIViewController {
         verifyTableViewContent()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        UIApplication.shared.statusBarStyle = .default
+    }
+    
     func verifyTableViewContent() {
         if medicines.count == 0 {
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(callPerform(tapGestureRecognizer:)))

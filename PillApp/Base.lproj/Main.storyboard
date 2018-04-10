@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gv4-dg-KHv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gv4-dg-KHv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -155,7 +155,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Medicine name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kjn-B7-Sb2">
-                                <rect key="frame" x="21" y="120" width="333" height="46"/>
+                                <rect key="frame" x="21" y="76" width="333" height="46"/>
                                 <color key="backgroundColor" red="0.89402025938034058" green="0.89417368173599243" blue="0.89401060342788696" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="Sky-d3-dmt"/>
@@ -165,13 +165,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whats the name of the medicine?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ywd-So-vgh">
-                                <rect key="frame" x="21" y="86" width="256" height="21"/>
+                                <rect key="frame" x="21" y="42" width="256" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BH3-pf-FP1">
-                                <rect key="frame" x="0.0" y="212" width="375" height="103"/>
+                                <rect key="frame" x="0.0" y="168" width="375" height="103"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="103" id="pCB-Aj-Tys"/>
@@ -266,7 +266,7 @@
                                 </prototypes>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Bz-Ve-j9v">
-                                <rect key="frame" x="0.0" y="315" width="375" height="0.0"/>
+                                <rect key="frame" x="0.0" y="271" width="375" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -363,7 +363,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bn2-4S-gtZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="5Uq-oJ-ieX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2464.8000000000002" y="147.97601199400302"/>
+            <point key="canvasLocation" x="2454" y="1722"/>
         </scene>
         <!--Dosage-->
         <scene sceneID="Zzk-7e-Y80">
@@ -567,7 +567,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NgH-Ou-fPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="xWK-VS-n8A" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3501.5999999999999" y="887.40629685157433"/>
+            <point key="canvasLocation" x="3490" y="2462"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fbx-lL-BWc">
@@ -595,15 +595,103 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BBr-1U-rEj">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="nXj-tR-gsX" kind="relationship" relationship="rootViewController" id="dxV-Pq-P1g"/>
+                        <segue destination="VbB-yZ-Y1E" kind="relationship" relationship="rootViewController" id="Epk-jj-nUy"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lKV-tS-gas" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1585" y="148"/>
+        </scene>
+        <!--STEP 1-->
+        <scene sceneID="0k3-r2-jgg">
+            <objects>
+                <viewController id="VbB-yZ-Y1E" customClass="StepOneViewController" customModule="PillApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EFi-ZM-ljx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pills" translatesAutoresizingMaskIntoConstraints="NO" id="VHT-nw-G3M">
+                                <rect key="frame" x="119.5" y="108" width="135" height="145"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="145" id="M58-Lh-XJe"/>
+                                    <constraint firstAttribute="width" constant="135" id="dRH-7J-zWM"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's the name of the medicine?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2P-c4-NqK">
+                                <rect key="frame" x="30" y="303" width="315" height="86"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lNq-7k-qVD">
+                                <rect key="frame" x="59" y="460" width="257" height="27"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBx-fW-8Hb">
+                                <rect key="frame" x="59" y="497" width="256" height="2"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="pdW-c2-zUl"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bkl-SE-Eyg">
+                                <rect key="frame" x="38" y="590" width="299" height="41"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="0.11372549019607843" green="0.47843137254901957" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="x2P-c4-NqK" firstAttribute="leading" secondItem="WIH-zH-EN1" secondAttribute="leading" constant="30" id="4Ln-pw-uVM"/>
+                            <constraint firstItem="x2P-c4-NqK" firstAttribute="centerX" secondItem="EFi-ZM-ljx" secondAttribute="centerX" id="8Ey-Yc-KB5"/>
+                            <constraint firstItem="Bkl-SE-Eyg" firstAttribute="leading" secondItem="WIH-zH-EN1" secondAttribute="leading" constant="38" id="BKx-K1-Z89"/>
+                            <constraint firstItem="lNq-7k-qVD" firstAttribute="leading" secondItem="WIH-zH-EN1" secondAttribute="leading" constant="59" id="EBn-4F-x99"/>
+                            <constraint firstItem="x2P-c4-NqK" firstAttribute="top" secondItem="VHT-nw-G3M" secondAttribute="bottom" constant="50" id="GKf-iA-Sl9"/>
+                            <constraint firstItem="hBx-fW-8Hb" firstAttribute="leading" secondItem="EFi-ZM-ljx" secondAttribute="leading" constant="59" id="GfA-zC-n1f"/>
+                            <constraint firstItem="VHT-nw-G3M" firstAttribute="top" secondItem="WIH-zH-EN1" secondAttribute="top" constant="44" id="NkZ-ar-fbC"/>
+                            <constraint firstItem="lNq-7k-qVD" firstAttribute="centerX" secondItem="EFi-ZM-ljx" secondAttribute="centerX" id="RxB-sW-UZj"/>
+                            <constraint firstItem="hBx-fW-8Hb" firstAttribute="centerX" secondItem="EFi-ZM-ljx" secondAttribute="centerX" id="hHi-lq-s3E"/>
+                            <constraint firstItem="WIH-zH-EN1" firstAttribute="bottom" secondItem="Bkl-SE-Eyg" secondAttribute="bottom" constant="36" id="m5V-CP-DPp"/>
+                            <constraint firstItem="lNq-7k-qVD" firstAttribute="top" secondItem="x2P-c4-NqK" secondAttribute="bottom" constant="71" id="mPg-Cg-Euu"/>
+                            <constraint firstItem="hBx-fW-8Hb" firstAttribute="top" secondItem="lNq-7k-qVD" secondAttribute="bottom" constant="10" id="s0J-MB-kNF"/>
+                            <constraint firstItem="Bkl-SE-Eyg" firstAttribute="centerX" secondItem="EFi-ZM-ljx" secondAttribute="centerX" id="tWl-1K-0EK"/>
+                            <constraint firstItem="VHT-nw-G3M" firstAttribute="centerX" secondItem="EFi-ZM-ljx" secondAttribute="centerX" id="zfY-L4-rgN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WIH-zH-EN1"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="STEP 1" id="auh-z1-QGc">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9lc-iI-Wmv">
+                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="VbB-yZ-Y1E" id="HZe-Pa-3BB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yvP-eo-sEO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2533.5999999999999" y="137.18140929535232"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mLL-ba-XjU">
@@ -621,7 +709,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ym8-IH-JAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2465" y="889"/>
+            <point key="canvasLocation" x="2454" y="2463"/>
         </scene>
         <!--Add new Medicine-->
         <scene sceneID="orH-Tj-746">
@@ -632,7 +720,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IcY-rb-hdU">
-                                <rect key="frame" x="0.0" y="97" width="375" height="570"/>
+                                <rect key="frame" x="0.0" y="53" width="375" height="614"/>
                                 <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ReminderHeaderTableViewCell" id="60O-pY-zNu" customClass="ReminderHeaderTableViewCell" customModule="PillApp" customModuleProvider="target">
@@ -814,7 +902,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddG-2e-XYK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3502" y="148"/>
+            <point key="canvasLocation" x="3490" y="1722"/>
         </scene>
         <!--Add new medicine-->
         <scene sceneID="mI7-dp-Ifx">
@@ -825,7 +913,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OXI-UD-lKE">
-                                <rect key="frame" x="0.0" y="97" width="375" height="570"/>
+                                <rect key="frame" x="0.0" y="53" width="375" height="614"/>
                                 <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="48" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -908,13 +996,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUu-fq-PxG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="JAI-0j-Dyo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4439" y="148"/>
+            <point key="canvasLocation" x="4426" y="1722"/>
         </scene>
     </scenes>
     <resources>
         <image name="check" width="37" height="27"/>
         <image name="dosage" width="30" height="30"/>
         <image name="frequence" width="29" height="28"/>
+        <image name="pills" width="120" height="129"/>
         <image name="reminder" width="30" height="29"/>
         <image name="unit" width="23" height="29"/>
     </resources>
