@@ -22,4 +22,12 @@ struct Medicine {
         self.dosage = Dosage(rawValue: dictionary[Keys.Medicine.dosage] as! String)!
         self.brand = dictionary[Keys.Medicine.brand] as? String ?? nil
     }
+    
+    init(id: String, name: String, unit: Int, dosage: Dosage, brand: String?) {
+        self.id = id
+        self.name = name
+        self.unit = unit
+        self.dosage = dosage
+        self.brand = brand
+    }
 }

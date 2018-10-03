@@ -18,10 +18,20 @@
 		84132637204EEE6000AA4B3A /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84132636204EEE6000AA4B3A /* ExtensionDelegate.swift */; };
 		84132639204EEE6000AA4B3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84132638204EEE6000AA4B3A /* Assets.xcassets */; };
 		84395E27205055EB003FEBBE /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84395E26205055EB003FEBBE /* NotificationManager.swift */; };
+		845A52C32165733100D5AA95 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A52C22165733100D5AA95 /* CoreDataService.swift */; };
 		846949B22051ACA8000E4709 /* WatchiPhoneCommunicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846949B12051ACA8000E4709 /* WatchiPhoneCommunicationProtocol.swift */; };
 		846949B32051ADC1000E4709 /* WatchiPhoneCommunicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846949B12051ACA8000E4709 /* WatchiPhoneCommunicationProtocol.swift */; };
 		8477A4EA20505750008445F7 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477A4E92050574F008445F7 /* NotificationManager.swift */; };
 		8495F8CB2052CF19009C5C84 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495F8CA2052CF19009C5C84 /* Register.swift */; };
+		84CF99962164F6B5003CE285 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF99952164F6B5003CE285 /* AppCoordinator.swift */; };
+		84CF99972164F732003CE285 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCB5A322052CA510058B3E4 /* Helper.swift */; };
+		84CF999A2164F981003CE285 /* RemindersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF99982164F981003CE285 /* RemindersViewController.swift */; };
+		84CF999B2164F981003CE285 /* RemindersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CF99992164F981003CE285 /* RemindersViewController.xib */; };
+		84CF999E2164FABB003CE285 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF999D2164FABB003CE285 /* Reusable.swift */; };
+		84CF99A02164FC2E003CE285 /* RemindersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF999F2164FC2E003CE285 /* RemindersViewModel.swift */; };
+		84CF99A22164FC67003CE285 /* ReminderCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF99A12164FC67003CE285 /* ReminderCellViewModel.swift */; };
+		84CF99A62164FD72003CE285 /* ReminderItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF99A42164FD72003CE285 /* ReminderItemTableViewCell.swift */; };
+		84CF99A72164FD72003CE285 /* ReminderItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CF99A52164FD72003CE285 /* ReminderItemTableViewCell.xib */; };
 		84E418EF205011CF007DE716 /* WatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E418EE205011CF007DE716 /* WatchManager.swift */; };
 		84E418F1205011DC007DE716 /* iOSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E418F0205011DC007DE716 /* iOSManager.swift */; };
 		84F738482050733D00FDEB1D /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F738472050733D00FDEB1D /* Medicine.swift */; };
@@ -49,7 +59,6 @@
 		8D60C9142051D6000048E3E3 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60C9042051D6000048E3E3 /* Vector3.swift */; };
 		8D60C9152051D6000048E3E3 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60C9052051D6000048E3E3 /* CGPoint+Extensions.swift */; };
 		8DCB5A332052CA510058B3E4 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCB5A322052CA510058B3E4 /* Helper.swift */; };
-		8DCB5A342052CA580058B3E4 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCB5A322052CA510058B3E4 /* Helper.swift */; };
 		8DCB5A362052CBCA0058B3E4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCB5A352052CBCA0058B3E4 /* Colors.swift */; };
 		9101E83A205076EE00AB41FF /* ReminderFrequencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9101E839205076EE00AB41FF /* ReminderFrequencyViewController.swift */; };
 		9101E83C20507CAE00AB41FF /* ReminderHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9101E83B20507CAE00AB41FF /* ReminderHeaderTableViewCell.swift */; };
@@ -131,9 +140,18 @@
 		8413263A204EEE6000AA4B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8413264E204F0B5100AA4B3A /* PillApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PillApp.entitlements; sourceTree = "<group>"; };
 		84395E26205055EB003FEBBE /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		845A52C22165733100D5AA95 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		846949B12051ACA8000E4709 /* WatchiPhoneCommunicationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchiPhoneCommunicationProtocol.swift; sourceTree = "<group>"; };
 		8477A4E92050574F008445F7 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		8495F8CA2052CF19009C5C84 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		84CF99952164F6B5003CE285 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		84CF99982164F981003CE285 /* RemindersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersViewController.swift; sourceTree = "<group>"; };
+		84CF99992164F981003CE285 /* RemindersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemindersViewController.xib; sourceTree = "<group>"; };
+		84CF999D2164FABB003CE285 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		84CF999F2164FC2E003CE285 /* RemindersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersViewModel.swift; sourceTree = "<group>"; };
+		84CF99A12164FC67003CE285 /* ReminderCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCellViewModel.swift; sourceTree = "<group>"; };
+		84CF99A42164FD72003CE285 /* ReminderItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReminderItemTableViewCell.swift; path = View/ReminderItemTableViewCell.swift; sourceTree = "<group>"; };
+		84CF99A52164FD72003CE285 /* ReminderItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ReminderItemTableViewCell.xib; path = View/ReminderItemTableViewCell.xib; sourceTree = "<group>"; };
 		84E418EE205011CF007DE716 /* WatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchManager.swift; sourceTree = "<group>"; };
 		84E418F0205011DC007DE716 /* iOSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSManager.swift; sourceTree = "<group>"; };
 		84F738472050733D00FDEB1D /* Medicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
@@ -222,28 +240,16 @@
 		84132610204EEE6000AA4B3A /* PillApp */ = {
 			isa = PBXGroup;
 			children = (
+				845A52C42165735700D5AA95 /* Services */,
+				84CF999C2164F9B9003CE285 /* Coordinator */,
+				84CF99A32164FC87003CE285 /* ViewModel */,
+				8477A4EE20505A1B008445F7 /* View */,
 				8DCB5A352052CBCA0058B3E4 /* Colors.swift */,
 				84F73846205070F300FDEB1D /* Controller */,
 				84132611204EEE6000AA4B3A /* AppDelegate.swift */,
-				84132613204EEE6000AA4B3A /* ViewController.swift */,
-				D7C85611204F0D3A001265C7 /* CreateMedicineViewController.swift */,
-				D7C8560F204F02A7001265C7 /* MedicineTableViewCell.swift */,
-				D7C8563720507795001265C7 /* UIView.swift */,
-				84132615204EEE6000AA4B3A /* Main.storyboard */,
-				D7C8563F2051AFB0001265C7 /* SetDosageTableViewCell.swift */,
-				D7C856412051B5E9001265C7 /* SetUnitTableViewCell.swift */,
-				D7C8563D2051AD85001265C7 /* DosageSettingsViewController.swift */,
-				D7C8563920508051001265C7 /* DosageTableViewCell.swift */,
-				D7C8563B205080AD001265C7 /* ColorTableViewCell.swift */,
-				84132618204EEE6000AA4B3A /* Assets.xcassets */,
-				8413261A204EEE6000AA4B3A /* LaunchScreen.storyboard */,
-				8413261D204EEE6000AA4B3A /* Info.plist */,
-				D7C85613204F2749001265C7 /* PillApp.xcdatamodeld */,
 				8477A4EC205059FF008445F7 /* Managers */,
-				8477A4EE20505A1B008445F7 /* View */,
 				8477A4EB205059D6008445F7 /* Supporting Files */,
 				8477A4ED20505A0F008445F7 /* Model */,
-				8DCB5A322052CA510058B3E4 /* Helper.swift */,
 			);
 			path = PillApp;
 			sourceTree = "<group>";
@@ -270,10 +276,25 @@
 			path = "PillApp WatchKit Extension";
 			sourceTree = "<group>";
 		};
+		845A52C42165735700D5AA95 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				845A52C22165733100D5AA95 /* CoreDataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		8477A4EB205059D6008445F7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				84132615204EEE6000AA4B3A /* Main.storyboard */,
+				84132618204EEE6000AA4B3A /* Assets.xcassets */,
+				8413261A204EEE6000AA4B3A /* LaunchScreen.storyboard */,
+				8413261D204EEE6000AA4B3A /* Info.plist */,
+				D7C85613204F2749001265C7 /* PillApp.xcdatamodeld */,
 				8413264E204F0B5100AA4B3A /* PillApp.entitlements */,
+				8DCB5A322052CA510058B3E4 /* Helper.swift */,
+				84CF999D2164FABB003CE285 /* Reusable.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -298,13 +319,10 @@
 		8477A4EE20505A1B008445F7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9101E839205076EE00AB41FF /* ReminderFrequencyViewController.swift */,
-				9101E83B20507CAE00AB41FF /* ReminderHeaderTableViewCell.swift */,
-				91ECBF522051A91E009FE51E /* FrequencyViewController.swift */,
-				91531FEB2051B0EC0012E488 /* FrequencyTableViewCell.swift */,
-				91940C992051ECA60035316D /* ReminderCellDelegate.swift */,
-				91940C9B2052054B0035316D /* ReminderPickerTableViewCell.swift */,
-				91B9D5EA20523783007DC9F4 /* FrequencyTableViewCellDelegate.swift */,
+				84CF99982164F981003CE285 /* RemindersViewController.swift */,
+				84CF99992164F981003CE285 /* RemindersViewController.xib */,
+				84CF99A42164FD72003CE285 /* ReminderItemTableViewCell.swift */,
+				84CF99A52164FD72003CE285 /* ReminderItemTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -339,9 +357,42 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		84CF999C2164F9B9003CE285 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				84CF99952164F6B5003CE285 /* AppCoordinator.swift */,
+			);
+			name = Coordinator;
+			sourceTree = "<group>";
+		};
+		84CF99A32164FC87003CE285 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84CF999F2164FC2E003CE285 /* RemindersViewModel.swift */,
+				84CF99A12164FC67003CE285 /* ReminderCellViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
 		84F73846205070F300FDEB1D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D7C85611204F0D3A001265C7 /* CreateMedicineViewController.swift */,
+				84132613204EEE6000AA4B3A /* ViewController.swift */,
+				D7C8560F204F02A7001265C7 /* MedicineTableViewCell.swift */,
+				D7C8563F2051AFB0001265C7 /* SetDosageTableViewCell.swift */,
+				D7C856412051B5E9001265C7 /* SetUnitTableViewCell.swift */,
+				D7C8563920508051001265C7 /* DosageTableViewCell.swift */,
+				D7C8563B205080AD001265C7 /* ColorTableViewCell.swift */,
+				D7C8563D2051AD85001265C7 /* DosageSettingsViewController.swift */,
+				9101E839205076EE00AB41FF /* ReminderFrequencyViewController.swift */,
+				9101E83B20507CAE00AB41FF /* ReminderHeaderTableViewCell.swift */,
+				91ECBF522051A91E009FE51E /* FrequencyViewController.swift */,
+				91531FEB2051B0EC0012E488 /* FrequencyTableViewCell.swift */,
+				91940C992051ECA60035316D /* ReminderCellDelegate.swift */,
+				91940C9B2052054B0035316D /* ReminderPickerTableViewCell.swift */,
+				91B9D5EA20523783007DC9F4 /* FrequencyTableViewCellDelegate.swift */,
+				D7C8563720507795001265C7 /* UIView.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -499,6 +550,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84CF999B2164F981003CE285 /* RemindersViewController.xib in Resources */,
+				84CF99A72164FD72003CE285 /* ReminderItemTableViewCell.xib in Resources */,
 				8413261C204EEE6000AA4B3A /* LaunchScreen.storyboard in Resources */,
 				84132619204EEE6000AA4B3A /* Assets.xcassets in Resources */,
 				84132617204EEE6000AA4B3A /* Main.storyboard in Resources */,
@@ -529,12 +582,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84CF99A02164FC2E003CE285 /* RemindersViewModel.swift in Sources */,
+				84CF999A2164F981003CE285 /* RemindersViewController.swift in Sources */,
 				D7C856422051B5E9001265C7 /* SetUnitTableViewCell.swift in Sources */,
 				D7C85612204F0D3A001265C7 /* CreateMedicineViewController.swift in Sources */,
 				D7C8563A20508051001265C7 /* DosageTableViewCell.swift in Sources */,
 				91940C9A2051ECA60035316D /* ReminderCellDelegate.swift in Sources */,
 				D7C85615204F2749001265C7 /* PillApp.xcdatamodeld in Sources */,
 				D7C8563820507795001265C7 /* UIView.swift in Sources */,
+				84CF99962164F6B5003CE285 /* AppCoordinator.swift in Sources */,
 				D7C856402051AFB0001265C7 /* SetDosageTableViewCell.swift in Sources */,
 				91B9D5EB20523783007DC9F4 /* FrequencyTableViewCellDelegate.swift in Sources */,
 				D7C8563C205080AD001265C7 /* ColorTableViewCell.swift in Sources */,
@@ -545,14 +601,18 @@
 				8477A4EA20505750008445F7 /* NotificationManager.swift in Sources */,
 				84F738522050804800FDEB1D /* Frequency.swift in Sources */,
 				84F738532050804C00FDEB1D /* Dosage.swift in Sources */,
+				845A52C32165733100D5AA95 /* CoreDataService.swift in Sources */,
 				91940C9C2052054B0035316D /* ReminderPickerTableViewCell.swift in Sources */,
 				9101E83A205076EE00AB41FF /* ReminderFrequencyViewController.swift in Sources */,
 				91ECBF532051A91E009FE51E /* FrequencyViewController.swift in Sources */,
 				84E418EF205011CF007DE716 /* WatchManager.swift in Sources */,
+				84CF99A62164FD72003CE285 /* ReminderItemTableViewCell.swift in Sources */,
 				84132612204EEE6000AA4B3A /* AppDelegate.swift in Sources */,
 				8DCB5A362052CBCA0058B3E4 /* Colors.swift in Sources */,
 				84F738552050941100FDEB1D /* CoreDataManager.swift in Sources */,
+				84CF99A22164FC67003CE285 /* ReminderCellViewModel.swift in Sources */,
 				8DCB5A332052CA510058B3E4 /* Helper.swift in Sources */,
+				84CF999E2164FABB003CE285 /* Reusable.swift in Sources */,
 				D7C85610204F02A7001265C7 /* MedicineTableViewCell.swift in Sources */,
 				846949B32051ADC1000E4709 /* WatchiPhoneCommunicationProtocol.swift in Sources */,
 			);
@@ -577,7 +637,6 @@
 				8D60C90E2051D6000048E3E3 /* SKAction+SpecialEffects.swift in Sources */,
 				846949B22051ACA8000E4709 /* WatchiPhoneCommunicationProtocol.swift in Sources */,
 				84F738512050802100FDEB1D /* Frequency.swift in Sources */,
-				8DCB5A342052CA580058B3E4 /* Helper.swift in Sources */,
 				84132637204EEE6000AA4B3A /* ExtensionDelegate.swift in Sources */,
 				8D60C9082051D6000048E3E3 /* SKRingNode.swift in Sources */,
 				8D60C9092051D6000048E3E3 /* SKColor+Extensions.swift in Sources */,
@@ -590,6 +649,7 @@
 				AB7C23F1204F12E400EBA6AB /* MedicineRowController.swift in Sources */,
 				8D60C90A2051D6000048E3E3 /* CGFloat+Extensions.swift in Sources */,
 				8D60C9142051D6000048E3E3 /* Vector3.swift in Sources */,
+				84CF99972164F732003CE285 /* Helper.swift in Sources */,
 				8D60C8F42051D5970048E3E3 /* ComplicationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -817,7 +877,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M3PUPH2NBH;
 				INFOPLIST_FILE = PillApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Scheltzke.PillApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -833,7 +893,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M3PUPH2NBH;
 				INFOPLIST_FILE = PillApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Scheltzke.PillApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
