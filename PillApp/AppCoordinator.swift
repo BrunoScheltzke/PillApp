@@ -33,12 +33,19 @@ class AppCoordinator: NavigationCoordinator {
         
         let medicinesVC = RemindersViewController()
         let coredata = CoreDataService()
-        let mecicinesVM = RemindersViewModel(database: coredata)
+        let mecicinesVM = RemindersViewModel(database: coredata, delegate: self)
         
         medicinesVC.viewModel = mecicinesVM
         navigationController.viewControllers = [medicinesVC]
         
         window.makeKeyAndVisible()
         window.rootViewController = navigationController
+    }
+}
+
+extension AppCoordinator: RemindersViewModelDelegate {
+    func didAskToAddReminder() {
+        let createReminderCoordinator = CreateReminderCoordinator(presenter: navigationController)
+        createReminderCoordinator.start()
     }
 }

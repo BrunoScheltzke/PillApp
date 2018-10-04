@@ -109,7 +109,7 @@ extension UIView {
         addSubview(subView)
         subView.fillToParent()
         
-        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
         subView.addSubview(activityIndicator)
         activityIndicator.centerToParent()
         activityIndicator.startAnimating()

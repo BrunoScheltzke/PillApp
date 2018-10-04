@@ -8,7 +8,8 @@
 
 import Foundation
 
-enum Dosage: String {
+enum Dosage: String, CaseIterable {
     case ml
     case pill
+    case drop
 }

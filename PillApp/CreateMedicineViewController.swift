@@ -108,14 +108,14 @@ extension CreateMedicineViewController: UITableViewDelegate, UITableViewDataSour
             } else if indexPath.row == 1 && isOpen == false {
                 isOpen = true
                 self.view.layoutIfNeeded()
-                UIView.animate(withDuration: 0.3, delay: 0.11, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+                UIView.animate(withDuration: 0.3, delay: 0.11, options: UIView.AnimationOptions.curveEaseInOut, animations: {
                     self.bottomColorsTableviewConstraint.constant = 0
                     self.view.layoutIfNeeded()
                 })
             } else if isOpen {
                 isOpen = false
                 self.view.layoutIfNeeded()
-                UIView.animate(withDuration: 0.3, delay: 0.11, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+                UIView.animate(withDuration: 0.3, delay: 0.11, options: UIView.AnimationOptions.curveEaseInOut, animations: {
                     self.bottomColorsTableviewConstraint.constant = -352
                     self.view.layoutIfNeeded()
                 })
@@ -125,7 +125,7 @@ extension CreateMedicineViewController: UITableViewDelegate, UITableViewDataSour
             self.indexColorsTableview = indexPath.row
             self.tableview.reloadData()
             self.view.layoutIfNeeded()
-            UIView.animate(withDuration: 0.3, delay: 0.11, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+            UIView.animate(withDuration: 0.3, delay: 0.11, options: UIView.AnimationOptions.curveEaseInOut, animations: {
                 self.bottomColorsTableviewConstraint.constant = -352
                 self.view.layoutIfNeeded()
             })

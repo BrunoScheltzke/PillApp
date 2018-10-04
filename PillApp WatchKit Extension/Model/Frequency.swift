@@ -8,8 +8,9 @@
 
 import Foundation
 
-enum Frequency: Int {
+enum Frequency: Int, CaseIterable {
     case currentDayOnly = 0
+    case everyDay
     case everySunday
     case everyMonday
     case everyTuesday
@@ -17,5 +18,18 @@ enum Frequency: Int {
     case everyThursday
     case everyFriday
     case everySaturday
-    case everyDay
+    
+    func asString() -> String {
+        switch self {
+        case .currentDayOnly: return "Current day only"
+        case .everyDay: return "Everyday"
+        case .everyMonday: return "Every monday"
+        case .everyTuesday: return "Every tuesday"
+        case .everyWednesday: return "Every wednesday"
+        case .everyThursday: return "Every thursday"
+        case .everyFriday: return "Every friday"
+        case .everySaturday: return "Every saturday"
+        case .everySunday: return "Every sunday"
+        }
+    }
 }

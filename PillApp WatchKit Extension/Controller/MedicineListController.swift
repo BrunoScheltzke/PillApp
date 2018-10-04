@@ -10,12 +10,6 @@ import WatchKit
 import Foundation
 import SpriteKit
 
-let dayFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "EEEE, dd"
-    return formatter
-}()
-
 class MedicineListController: WKInterfaceController {
     @IBOutlet var notificationBtn: WKInterfaceButton!
     

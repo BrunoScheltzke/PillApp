@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C1829DDB324BC776206CA61 /* Pods_PillApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F67DA2716DB4DA2DA90D4AF5 /* Pods_PillApp.framework */; };
 		84132612204EEE6000AA4B3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84132611204EEE6000AA4B3A /* AppDelegate.swift */; };
 		84132614204EEE6000AA4B3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84132613204EEE6000AA4B3A /* ViewController.swift */; };
 		84132617204EEE6000AA4B3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84132615204EEE6000AA4B3A /* Main.storyboard */; };
@@ -22,6 +23,10 @@
 		846949B22051ACA8000E4709 /* WatchiPhoneCommunicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846949B12051ACA8000E4709 /* WatchiPhoneCommunicationProtocol.swift */; };
 		846949B32051ADC1000E4709 /* WatchiPhoneCommunicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846949B12051ACA8000E4709 /* WatchiPhoneCommunicationProtocol.swift */; };
 		8477A4EA20505750008445F7 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477A4E92050574F008445F7 /* NotificationManager.swift */; };
+		84781725216648AB00A1BE8A /* CreateReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84781724216648AB00A1BE8A /* CreateReminderViewModel.swift */; };
+		847817272166497000A1BE8A /* CreateReminderCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847817262166497000A1BE8A /* CreateReminderCoordinator.swift */; };
+		8478172A216651CA00A1BE8A /* CreateReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84781728216651CA00A1BE8A /* CreateReminderViewController.swift */; };
+		8478172B216651CA00A1BE8A /* CreateReminderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84781729216651CA00A1BE8A /* CreateReminderViewController.xib */; };
 		8495F8CB2052CF19009C5C84 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495F8CA2052CF19009C5C84 /* Register.swift */; };
 		84CF99962164F6B5003CE285 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF99952164F6B5003CE285 /* AppCoordinator.swift */; };
 		84CF99972164F732003CE285 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCB5A322052CA510058B3E4 /* Helper.swift */; };
@@ -143,6 +148,10 @@
 		845A52C22165733100D5AA95 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		846949B12051ACA8000E4709 /* WatchiPhoneCommunicationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchiPhoneCommunicationProtocol.swift; sourceTree = "<group>"; };
 		8477A4E92050574F008445F7 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		84781724216648AB00A1BE8A /* CreateReminderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReminderViewModel.swift; sourceTree = "<group>"; };
+		847817262166497000A1BE8A /* CreateReminderCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReminderCoordinator.swift; sourceTree = "<group>"; };
+		84781728216651CA00A1BE8A /* CreateReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReminderViewController.swift; sourceTree = "<group>"; };
+		84781729216651CA00A1BE8A /* CreateReminderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateReminderViewController.xib; sourceTree = "<group>"; };
 		8495F8CA2052CF19009C5C84 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		84CF99952164F6B5003CE285 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		84CF99982164F981003CE285 /* RemindersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +194,7 @@
 		91940C9B2052054B0035316D /* ReminderPickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderPickerTableViewCell.swift; sourceTree = "<group>"; };
 		91B9D5EA20523783007DC9F4 /* FrequencyTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		91ECBF522051A91E009FE51E /* FrequencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyViewController.swift; sourceTree = "<group>"; };
+		A51D52338BD4E8C4031D717B /* Pods-PillApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PillApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PillApp/Pods-PillApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AB7C23ED204F12DF00EBA6AB /* MedicineListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineListController.swift; sourceTree = "<group>"; };
 		AB7C23EE204F12DF00EBA6AB /* MedicineRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineRowController.swift; sourceTree = "<group>"; };
 		AB7C23F5204F132A00EBA6AB /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
@@ -197,6 +207,8 @@
 		D7C8563D2051AD85001265C7 /* DosageSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DosageSettingsViewController.swift; sourceTree = "<group>"; };
 		D7C8563F2051AFB0001265C7 /* SetDosageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDosageTableViewCell.swift; sourceTree = "<group>"; };
 		D7C856412051B5E9001265C7 /* SetUnitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUnitTableViewCell.swift; sourceTree = "<group>"; };
+		DB3187CB3C3500B24D0DE5CF /* Pods-PillApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PillApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PillApp/Pods-PillApp.release.xcconfig"; sourceTree = "<group>"; };
+		F67DA2716DB4DA2DA90D4AF5 /* Pods_PillApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PillApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,10 +216,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C1829DDB324BC776206CA61 /* Pods_PillApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8413262C204EEE6000AA4B3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADB4E93336BF799A09E6D2BF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -224,6 +244,8 @@
 				84132624204EEE6000AA4B3A /* PillApp WatchKit App */,
 				84132633204EEE6000AA4B3A /* PillApp WatchKit Extension */,
 				8413260F204EEE6000AA4B3A /* Products */,
+				B699B3A8118C399206395C46 /* Pods */,
+				D7955BCCEB1CEDA585D2BAC6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -323,6 +345,8 @@
 				84CF99992164F981003CE285 /* RemindersViewController.xib */,
 				84CF99A42164FD72003CE285 /* ReminderItemTableViewCell.swift */,
 				84CF99A52164FD72003CE285 /* ReminderItemTableViewCell.xib */,
+				84781728216651CA00A1BE8A /* CreateReminderViewController.swift */,
+				84781729216651CA00A1BE8A /* CreateReminderViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -361,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				84CF99952164F6B5003CE285 /* AppCoordinator.swift */,
+				847817262166497000A1BE8A /* CreateReminderCoordinator.swift */,
 			);
 			name = Coordinator;
 			sourceTree = "<group>";
@@ -370,6 +395,7 @@
 			children = (
 				84CF999F2164FC2E003CE285 /* RemindersViewModel.swift */,
 				84CF99A12164FC67003CE285 /* ReminderCellViewModel.swift */,
+				84781724216648AB00A1BE8A /* CreateReminderViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -432,6 +458,23 @@
 			path = "Ring Node";
 			sourceTree = "<group>";
 		};
+		B699B3A8118C399206395C46 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A51D52338BD4E8C4031D717B /* Pods-PillApp.debug.xcconfig */,
+				DB3187CB3C3500B24D0DE5CF /* Pods-PillApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D7955BCCEB1CEDA585D2BAC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F67DA2716DB4DA2DA90D4AF5 /* Pods_PillApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -439,10 +482,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84132645204EEE6000AA4B3A /* Build configuration list for PBXNativeTarget "PillApp" */;
 			buildPhases = (
+				DF20C5B9817525BC15207EBB /* [CP] Check Pods Manifest.lock */,
 				8413260A204EEE6000AA4B3A /* Sources */,
 				8413260B204EEE6000AA4B3A /* Frameworks */,
 				8413260C204EEE6000AA4B3A /* Resources */,
 				84132644204EEE6000AA4B3A /* Embed Watch Content */,
+				7C5D236F88BB73234A13CF60 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -460,6 +505,7 @@
 			buildPhases = (
 				8413261E204EEE6000AA4B3A /* Resources */,
 				84132640204EEE6000AA4B3A /* Embed App Extensions */,
+				ADB4E93336BF799A09E6D2BF /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -500,6 +546,7 @@
 				TargetAttributes = {
 					8413260D204EEE6000AA4B3A = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -516,6 +563,7 @@
 					};
 					8413262E204EEE6000AA4B3A = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes.watchos.extension = {
@@ -554,6 +602,7 @@
 				84CF99A72164FD72003CE285 /* ReminderItemTableViewCell.xib in Resources */,
 				8413261C204EEE6000AA4B3A /* LaunchScreen.storyboard in Resources */,
 				84132619204EEE6000AA4B3A /* Assets.xcassets in Resources */,
+				8478172B216651CA00A1BE8A /* CreateReminderViewController.xib in Resources */,
 				84132617204EEE6000AA4B3A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,6 +625,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7C5D236F88BB73234A13CF60 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PillApp/Pods-PillApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PillApp/Pods-PillApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF20C5B9817525BC15207EBB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PillApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8413260A204EEE6000AA4B3A /* Sources */ = {
@@ -603,12 +691,15 @@
 				84F738532050804C00FDEB1D /* Dosage.swift in Sources */,
 				845A52C32165733100D5AA95 /* CoreDataService.swift in Sources */,
 				91940C9C2052054B0035316D /* ReminderPickerTableViewCell.swift in Sources */,
+				84781725216648AB00A1BE8A /* CreateReminderViewModel.swift in Sources */,
 				9101E83A205076EE00AB41FF /* ReminderFrequencyViewController.swift in Sources */,
 				91ECBF532051A91E009FE51E /* FrequencyViewController.swift in Sources */,
 				84E418EF205011CF007DE716 /* WatchManager.swift in Sources */,
 				84CF99A62164FD72003CE285 /* ReminderItemTableViewCell.swift in Sources */,
+				8478172A216651CA00A1BE8A /* CreateReminderViewController.swift in Sources */,
 				84132612204EEE6000AA4B3A /* AppDelegate.swift in Sources */,
 				8DCB5A362052CBCA0058B3E4 /* Colors.swift in Sources */,
+				847817272166497000A1BE8A /* CreateReminderCoordinator.swift in Sources */,
 				84F738552050941100FDEB1D /* CoreDataManager.swift in Sources */,
 				84CF99A22164FC67003CE285 /* ReminderCellViewModel.swift in Sources */,
 				8DCB5A332052CA510058B3E4 /* Helper.swift in Sources */,
@@ -808,7 +899,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
@@ -826,7 +917,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
@@ -872,6 +963,7 @@
 		};
 		84132646204EEE6000AA4B3A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A51D52338BD4E8C4031D717B /* Pods-PillApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -881,13 +973,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Scheltzke.PillApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		84132647204EEE6000AA4B3A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB3187CB3C3500B24D0DE5CF /* Pods-PillApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -897,7 +990,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Scheltzke.PillApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
