@@ -10,7 +10,14 @@ import UIKit
 
 class ReminderItemTableViewCell: UITableViewCell {
     
-    var viewModel: ReminderCellViewModel!
+    var viewModel: ReminderCellViewModel! {
+        didSet {
+            colorView.backgroundColor = viewModel.color
+            medicineLabel.text = viewModel.name
+            quantityLabel.text = "\(viewModel.quantity)"
+            timeLabel.text = "\(viewModel.date)"
+        }
+    }
     
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var medicineLabel: UILabel!

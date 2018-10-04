@@ -6,12 +6,18 @@
 //  Copyright © 2018 Bruno Scheltzke. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class ReminderCellViewModel {
     var date: Date
+    var name: String
+    var quantity: Int
+    var color: UIColor
     
     init(reminder: Reminder) {
         date = reminder.date!
+        name = reminder.medicine!.name!
+        quantity = Int(reminder.quantity)
+        color = .red
     }
 }

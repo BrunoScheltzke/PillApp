@@ -9,18 +9,26 @@
 import UIKit
 
 class CreateReminderCoordinator: NavigationCoordinator {
-    var navigationController: UINavigationController
-    var presenter: UIViewController
+    internal var navigationController: UINavigationController
+    private var presenter: UIViewController
+    private var database: LocalDatabaseServiceProtocol
     
-    init(presenter: UIViewController) {
+    init(presenter: UIViewController, database: LocalDatabaseServiceProtocol) {
         navigationController = UINavigationController()
         self.presenter = presenter
+        self.database = database
     }
     
     func start() {
-        let createReminderVM = CreateReminderViewModel()
+        let createReminderVM = CreateReminderViewModel(delegate: self, database: database)
         let createReminderVC = CreateReminderViewController(viewModel: createReminderVM)
         navigationController.viewControllers = [createReminderVC]
         presenter.present(navigationController, animated: true, completion: nil)
+    }
+}
+
+extension CreateReminderCoordinator: CreateReminderViewModelProtocol {
+    func didAskToDismiss() {
+        navigationController.dismiss(animated: true, completion: nil)
     }
 }
