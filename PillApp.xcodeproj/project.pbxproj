@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		5C1829DDB324BC776206CA61 /* Pods_PillApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F67DA2716DB4DA2DA90D4AF5 /* Pods_PillApp.framework */; };
 		84132612204EEE6000AA4B3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84132611204EEE6000AA4B3A /* AppDelegate.swift */; };
-		84132614204EEE6000AA4B3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84132613204EEE6000AA4B3A /* ViewController.swift */; };
-		84132617204EEE6000AA4B3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84132615204EEE6000AA4B3A /* Main.storyboard */; };
 		84132619204EEE6000AA4B3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84132618204EEE6000AA4B3A /* Assets.xcassets */; };
 		8413261C204EEE6000AA4B3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8413261A204EEE6000AA4B3A /* LaunchScreen.storyboard */; };
 		84132621204EEE6000AA4B3A /* PillApp WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 84132620204EEE6000AA4B3A /* PillApp WatchKit App.app */; };
@@ -18,6 +16,12 @@
 		84132630204EEE6000AA4B3A /* PillApp WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8413262F204EEE6000AA4B3A /* PillApp WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		84132637204EEE6000AA4B3A /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84132636204EEE6000AA4B3A /* ExtensionDelegate.swift */; };
 		84132639204EEE6000AA4B3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84132638204EEE6000AA4B3A /* Assets.xcassets */; };
+		841D0970216915A00073A9BE /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F738472050733D00FDEB1D /* Medicine.swift */; };
+		841D0971216915A30073A9BE /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7384A205076A700FDEB1D /* Reminder.swift */; };
+		841D0972216915A80073A9BE /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495F8CA2052CF19009C5C84 /* Register.swift */; };
+		841D097421691A190073A9BE /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D097321691A190073A9BE /* Array.swift */; };
+		841D09762169209C0073A9BE /* Reminder+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D09752169209C0073A9BE /* Reminder+CoreData.swift */; };
+		841D0978216922A80073A9BE /* Medicine+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D0977216922A80073A9BE /* Medicine+CoreData.swift */; };
 		84395E27205055EB003FEBBE /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84395E26205055EB003FEBBE /* NotificationManager.swift */; };
 		845A52C32165733100D5AA95 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A52C22165733100D5AA95 /* CoreDataService.swift */; };
 		846949B22051ACA8000E4709 /* WatchiPhoneCommunicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846949B12051ACA8000E4709 /* WatchiPhoneCommunicationProtocol.swift */; };
@@ -45,7 +49,6 @@
 		84F738512050802100FDEB1D /* Frequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F738502050802100FDEB1D /* Frequency.swift */; };
 		84F738522050804800FDEB1D /* Frequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F738502050802100FDEB1D /* Frequency.swift */; };
 		84F738532050804C00FDEB1D /* Dosage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7384E2050801B00FDEB1D /* Dosage.swift */; };
-		84F738552050941100FDEB1D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F738542050941100FDEB1D /* CoreDataManager.swift */; };
 		8D60C8F42051D5970048E3E3 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60C8F32051D5970048E3E3 /* ComplicationController.swift */; };
 		8D60C9062051D6000048E3E3 /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60C8F62051D5FF0048E3E3 /* CGVector+Extensions.swift */; };
 		8D60C9072051D6000048E3E3 /* SKTAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60C8F72051D5FF0048E3E3 /* SKTAudio.swift */; };
@@ -65,25 +68,10 @@
 		8D60C9152051D6000048E3E3 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60C9052051D6000048E3E3 /* CGPoint+Extensions.swift */; };
 		8DCB5A332052CA510058B3E4 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCB5A322052CA510058B3E4 /* Helper.swift */; };
 		8DCB5A362052CBCA0058B3E4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCB5A352052CBCA0058B3E4 /* Colors.swift */; };
-		9101E83A205076EE00AB41FF /* ReminderFrequencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9101E839205076EE00AB41FF /* ReminderFrequencyViewController.swift */; };
-		9101E83C20507CAE00AB41FF /* ReminderHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9101E83B20507CAE00AB41FF /* ReminderHeaderTableViewCell.swift */; };
-		91531FEC2051B0EC0012E488 /* FrequencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91531FEB2051B0EC0012E488 /* FrequencyTableViewCell.swift */; };
-		91940C9A2051ECA60035316D /* ReminderCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91940C992051ECA60035316D /* ReminderCellDelegate.swift */; };
-		91940C9C2052054B0035316D /* ReminderPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91940C9B2052054B0035316D /* ReminderPickerTableViewCell.swift */; };
-		91B9D5EB20523783007DC9F4 /* FrequencyTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9D5EA20523783007DC9F4 /* FrequencyTableViewCellDelegate.swift */; };
-		91ECBF532051A91E009FE51E /* FrequencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ECBF522051A91E009FE51E /* FrequencyViewController.swift */; };
 		AB7C23F1204F12E400EBA6AB /* MedicineRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7C23EE204F12DF00EBA6AB /* MedicineRowController.swift */; };
 		AB7C23F2204F12E400EBA6AB /* MedicineListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7C23ED204F12DF00EBA6AB /* MedicineListController.swift */; };
 		AB7C23F6204F132A00EBA6AB /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB7C23F5204F132A00EBA6AB /* Interface.storyboard */; };
-		D7C85610204F02A7001265C7 /* MedicineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8560F204F02A7001265C7 /* MedicineTableViewCell.swift */; };
-		D7C85612204F0D3A001265C7 /* CreateMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C85611204F0D3A001265C7 /* CreateMedicineViewController.swift */; };
 		D7C85615204F2749001265C7 /* PillApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7C85613204F2749001265C7 /* PillApp.xcdatamodeld */; };
-		D7C8563820507795001265C7 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8563720507795001265C7 /* UIView.swift */; };
-		D7C8563A20508051001265C7 /* DosageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8563920508051001265C7 /* DosageTableViewCell.swift */; };
-		D7C8563C205080AD001265C7 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8563B205080AD001265C7 /* ColorTableViewCell.swift */; };
-		D7C8563E2051AD85001265C7 /* DosageSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8563D2051AD85001265C7 /* DosageSettingsViewController.swift */; };
-		D7C856402051AFB0001265C7 /* SetDosageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8563F2051AFB0001265C7 /* SetDosageTableViewCell.swift */; };
-		D7C856422051B5E9001265C7 /* SetUnitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C856412051B5E9001265C7 /* SetUnitTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,13 +114,21 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		841D096D216906A20073A9BE /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8413260E204EEE6000AA4B3A /* PillApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PillApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84132611204EEE6000AA4B3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84132613204EEE6000AA4B3A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		84132616204EEE6000AA4B3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84132618204EEE6000AA4B3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8413261B204EEE6000AA4B3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8413261D204EEE6000AA4B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -144,6 +140,12 @@
 		84132638204EEE6000AA4B3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8413263A204EEE6000AA4B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8413264E204F0B5100AA4B3A /* PillApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PillApp.entitlements; sourceTree = "<group>"; };
+		841D0964216906A20073A9BE /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		841D0966216906A20073A9BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		841D096E216914A30073A9BE /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		841D097321691A190073A9BE /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		841D09752169209C0073A9BE /* Reminder+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreData.swift"; sourceTree = "<group>"; };
+		841D0977216922A80073A9BE /* Medicine+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Medicine+CoreData.swift"; sourceTree = "<group>"; };
 		84395E26205055EB003FEBBE /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		845A52C22165733100D5AA95 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		846949B12051ACA8000E4709 /* WatchiPhoneCommunicationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchiPhoneCommunicationProtocol.swift; sourceTree = "<group>"; };
@@ -167,7 +169,6 @@
 		84F7384A205076A700FDEB1D /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		84F7384E2050801B00FDEB1D /* Dosage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dosage.swift; sourceTree = "<group>"; };
 		84F738502050802100FDEB1D /* Frequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frequency.swift; sourceTree = "<group>"; };
-		84F738542050941100FDEB1D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		8D60C8F32051D5970048E3E3 /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComplicationController.swift; path = "PillApp WatchKit Extension/View/ComplicationController.swift"; sourceTree = SOURCE_ROOT; };
 		8D60C8F62051D5FF0048E3E3 /* CGVector+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGVector+Extensions.swift"; sourceTree = "<group>"; };
 		8D60C8F72051D5FF0048E3E3 /* SKTAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTAudio.swift; sourceTree = "<group>"; };
@@ -187,26 +188,11 @@
 		8D60C9052051D6000048E3E3 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
 		8DCB5A322052CA510058B3E4 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		8DCB5A352052CBCA0058B3E4 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		9101E839205076EE00AB41FF /* ReminderFrequencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderFrequencyViewController.swift; sourceTree = "<group>"; };
-		9101E83B20507CAE00AB41FF /* ReminderHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderHeaderTableViewCell.swift; sourceTree = "<group>"; };
-		91531FEB2051B0EC0012E488 /* FrequencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyTableViewCell.swift; sourceTree = "<group>"; };
-		91940C992051ECA60035316D /* ReminderCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCellDelegate.swift; sourceTree = "<group>"; };
-		91940C9B2052054B0035316D /* ReminderPickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderPickerTableViewCell.swift; sourceTree = "<group>"; };
-		91B9D5EA20523783007DC9F4 /* FrequencyTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyTableViewCellDelegate.swift; sourceTree = "<group>"; };
-		91ECBF522051A91E009FE51E /* FrequencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyViewController.swift; sourceTree = "<group>"; };
 		A51D52338BD4E8C4031D717B /* Pods-PillApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PillApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PillApp/Pods-PillApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AB7C23ED204F12DF00EBA6AB /* MedicineListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineListController.swift; sourceTree = "<group>"; };
 		AB7C23EE204F12DF00EBA6AB /* MedicineRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineRowController.swift; sourceTree = "<group>"; };
 		AB7C23F5204F132A00EBA6AB /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
-		D7C8560F204F02A7001265C7 /* MedicineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineTableViewCell.swift; sourceTree = "<group>"; };
-		D7C85611204F0D3A001265C7 /* CreateMedicineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMedicineViewController.swift; sourceTree = "<group>"; };
 		D7C85614204F2749001265C7 /* PillApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PillApp.xcdatamodel; sourceTree = "<group>"; };
-		D7C8563720507795001265C7 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		D7C8563920508051001265C7 /* DosageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DosageTableViewCell.swift; sourceTree = "<group>"; };
-		D7C8563B205080AD001265C7 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
-		D7C8563D2051AD85001265C7 /* DosageSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DosageSettingsViewController.swift; sourceTree = "<group>"; };
-		D7C8563F2051AFB0001265C7 /* SetDosageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDosageTableViewCell.swift; sourceTree = "<group>"; };
-		D7C856412051B5E9001265C7 /* SetUnitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUnitTableViewCell.swift; sourceTree = "<group>"; };
 		DB3187CB3C3500B24D0DE5CF /* Pods-PillApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PillApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PillApp/Pods-PillApp.release.xcconfig"; sourceTree = "<group>"; };
 		F67DA2716DB4DA2DA90D4AF5 /* Pods_PillApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PillApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -243,6 +229,7 @@
 				84132610204EEE6000AA4B3A /* PillApp */,
 				84132624204EEE6000AA4B3A /* PillApp WatchKit App */,
 				84132633204EEE6000AA4B3A /* PillApp WatchKit Extension */,
+				841D0963216906A20073A9BE /* PillIntent */,
 				8413260F204EEE6000AA4B3A /* Products */,
 				B699B3A8118C399206395C46 /* Pods */,
 				D7955BCCEB1CEDA585D2BAC6 /* Frameworks */,
@@ -271,7 +258,6 @@
 				84132611204EEE6000AA4B3A /* AppDelegate.swift */,
 				8477A4EC205059FF008445F7 /* Managers */,
 				8477A4EB205059D6008445F7 /* Supporting Files */,
-				8477A4ED20505A0F008445F7 /* Model */,
 			);
 			path = PillApp;
 			sourceTree = "<group>";
@@ -298,10 +284,29 @@
 			path = "PillApp WatchKit Extension";
 			sourceTree = "<group>";
 		};
+		841D0963216906A20073A9BE /* PillIntent */ = {
+			isa = PBXGroup;
+			children = (
+				841D0964216906A20073A9BE /* IntentHandler.swift */,
+				841D0966216906A20073A9BE /* Info.plist */,
+			);
+			path = PillIntent;
+			sourceTree = "<group>";
+		};
+		841D0979216922E00073A9BE /* Model+CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				841D09752169209C0073A9BE /* Reminder+CoreData.swift */,
+				841D0977216922A80073A9BE /* Medicine+CoreData.swift */,
+			);
+			name = "Model+CoreData";
+			sourceTree = "<group>";
+		};
 		845A52C42165735700D5AA95 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				845A52C22165733100D5AA95 /* CoreDataService.swift */,
+				841D0979216922E00073A9BE /* Model+CoreData */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -309,7 +314,6 @@
 		8477A4EB205059D6008445F7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				84132615204EEE6000AA4B3A /* Main.storyboard */,
 				84132618204EEE6000AA4B3A /* Assets.xcassets */,
 				8413261A204EEE6000AA4B3A /* LaunchScreen.storyboard */,
 				8413261D204EEE6000AA4B3A /* Info.plist */,
@@ -317,6 +321,7 @@
 				8413264E204F0B5100AA4B3A /* PillApp.entitlements */,
 				8DCB5A322052CA510058B3E4 /* Helper.swift */,
 				84CF999D2164FABB003CE285 /* Reusable.swift */,
+				841D097321691A190073A9BE /* Array.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -326,16 +331,8 @@
 			children = (
 				8477A4E92050574F008445F7 /* NotificationManager.swift */,
 				84E418EE205011CF007DE716 /* WatchManager.swift */,
-				84F738542050941100FDEB1D /* CoreDataManager.swift */,
 			);
 			name = Managers;
-			sourceTree = "<group>";
-		};
-		8477A4ED20505A0F008445F7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		8477A4EE20505A1B008445F7 /* View */ = {
@@ -403,22 +400,6 @@
 		84F73846205070F300FDEB1D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D7C85611204F0D3A001265C7 /* CreateMedicineViewController.swift */,
-				84132613204EEE6000AA4B3A /* ViewController.swift */,
-				D7C8560F204F02A7001265C7 /* MedicineTableViewCell.swift */,
-				D7C8563F2051AFB0001265C7 /* SetDosageTableViewCell.swift */,
-				D7C856412051B5E9001265C7 /* SetUnitTableViewCell.swift */,
-				D7C8563920508051001265C7 /* DosageTableViewCell.swift */,
-				D7C8563B205080AD001265C7 /* ColorTableViewCell.swift */,
-				D7C8563D2051AD85001265C7 /* DosageSettingsViewController.swift */,
-				9101E839205076EE00AB41FF /* ReminderFrequencyViewController.swift */,
-				9101E83B20507CAE00AB41FF /* ReminderHeaderTableViewCell.swift */,
-				91ECBF522051A91E009FE51E /* FrequencyViewController.swift */,
-				91531FEB2051B0EC0012E488 /* FrequencyTableViewCell.swift */,
-				91940C992051ECA60035316D /* ReminderCellDelegate.swift */,
-				91940C9B2052054B0035316D /* ReminderPickerTableViewCell.swift */,
-				91B9D5EA20523783007DC9F4 /* FrequencyTableViewCellDelegate.swift */,
-				D7C8563720507795001265C7 /* UIView.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -470,6 +451,7 @@
 		D7955BCCEB1CEDA585D2BAC6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				841D096E216914A30073A9BE /* Intents.framework */,
 				F67DA2716DB4DA2DA90D4AF5 /* Pods_PillApp.framework */,
 			);
 			name = Frameworks;
@@ -488,6 +470,7 @@
 				8413260C204EEE6000AA4B3A /* Resources */,
 				84132644204EEE6000AA4B3A /* Embed Watch Content */,
 				7C5D236F88BB73234A13CF60 /* [CP] Embed Pods Frameworks */,
+				841D096D216906A20073A9BE /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -540,7 +523,7 @@
 		84132606204EEE6000AA4B3A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Bruno Scheltzke";
 				TargetAttributes = {
@@ -549,11 +532,17 @@
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
 							com.apple.Push = {
 								enabled = 0;
+							};
+							com.apple.Siri = {
+								enabled = 1;
 							};
 						};
 					};
@@ -603,7 +592,6 @@
 				8413261C204EEE6000AA4B3A /* LaunchScreen.storyboard in Resources */,
 				84132619204EEE6000AA4B3A /* Assets.xcassets in Resources */,
 				8478172B216651CA00A1BE8A /* CreateReminderViewController.xib in Resources */,
-				84132617204EEE6000AA4B3A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,39 +660,28 @@
 			files = (
 				84CF99A02164FC2E003CE285 /* RemindersViewModel.swift in Sources */,
 				84CF999A2164F981003CE285 /* RemindersViewController.swift in Sources */,
-				D7C856422051B5E9001265C7 /* SetUnitTableViewCell.swift in Sources */,
-				D7C85612204F0D3A001265C7 /* CreateMedicineViewController.swift in Sources */,
-				D7C8563A20508051001265C7 /* DosageTableViewCell.swift in Sources */,
-				91940C9A2051ECA60035316D /* ReminderCellDelegate.swift in Sources */,
 				D7C85615204F2749001265C7 /* PillApp.xcdatamodeld in Sources */,
-				D7C8563820507795001265C7 /* UIView.swift in Sources */,
 				84CF99962164F6B5003CE285 /* AppCoordinator.swift in Sources */,
-				D7C856402051AFB0001265C7 /* SetDosageTableViewCell.swift in Sources */,
-				91B9D5EB20523783007DC9F4 /* FrequencyTableViewCellDelegate.swift in Sources */,
-				D7C8563C205080AD001265C7 /* ColorTableViewCell.swift in Sources */,
-				D7C8563E2051AD85001265C7 /* DosageSettingsViewController.swift in Sources */,
-				91531FEC2051B0EC0012E488 /* FrequencyTableViewCell.swift in Sources */,
-				84132614204EEE6000AA4B3A /* ViewController.swift in Sources */,
-				9101E83C20507CAE00AB41FF /* ReminderHeaderTableViewCell.swift in Sources */,
 				8477A4EA20505750008445F7 /* NotificationManager.swift in Sources */,
 				84F738522050804800FDEB1D /* Frequency.swift in Sources */,
+				841D097421691A190073A9BE /* Array.swift in Sources */,
 				84F738532050804C00FDEB1D /* Dosage.swift in Sources */,
+				841D0970216915A00073A9BE /* Medicine.swift in Sources */,
 				845A52C32165733100D5AA95 /* CoreDataService.swift in Sources */,
-				91940C9C2052054B0035316D /* ReminderPickerTableViewCell.swift in Sources */,
 				84781725216648AB00A1BE8A /* CreateReminderViewModel.swift in Sources */,
-				9101E83A205076EE00AB41FF /* ReminderFrequencyViewController.swift in Sources */,
-				91ECBF532051A91E009FE51E /* FrequencyViewController.swift in Sources */,
 				84E418EF205011CF007DE716 /* WatchManager.swift in Sources */,
 				84CF99A62164FD72003CE285 /* ReminderItemTableViewCell.swift in Sources */,
+				841D0972216915A80073A9BE /* Register.swift in Sources */,
 				8478172A216651CA00A1BE8A /* CreateReminderViewController.swift in Sources */,
 				84132612204EEE6000AA4B3A /* AppDelegate.swift in Sources */,
 				8DCB5A362052CBCA0058B3E4 /* Colors.swift in Sources */,
+				841D0971216915A30073A9BE /* Reminder.swift in Sources */,
 				847817272166497000A1BE8A /* CreateReminderCoordinator.swift in Sources */,
-				84F738552050941100FDEB1D /* CoreDataManager.swift in Sources */,
 				84CF99A22164FC67003CE285 /* ReminderCellViewModel.swift in Sources */,
 				8DCB5A332052CA510058B3E4 /* Helper.swift in Sources */,
+				841D0978216922A80073A9BE /* Medicine+CoreData.swift in Sources */,
 				84CF999E2164FABB003CE285 /* Reusable.swift in Sources */,
-				D7C85610204F02A7001265C7 /* MedicineTableViewCell.swift in Sources */,
+				841D09762169209C0073A9BE /* Reminder+CoreData.swift in Sources */,
 				846949B32051ADC1000E4709 /* WatchiPhoneCommunicationProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -761,14 +738,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		84132615204EEE6000AA4B3A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84132616204EEE6000AA4B3A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8413261A204EEE6000AA4B3A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -965,7 +934,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A51D52338BD4E8C4031D717B /* Pods-PillApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PillApp/PillApp.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M3PUPH2NBH;
 				INFOPLIST_FILE = PillApp/Info.plist;
@@ -973,6 +945,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Scheltzke.PillApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -982,7 +955,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DB3187CB3C3500B24D0DE5CF /* Pods-PillApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PillApp/PillApp.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M3PUPH2NBH;
 				INFOPLIST_FILE = PillApp/Info.plist;
@@ -990,6 +966,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Scheltzke.PillApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

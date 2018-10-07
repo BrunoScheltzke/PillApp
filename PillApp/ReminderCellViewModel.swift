@@ -15,9 +15,9 @@ class ReminderCellViewModel {
     var color: UIColor
     
     init(reminder: Reminder) {
-        date = reminder.date!
-        name = reminder.medicine!.name!
-        quantity = Int(reminder.quantity)
+        date = reminder.date
+        name = reminder.medicine.name
+        quantity = reminder.quantity
         color = .red
     }
 }

@@ -59,35 +59,51 @@ class NotificationManager: NSObject {
         center.setNotificationCategories([medicineTakingCategory])
     }
     
-    func setUpReminder(reminder: Reminder) {
+    func setUpReminder(reminder: Reminder) -> [String] {
+        
         let content = UNMutableNotificationContent()
         content.title = "Medication Reminder"
-        content.body = "Remember to take \(reminder.quantity, reminder.dosage) of \(reminder.medicine!.name!)"
+        content.body = "Remember to take \(reminder.quantity, reminder.dosage) of \(reminder.medicine.name)"
         content.categoryIdentifier = NotificationCategoryIdentifier.medicineTaking
-        content.userInfo = [Keys.reminderId: reminder.objectID.uriRepresentation().absoluteString]
-        
+        content.userInfo = [Keys.reminderId: reminder.id]
+
         var date = DateComponents()
         //TODO: FIX THIS DISGUSTING THING WITH UTC
-        date.hour = Calendar.current.component(.hour, from: reminder.date!)
-        date.minute = Calendar.current.component(.minute, from: reminder.date!)
+        date.hour = Calendar.current.component(.hour, from: reminder.date)
+        date.minute = Calendar.current.component(.minute, from: reminder.date)
         
-        if reminder.frequency != Int32(Frequency.everyDay.rawValue) && reminder.frequency != Int32(Frequency.currentDayOnly.rawValue) {
-            date.weekday = Int(reminder.frequency)
-        }
-        
-        let trigger: UNCalendarNotificationTrigger
-        
-        if reminder.frequency == Int32(Frequency.currentDayOnly.rawValue) {
-            trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: false)
+        if reminder.frequency.contains(.currentDayOnly) {
+            let weekday = Calendar.current.component(.weekday, from: Date())
+            date.weekday = weekday
+            let notificationId = reminder.id + reminder.medicine.name + "\(weekday)"
+            createNotification(date, repeats: false, id: notificationId, content: content)
+            return [notificationId]
+        } else if reminder.frequency.contains(.everyday) {
+            var notificationIds: [String] = []
+            for weekday in 1...7 {
+                date.weekday = weekday
+                let notificationId = reminder.id + reminder.medicine.name + "\(weekday)"
+                createNotification(date, repeats: true, id: notificationId, content: content)
+                notificationIds.append(notificationId)
+            }
+            return notificationIds
         } else {
-            trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
+            var notificationIds: [String] = []
+            reminder.frequency.forEach { frequency in
+                date.weekday = frequency.weekday()
+                let notificationId = reminder.id + reminder.medicine.name + "\(frequency.weekday())"
+                createNotification(date, repeats: true, id: notificationId, content: content)
+                notificationIds.append(notificationId)
+            }
+            return notificationIds
         }
-        
-        // Create the request object.
-        let request = UNNotificationRequest(identifier: NotificationCategoryIdentifier.medicineTaking, content: content, trigger: trigger)
-        
+    }
+    
+    private func createNotification(_ date: DateComponents, repeats: Bool, id: String, content: UNMutableNotificationContent) {
+        let trigger: UNCalendarNotificationTrigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: repeats)
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
         center.add(request) { (error) in
-            print(error ?? "Setup notification for medication: \(reminder.medicine!.name!), reminderID: \(reminder.objectID.uriRepresentation().absoluteString)")
+            print(error ?? "Setup notification for medication")
         }
     }
     
@@ -147,13 +163,13 @@ extension NotificationManager: UNUserNotificationCenterDelegate {
                 print("Error with reminder id: \(idStr)")
                 return
             }
-            guard let reminder = CoreDataManager.shared.fetchReminder(by: idUrl) else {
-                print("No reminder found for reminder id: \(idStr)")
-                return
-            }
-            let date = reminderDict[Keys.date] as? Date ?? Date()
-            
-            CoreDataManager.shared.createRegister(date: date, reminder: reminder, taken: taken)
+//            guard let reminder = CoreDataManager.shared.fetchReminder(by: idUrl) else {
+//                print("No reminder found for reminder id: \(idStr)")
+//                return
+//            }
+//            let date = reminderDict[Keys.date] as? Date ?? Date()
+//
+//            CoreDataManager.shared.createRegister(date: date, reminder: reminder, taken: taken)
 
             completionHandler()
         }

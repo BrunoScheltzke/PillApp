@@ -21,8 +21,9 @@ class CreateReminderViewModel {
         delegate.didAskToDismiss()
     }
     
-    func createReminder() {
-        
+    func createReminder(forMedicineName medicine: String, date: Date, dosage: Dosage, frequency: [Frequency], quantity: Int) {
+        let medicine = database.createMedicine(name: medicine, brand: nil, unit: 0, dosage: dosage)
+        database.createReminder(medicine: medicine, date: date, dosage: dosage, frequency: frequency, quantity: Int32(quantity))
     }
 }
 

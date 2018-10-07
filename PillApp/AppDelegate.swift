@@ -18,15 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
+        NotificationManager.shared.setup { _ in
+            
+        }
         appCoordinator = AppCoordinator(window: window)
         appCoordinator.start()
         
-        WatchManager.shared.startSession()
-        CoreDataManager.shared.setup()
-        
-        NotificationManager.shared.setup { (result) in
-            
-        }
         return true
     }
     

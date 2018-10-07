@@ -10,9 +10,9 @@ import UIKit
 import CoreData
 
 protocol LocalDatabaseServiceProtocol {
-    func fetchAllReminders() -> [Reminder]
-    @discardableResult func createReminder(medicine: Medicine, date: Date, dosage: Dosage, frequency: Frequency, quantity: Int32) -> Reminder
-    @discardableResult func createMedicine(name: String, brand: String?, unit: Int32, dosage: Dosage) -> Medicine
+    func fetchAllReminders() -> [ReminderCoreData]
+    @discardableResult func createReminder(medicine: MedicineCoreData, date: Date, dosage: Dosage, frequency: [Frequency], quantity: Int32) -> ReminderCoreData
+    @discardableResult func createMedicine(name: String, brand: String?, unit: Int32, dosage: Dosage) -> MedicineCoreData
 }
 
 class CoreDataService: LocalDatabaseServiceProtocol {
@@ -23,9 +23,9 @@ class CoreDataService: LocalDatabaseServiceProtocol {
         container = appDelegate.persistentContainer
     }
     
-    func fetchAllReminders() -> [Reminder] {
-        let request = NSFetchRequest<Reminder>(entityName: Keys.Reminder.tableName)
-        var reminders: [Reminder] = []
+    func fetchAllReminders() -> [ReminderCoreData] {
+        let request = NSFetchRequest<ReminderCoreData>(entityName: Keys.Reminder.tableName)
+        var reminders: [ReminderCoreData] = []
         
         do {
             reminders = try container.viewContext.fetch(request)
@@ -36,14 +36,17 @@ class CoreDataService: LocalDatabaseServiceProtocol {
         return reminders
     }
     
-    @discardableResult func createReminder(medicine: Medicine, date: Date, dosage: Dosage, frequency: Frequency = .currentDayOnly, quantity: Int32) -> Reminder {
-        let reminderObj = NSEntityDescription.insertNewObject(forEntityName: Keys.Reminder.tableName, into: container.viewContext) as! Reminder
+    @discardableResult func createReminder(medicine: MedicineCoreData, date: Date, dosage: Dosage, frequency: [Frequency] = [], quantity: Int32) -> ReminderCoreData {
+        let reminderObj = NSEntityDescription.insertNewObject(forEntityName: Keys.Reminder.tableName, into: container.viewContext) as! ReminderCoreData
         
         reminderObj.date = date
         reminderObj.dosage = dosage.rawValue
-        reminderObj.frequency = Int32(frequency.rawValue)
         reminderObj.quantity = quantity
         reminderObj.medicine = medicine
+        reminderObj.frequency = NSKeyedArchiver.archivedData(withRootObject: frequency.map { $0.rawValue })
+        
+        let notificationIds = NotificationManager.shared.setUpReminder(reminder: Reminder(reminderObj))
+        reminderObj.notifications = NSKeyedArchiver.archivedData(withRootObject: notificationIds)
         
         do {
             try container.viewContext.save()
@@ -51,14 +54,12 @@ class CoreDataService: LocalDatabaseServiceProtocol {
             print(error)
         }
         
-        NotificationManager.shared.setUpReminder(reminder: reminderObj)
-        
         return reminderObj
     }
     
-    @discardableResult func createMedicine(name: String, brand: String?, unit: Int32, dosage: Dosage) -> Medicine {
+    @discardableResult func createMedicine(name: String, brand: String?, unit: Int32, dosage: Dosage) -> MedicineCoreData {
         let medicine = NSEntityDescription.insertNewObject(forEntityName: Keys.Medicine.tableName,
-                                                           into: container.viewContext) as! Medicine
+                                                           into: container.viewContext) as! MedicineCoreData
         medicine.name = name
         medicine.brand = brand
         medicine.unit = unit

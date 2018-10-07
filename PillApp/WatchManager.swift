@@ -36,14 +36,14 @@ class WatchManager: NSObject, WCSessionDelegate {
                 return
             }
             
-            guard let reminder = CoreDataManager.shared.fetchReminder(by: idUrl) else {
-                print("No reminder found from Id: \(idStr)")
-                return
-            }
-            let date = userInfo[Keys.date] as? Date ?? Date()
-            
-            CoreDataManager.shared.createRegister(date: date, reminder: reminder, taken: taken)
-            
+//            guard let reminder = CoreDataManager.shared.fetchReminder(by: idUrl) else {
+//                print("No reminder found from Id: \(idStr)")
+//                return
+//            }
+//            let date = userInfo[Keys.date] as? Date ?? Date()
+//            
+//            CoreDataManager.shared.createRegister(date: date, reminder: reminder, taken: taken)
+//            
         default:
             print("Error\(#function)")
         }
@@ -53,30 +53,30 @@ class WatchManager: NSObject, WCSessionDelegate {
         print("Received Message from watch")
         print(message)
         
-        guard let command = message[Keys.communicationCommand] as? String else {return}
-        
-        switch command {
-        case CommunicationProtocol.dailyReminders:
-            print("Daily Reminders Requested")
-            
-            let result = CoreDataManager.shared.fetchTodaysReminders()
-            
-            let reminders = result.0 ?? []
-            let registers = result.1 ?? []
-            
-            var remindersDict: [[String: Any]] = []
-            reminders.forEach({ (reminder) in remindersDict.append(CoreDataManager.shared.toDictionary(reminder))
-            })
-            
-            var registerDict: [[String: Any]] = []
-            registers.forEach({ (register) in registerDict.append(CoreDataManager.shared.toDictionary(register))
-            })
-            
-            replyHandler([Keys.communicationCommand: CommunicationProtocol.dailyReminders, Keys.reminders: remindersDict, Keys.registers: registerDict])
-            
-        default:
-            print("Error\(#function)")
-        }
+//        guard let command = message[Keys.communicationCommand] as? String else {return}
+//
+//        switch command {
+//        case CommunicationProtocol.dailyReminders:
+//            print("Daily Reminders Requested")
+//
+//            let result = CoreDataManager.shared.fetchTodaysReminders()
+//
+//            let reminders = result.0 ?? []
+//            let registers = result.1 ?? []
+//
+//            var remindersDict: [[String: Any]] = []
+//            reminders.forEach({ (reminder) in remindersDict.append(CoreDataManager.shared.toDictionary(reminder))
+//            })
+//
+//            var registerDict: [[String: Any]] = []
+//            registers.forEach({ (register) in registerDict.append(CoreDataManager.shared.toDictionary(register))
+//            })
+//
+//            replyHandler([Keys.communicationCommand: CommunicationProtocol.dailyReminders, Keys.reminders: remindersDict, Keys.registers: registerDict])
+//
+//        default:
+//            print("Error\(#function)")
+//        }
     }
     
     func updateApplicationContext(context: [String: Any]) throws {

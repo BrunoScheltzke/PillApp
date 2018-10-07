@@ -11,6 +11,7 @@ import Foundation
 class RemindersViewModel {
     // Outputs
     var reminderCellVMsByDate: [[ReminderCellViewModel]] = []
+    var sectionNames: [Int]
     let title: String
     
     private let database: LocalDatabaseServiceProtocol
@@ -21,35 +22,65 @@ class RemindersViewModel {
         self.delegate = delegate
         
         title = "Today"
+        sectionNames = []
         setupReminders()
     }
     
     private func setupReminders() {
         reminderCellVMsByDate = []
-        let reminders = database.fetchAllReminders()
+        let reminders = database.fetchAllReminders().map { Reminder($0) }
         
-        //group by date
-        var temp = [Date: [ReminderCellViewModel]]()
+        //group by date()
         let cal = Calendar(identifier: .gregorian)
+        var weekday = cal.component(.weekday, from: Date())
+        
+        var temp0 = [Int: [ReminderCellViewModel]]()
         reminders.forEach { reminder in
-            //check if it has key date if not create a different one
-            guard let date = reminder.date else {return}
-            let dateMid = cal.startOfDay(for: date)
-            
             let reminderVM = ReminderCellViewModel(reminder: reminder)
-            if temp.keys.contains(dateMid) {
-                temp[dateMid]!.append(reminderVM)
+            if reminder.frequency.contains(Frequency.everyday) {
+                Frequency.allCases.filter { $0 != Frequency.currentDayOnly &&  $0 != Frequency.everyday }.forEach({ frequency in
+                    if temp0.keys.contains(frequency.weekday()) {
+                        temp0[frequency.weekday()]!.append(reminderVM)
+                    } else {
+                        temp0[frequency.weekday()] = [reminderVM]
+                    }
+                })
+            } else if reminder.frequency.contains(Frequency.currentDayOnly) {
+                if temp0.keys.contains(weekday) {
+                    temp0[weekday]!.append(reminderVM)
+                } else {
+                    temp0[weekday] = [reminderVM]
+                }
             } else {
-                temp[dateMid] = [reminderVM]
+                reminder.frequency.forEach({ frequency in
+                    if temp0.keys.contains(frequency.weekday()) {
+                        temp0[frequency.weekday()]!.append(reminderVM)
+                    } else {
+                        temp0[frequency.weekday()] = [reminderVM]
+                    }
+                })
             }
         }
         
-        let sorted = Array(temp.keys).sorted(by: >)
+        let sorted = Array(temp0.keys).sorted(by: <)
+        var sortedBasedOnToday: [Int] = []
         
-        //separate into sections for tableView
-        sorted.forEach { [unowned self] value in
-            if let values = temp[value] {
-                self.reminderCellVMsByDate.append(values)
+        for _ in 1...7 {
+            if weekday > 7 {
+                weekday = weekday - 7
+            }
+            
+            if sorted.contains(weekday) {
+                sortedBasedOnToday.append(weekday)
+            }
+            
+            weekday += 1
+        }
+        
+        sortedBasedOnToday.forEach { day in
+            if let value = temp0[day] {
+                reminderCellVMsByDate.append(value)
+                sectionNames.append(day)
             }
         }
     }

@@ -46,12 +46,9 @@ class RemindersViewController: UIViewController {
 
 extension RemindersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if let date = viewModel.reminderCellVMsByDate[section].first?.date {
-            return dayFormatter.string(from: date)
-        }
-        
-        return nil
+        return "\(viewModel.sectionNames[section])"
     }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.reminderCellVMsByDate.count
     }

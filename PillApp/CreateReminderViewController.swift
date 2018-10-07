@@ -70,7 +70,7 @@ class CreateReminderViewController: FormViewController {
         }
         
         let medicineModel = viewModel.database.createMedicine(name: medicine, brand: nil, unit: 50, dosage: dosage)
-        viewModel.database.createReminder(medicine: medicineModel, date: hour, dosage: dosage, frequency: frequency, quantity: Int32(quantity))
+        viewModel.database.createReminder(medicine: medicineModel, date: hour, dosage: dosage, frequency: [frequency], quantity: Int32(quantity))
         viewModel.leave()
     }
     
